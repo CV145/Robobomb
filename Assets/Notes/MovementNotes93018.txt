@@ -1,0 +1,59 @@
+When left key is pressed, move left
+When right key is pressed, move right
+
+- A vector is a line I believe.
+- A vector has an x component
+- This component is set equal to the direction of the transform 
+(positive or negative) times moveSpeed (5) times the amount of time
+since the last frame
+----
+- A rigidbody has a velocity. It can be set to a speed float times
+the transform direction (-1 or 1 times 10)
+ Issue: Robo tipping and falling over
+	- Is rotation on? Freeze rotation on Rigidbody
+	- Take rotation off to get that effect again
+
+----------
+- How to flip Robo when changing direction?
+		- Call on sprite renderer component
+-----------
+ CALLING AND SWITCHING ANIMATIONS
+- Make a condition in the animation controller. If "Speed" is greater than
+.01, switch to walking animation
+
+Animator anim;
+
+anim = GetComponent<Animator>()
+
+//Call property from controller
+
+anim.SetFloat("Ex:Speed", MathF.Abs(move)); //check if speed is not 0 (get 
+absolute value and set it equal to speed float)
+-----------
+DIFFERENT KIND OF MOVEMENT
+
+public float maxSpeed = 10.f;
+bool facingRight = true;
+
+void Start()
+{}
+
+void FixedUpdate()
+{
+ float move = Input.GetAxis("Horizontal")
+ rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+ //set the velocity of player's rigidbody using vector(x,y)
+
+ if (move > 0 && !facingRight)
+ {Flip();}
+ else if (move < 0 && facingRight)
+ {Flip();}
+}
+
+void Flip()
+{
+ facingRight = !facingRight;
+Vector3 theScale = transform.localScale;
+theScale.x *= -1;
+transform.localScale = theScale;
+}
