@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>D:/Projects/Robobomb/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
