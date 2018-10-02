@@ -1,0 +1,24 @@
+10/1/18
+
+The GroundCheck game object is like a small sensor
+attached at the bottom of Robo's feet that checks 
+whether the ground is being touched or not.
+
+grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        //if grounded is true we're on the ground, if not we're not. This is being check every frame
+        anim.SetBool("Ground", grounded);
+
+The layer mask checks if colliding on objects for 
+specific layers only.
+
+- Transforms are used to get positions and other stuff of a game object
+- groundCheck.position is the center of the OverlapCircle
+- Radius is 0.2f
+- Remember this script belongs to Robo. It's checking if Robo is colliding with this
+circle.
+- Is it checking if Robo and tile are colliding within the circle?
+//////////////
+Ok, so the GroundCheck itself is creating a tiny circle. This game object belongs to Robo
+so it follows the player around. If the GroundCheck is colliding with an object within
+the layer mask then it is set to true.
+The circle doesn't belong to Ground check, but is rather made where its position is. 
