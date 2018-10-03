@@ -1,0 +1,50 @@
+{
+    "name": "RockDrums",
+    "type": "multisamplebank",
+    "tags" : {
+        "style" : [],
+        "type" : ["drums"]
+    },             
+    "mode": "discrete",
+    "notes": [
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        45,
+        46,
+        49,
+        51
+    ],
+    "noteLabels": [
+        "kick",
+        "stick",
+        "snare",
+        "lowTom",
+        "closed",
+        "midTom",
+        "highTom",
+        "open",
+        "crash",
+        "ride"
+    ],
+    "velocities": [
+        64,
+        96,
+        127
+    ],
+    "loudness": [
+        -15,
+        -10,
+        0.0
+    ],
+    "master": {
+        "gain_db": 5
+    },
+    "credit": {
+        "product": "Kontakt 5 Band Drums Rock Kit",
+        "vendor": "Native Instruments"
+    }
+}

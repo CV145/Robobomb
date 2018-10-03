@@ -1,0 +1,49 @@
+{
+    "name": "HouseDrums2",
+ 	"type": "multisamplebank",
+    "tags" : {
+        "style" : ["house"],
+        "type" : ["drums"]
+    },     	
+    "notes": [
+        36,
+        37,
+        38,
+        39,
+        42,
+        43,
+        45,
+        46,
+        49
+    ],
+    "velocities": [
+        64,
+        96,
+        127
+    ],
+    "credit": {
+        "product": "Ultrabeat - Deep house Kit",
+        "vendor": "Logic X"
+    },
+    "noteLabels": [
+        "kick",
+        "stick",
+        "snare",
+        "clap",
+        "closed",
+        "lowTom",
+        "midTom",
+        "open",
+        "crash"
+    ],
+    "master": {
+        "gain_db": 11
+    },
+    "mode": "discrete",
+    "loudness": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ]
+}

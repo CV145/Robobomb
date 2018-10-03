@@ -1,0 +1,99 @@
+Melodrive End User License Agreement (“EULA”)
+
+
+Last Updated: Sept 20, 2018
+
+
+PLEASE READ THE FOLLOWING AGREEMENT TERMS AND CONDITIONS CAREFULLY BEFORE DOWNLOADING OR USING THE MELODRIVE DYNAMIC LIBRARY (“DL”). THESE TERMS AND CONDITIONS CONSTITUTE A LEGAL AGREEMENT BETWEEN YOU AND MELODRIVE INC (“MELODRIVE”). BY USING THE MELODRIVE SDK, YOU ARE ACKNOWLEDGING AND AGREEING TO BE BOUND BY AND TO BECOMING A PARTY TO THIS END USER LICENSE AGREEMENT. IF YOU DO NOT OR CANNOT AGREE TO THIS AGREEMENT, THEN YOU ARE NOT PERMITTED TO PARTICIPATE IN THIS PROGRAM OR USE THE MELODRIVE SDK OR RELATED PRODUCTS AND SERVICES.
+
+
+Purpose 
+
+
+This Agreement permits an End User (“You” or “End User”) to use and enjoy the Melodrive SDK, including Melodrive Software products (“Software”), documentation (“Documentation”) and services, with some specified limitations.
+
+
+This Agreement is a binding legal agreement between You and Melodrive (hereinafter “Melodrive” or “Us”, “We”), for use of:
+
+
+1. The Melodrive Software Development Kit including any instrument assets, samples, synthesizers, musical themes, computer Software in object code form, associated modules, files, libraries, data, metadata, media, printed materials, and online or electronic Documentation, and any upgrades, modified versions, additions and copies of the Melodrive SDK licensed to You or embedded into an application you are using, by Melodrive (collectively, the “Melodrive SDK”).
+
+
+By downloading, installing, copying or otherwise using the Melodrive SDK in any standalone or embedded application, You agree to be bound by the terms and conditions herein, including but not limited to all Disclaimers of Warranties and Limitations of Liability of this EULA.  If you do not agree to the terms of this Agreement, do not download, install, copy or otherwise use in any way the Melodrive SDK, including using any applications in which the Melodrive SDK is embedded.
+
+
+Grant of License
+
+
+1. Melodrive hereby grants a personal, non-exclusive, non-transferable, non-assignable, non-sublicenseable license to You to use the Melodrive SDK subject to the terms and conditions of this Agreement.  You may use the Melodrive SDK only in the form and in the product(s) delivered to you, subject to the terms and conditions of this EULA.  You may install, use, and incorporate all or portions of Melodrive object code, available source code, runtime library files, and/or documentation files that may be included with the unmodified Software in any programs.  Any use of the Melodrive SDK outside of the conditions set forth herein is strictly prohibited and will be deemed a breach of this Agreement resulting in immediate termination of your License.  Melodrive will be entitled to all available remedies at law or in equity (including immediate injunctive relief and repossession of all Software unless You are a Federal agency of the United States Government).
+
+
+Reservation of Rights and Ownership
+
+
+1. Melodrive reserves all rights not expressly granted to you in this EULA. The Melodrive SDK is protected by copyright and other intellectual property laws and treaties. Except for the limited rights granted above, Melodrive and its suppliers retain all right, title and interest in and to the Melodrive SDK, Software and Documentation, including copyrights and other proprietary rights. Certain components of the Software are subject to open source and third party licenses.  As a condition of this EULA, you agree to comply with the open source and third party license terms. Unless required by applicable law, such components are provided on an ‘AS IS’ BASIS, WITHOUT EXPRESS OR IMPLIED WARRANTIES OR CONDITIONS OF ANY KIND. 
+
+
+Limitations on End User Rights
+
+
+1. You shall not use, modify, reproduce, reverse engineer, disassemble, decompile or otherwise attempt to derive source code from the Melodrive SDK (except to the extent that such limitations may not be prohibited by law), sublicense, or distribute the Software or Documentation other than as permitted by this License. You shall not remove any proprietary notices, labels or marks on the Melodrive SDK, Software or Documentation. No license is granted to any Melodrive trademarks.
+
+
+Machine Data
+
+
+1. “Machine Data” means anonymized usage data collected by Melodrive under this Agreement such as device, device system time, CPU processing load, free RAM, number of running processes, network information (name, identifier), device identifier, firmware version, hardware version device type, audio volume, reboot, reboot cause, total storage and physical memory availability, power cycle count, and device up time and any other data collected by Melodrive. Notwithstanding anything else in this Agreement, all title and ownership rights in and to Machine Data are held by Melodrive.  In the event, and to the extent you are deemed to have any ownership rights in Machine Data, you hereby grant Melodrive a limited, revocable, non-exclusive right and license to use Machine Data.
+Software Releases, Replacement, Modification and Upgrades
+
+
+1. Melodrive may, from time to time, replace, modify or update the Software.  Any such replacement or modified Software code or update to the Software will be considered part of the Software and subject to the terms of this EULA (unless this EULA is superseded by a further EULA accompanying such replacement or modified version of or upgrade to the Software).
+
+
+Assignment
+
+
+1. You may not assign this Agreement or any of your rights or obligations hereunder (by operation of law or otherwise) without the prior written consent of Melodrive. Melodrive may assign this Agreement and its rights and obligations without your consent. Subject to the foregoing, this Agreement shall be binding upon and inure to the benefit of the parties to it and their respective legal representatives, successors and permitted assigns.
+
+
+Termination
+
+
+1. This EULA is effective until terminated. Your rights under this License will terminate automatically without notice from Melodrive if you fail to comply with any of the terms and conditions of this EULA.  Melodrive may terminate this Agreement by offering you a superseding Agreement for the Software or for any new release of the Software and conditioning your continued use of the Software or such new release on your acceptance of such superseding Agreement. Upon termination of this EULA, you must cease all use of the Software and destroy all copies, full or partial, of the Software.
+
+
+Disclaimer of Warranty
+
+
+1. UNLESS SEPARATELY STATED IN A WRITTEN EXPRESS LIMITED WARRANTY, ALL SOFTWARE PROVIDED BY MELODRIVE IS PROVIDED "AS IS" AND ON AN "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND FROM MELODRIVE, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT POSSIBLE PURSUANT TO APPLICABLE LAW, MELODRIVE DISCLAIMS ALL WARRANTIES EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY OR WORKMANLIKE EFFORT, FITNESS FOR A PARTICULAR PURPOSE, RELIABILITY OR AVAILABILITY, ACCURACY, LACK OF VIRUSES, NON INFRINGEMENT OF THIRD PARTY RIGHTS OR OTHER VIOLATION OF RIGHTS. MELODRIVE DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR FREE. TO THE EXTENT THAT THE SOFTWARE COVERED BY THIS EULA INCLUDES EMULATION LIBRARIES, SUCH EMULATION LIBRARIES DO NOT WORK 100% CORRECTLY OR COVER 100% OF THE FUNCTIONALITY BEING EMULATED, ARE OFFERED "AS IS" AND WITH ALL FAULTS, AND ALL THE DISCLAIMERS AND LIMITATIONS CONTAINED IN THIS PARAGRAPH AND THIS AGREEMENT APPLY TO SUCH EMULATION LIBRARIES. SOME JURISDICTIONS DO NOT ALLOW EXCLUSIONS OR LIMITATIONS OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSIONS OR LIMITATIONS MAY NOT APPLY TO YOU. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM MELODRIVE OR ITS AFFILIATES SHALL BE DEEMED TO ALTER THIS DISCLAIMER BY MELODRIVE OF WARRANTY REGARDING THE SOFTWARE, OR TO CREATE ANY WARRANTY OF ANY SORT FROM MELODRIVE.
+
+
+Non-Blocking of Development
+
+
+1. You acknowledge that Melodrive is currently developing or may develop technologies and products in the future that have or may have design and/or functionality similar to products that you may develop based on your license herein.  Nothing in this EULA shall impair, limit or curtail Melodrive’s right to continue with its development, maintenance and/or distribution of Melodrive’s technology or products.  You agree that you shall not assert in any way any patent owned by you arising out of or in connection with this DL or modifications made thereto against Melodrive, its subsidiaries or affiliates, or their customers, direct or indirect, agents and contractors for the manufacture, use, import, licensing, offer for sale or sale of any Melodrive products.
+Third Party Applications and Open Source
+
+
+1.  Certain third party applications may be included with, or downloaded with this Software. Melodrive makes no representations whatsoever about any of these applications. In particular, and without limitation, the Melodrive SDK may incorporate or include among others and with full license and authority the following third party software, components, languages or other assets (“third party applications”): Python, Music21, NLTK, STK and JUCE.  Since Melodrive has no control over such applications, you acknowledge and agree that Melodrive is not responsible for such applications. You expressly acknowledge and agree that use of third party applications is at your sole risk and that the entire risk of unsatisfactory quality, performance, accuracy and effort is with you. You agree that Melodrive shall not be responsible or liable, directly or indirectly, for any damage or loss, including but not limited to any damage to or loss of data, caused or alleged to be caused by, or in connection with, use of or reliance on any such third party content, products, or services available on or through any such application. You acknowledge and agree that the use of any third-party application is governed by such third party application provider's Terms of Use, License Agreement, Privacy Policy, or other such agreement and that any information or personal data you provide, whether knowingly or unknowingly, to such third-party application provider, will be subject to such third party application provider's privacy policy, if such a policy exists. MELODRIVE DISCLAIMS ANY RESPONSIBILITY FOR ANY DISCLOSURE OF INFORMATION OR ANY OTHER PRACTICES OF ANY THIRD PARTY APPLICATION PROVIDER. MELODRIVE EXPRESSLY DISCLAIMS ANY WARRANTY REGARDING WHETHER YOUR PERSONAL INFORMATION IS CAPTURED BY ANY THIRD PARTY APPLICATION PROVIDER OR THE USE TO WHICH SUCH PERSONAL INFORMATION MAY BE PUT BY SUCH THIRD PARTY APPLICATION PROVIDER. 
+
+
+Limitation of Liability 
+
+
+1. MELODRIVE WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING OUT OF OR RELATING TO THE USE OR THE INABILITY TO USE THE SOFTWARE OR ANY THIRD PARTY APPLICATION, ITS CONTENT OR FUNCTIONALITY, INCLUDING BUT NOT LIMITED TO DAMAGES CAUSED BY OR RELATED TO ERRORS, OMISSIONS, INTERRUPTIONS, DEFECTS, DELAY IN OPERATION OR TRANSMISSION, COMPUTER VIRUS, FAILURE TO CONNECT, NETWORK CHARGES, IN-APP PURCHASES, AND ALL OTHER DIRECT, INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES EVEN IF MELODRIVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE EXCLUSIONS OR LIMITATIONS MAY NOT APPLY TO YOU. NOTWITHSTANDING THE FOREGOING, MELODRIVE’S TOTAL LIABILITY TO YOU FOR ALL LOSSES, DAMAGES, CAUSES OF ACTION, INCLUDING BUT NOT LIMITED TO THOSE BASED ON CONTRACT, TORT, OR OTHERWISE, ARISING OUT OF YOUR USE OF THE SOFTWARE OR THIRD PARTY APPLICATIONS, OR ANY OTHER PROVISION OF THIS EULA, SHALL NOT EXCEED THE FAIR MARKET VALUE OF THE SOFTWARE OR AMOUNT PURCHASER PAID SPECIFICALLY FOR THE SOFTWARE. THE FOREGOING LIMITATIONS, EXCLUSIONS, AND DISCLAIMERS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
+
+
+General
+
+
+1. This Agreement will be governed by the laws of the State of California without reference to conflicts of laws principles. This Agreement is the entire agreement held between Us and supersedes any other communications or advertising with respect to the Melodrive SDK, Software and Documentation. If any provision of this Agreement is held invalid, the remainder of this Agreement shall continue in full force and effect. The Melodrive SDK, Software and Documentation were developed by private expense and are deemed to be “commercial computer software” and “commercial software documentation”, respectively, pursuant to DFAR Section 227.7202 and FAR Section 12.212(b), as applicable. Any use, modification, reproduction, release, performing, displaying or disclosing of the Melodrive SDK, Software and Documentation by the U.S. Government shall be prohibited except to the extent expressly permitted by this License. Your use of the Software and Documentation may be governed by laws and regulations of the US, including, without limitation, those issued by the Department of Commerce and the Bureau of Export Administration, and you agree to comply fully with all such laws and regulations. Failure fully to comply with this EULA, and any breach by you will result in automatic termination hereof and Melodrive reserves all rights to all legal and equitable remedies for all damages resulting therefrom.
+
+
+1. You acknowledge that, in the event you breach any provision of this Agreement, Melodrive will not have an adequate remedy in money or damages. Melodrive shall therefore be entitled to obtain an injunction against such breach from any court of competent jurisdiction immediately upon request without posting bond. Melodrive's right to obtain injunctive relief shall not limit its right to seek further remedies.
+
+
+1. No modification of this Agreement shall be binding on Melodrive unless it is in writing and is signed by an authorized representative of Melodrive. 
+
+
+Copyright © 2018 Melodrive Inc. All rights reserved.

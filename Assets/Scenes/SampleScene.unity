@@ -834,6 +834,34 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 3
     m_Data: {fileID: 21300006, guid: cdabc9f640329b34389d2cf67184496d, type: 3}
@@ -861,6 +889,34 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 6
     m_Data: {fileID: 21300190, guid: cdabc9f640329b34389d2cf67184496d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -994,6 +1050,14 @@ CompositeCollider2D:
         Y: -1440000000
       - X: -8320000000
         Y: -1440000000
+    - - X: -8320000000
+        Y: -3840000000
+      - X: -8480000000
+        Y: -3840000000
+      - X: -8480000000
+        Y: -4000000000
+      - X: -8320000000
+        Y: -4000000000
     - - X: 9600000000
         Y: -3840000000
       - X: 9440000000
@@ -1042,14 +1106,6 @@ CompositeCollider2D:
         Y: -4000000000
       - X: -5760000000
         Y: -4000000000
-    - - X: -8320000000
-        Y: -3840000000
-      - X: -8480000000
-        Y: -3840000000
-      - X: -8480000000
-        Y: -4000000000
-      - X: -8320000000
-        Y: -4000000000
     - - X: 4480000000
         Y: -3840000000
       - X: 4320000000
@@ -1080,6 +1136,10 @@ CompositeCollider2D:
       - {x: -848, y: -128}
       - {x: -848, y: -144}
       - {x: -832, y: -144}
+    - - {x: -832, y: -384}
+      - {x: -848, y: -384}
+      - {x: -848, y: -400}
+      - {x: -832, y: -400}
     - - {x: 960, y: -384}
       - {x: 944, y: -384}
       - {x: 944, y: -400}
@@ -1104,10 +1164,6 @@ CompositeCollider2D:
       - {x: -592, y: -384}
       - {x: -592, y: -400}
       - {x: -576, y: -400}
-    - - {x: -832, y: -384}
-      - {x: -848, y: -384}
-      - {x: -848, y: -400}
-      - {x: -832, y: -400}
     - - {x: 448, y: -384}
       - {x: 432, y: -384}
       - {x: 432, y: -400}
@@ -1291,6 +1347,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1377,6 +1434,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e0e253d7a7ea948950a240b45bb06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 809778034}
+  offset: {x: 0, y: 0, z: -20}
 --- !u!1 &712421108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1493,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b,
     type: 2}
   m_PrefabInternal: {fileID: 347169536}
+--- !u!1001 &875310815
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329365308551798, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592544317281030, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2,
+        type: 2}
+      propertyPath: initEmotion
+      value: happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592544317281030, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2,
+        type: 2}
+      propertyPath: initStyle
+      value: piano
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592544317281030, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2,
+        type: 2}
+      propertyPath: chiptuneMode
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5777f4caa47f8df4c9d2ab9aaa6257c2, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1093476079
 GameObject:
   m_ObjectHideFlags: 0

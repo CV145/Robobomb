@@ -1,0 +1,36 @@
+{
+    "name": "RockGuitar_SingleNote2.1",
+    "type": "samplebank",
+    "tags": {
+        "style": [
+            "rock"
+        ],
+        "type": [
+            "guitar","licks"
+        ],
+        "technique": ["singlenote", "arpeggio"]
+    },
+    "notes": [
+        40,
+        79
+    ],
+    "velocities": [
+        21,
+        32,
+        63,
+        84,
+        105,
+        127
+    ],
+    "loudness": [-4.03, -1.28,
+        0.0, -3.64, -0.14,
+        0.0
+    ],
+    "master": {
+        "gain_db": 0
+    },
+    "credit": {
+        "product": "Kontakt 5 Elektrik Guitar",
+        "vendor": "Native Instruments"
+    }
+}

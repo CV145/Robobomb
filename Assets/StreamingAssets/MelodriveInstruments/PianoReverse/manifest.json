@@ -1,0 +1,30 @@
+{
+    "name": "PianoReverse",
+    "type": "samplebank",
+    "tags": {
+        "style": [
+            "ambient"
+        ],
+        "type": [
+            "lefthand"
+        ]
+    },
+    "notes": [
+        45,
+        78
+    ],
+    "velocities": [
+        96,
+        127
+    ],
+    "loudness": [-4.14,
+        0.0
+    ],
+    "master": {
+        "gain_db": 0
+    },
+    "credit": {
+        "product": "Una Corda",
+        "vendor": "Native Instruments"
+    }
+}

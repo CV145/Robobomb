@@ -1,0 +1,12 @@
+{
+    "name": "MelodriveTests",
+    "references": [
+        "MelodriveScripts"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

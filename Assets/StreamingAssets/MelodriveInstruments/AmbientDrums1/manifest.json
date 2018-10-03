@@ -1,0 +1,30 @@
+{
+    "name": "AmbientDrums1",
+    "type": "multisamplebank",
+    "tags": {
+        "style": [
+            "ambient"
+        ],
+        "type": [
+            "drums"
+        ]
+    },
+    "mode": "discrete",
+    "notes": [
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        46,
+        49
+    ],
+    "velocities": [
+        127
+    ],
+    "loudness": [
+        0.0
+    ]
+}

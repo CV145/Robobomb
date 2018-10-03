@@ -1,0 +1,42 @@
+{
+    "name": "RockGuitar_PowerChord1.2",
+    "type": "samplebank",
+    "tags" : {
+        "style" : ["rock"],
+        "type" : ["guitar"],
+        "technique":  ["powerchord"]
+    },        
+    "notes": [
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45
+    ],
+    "velocities": [
+        21,
+        42,
+        63,
+        84,
+        105,
+        127
+    ],
+    "loudness": [
+        -5.76,
+        -0.5,
+        0.0,
+        -3.26,
+        0.0,
+        0.0
+    ],
+    "master": {
+        "gain_db": 0
+    },
+    "credit": {
+        "product": "ESX2 Electric Guitar",
+        "vendor": "Logic X"
+    }
+}

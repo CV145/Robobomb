@@ -1,0 +1,19 @@
+{
+    "name": "RockGuitar_SingleNotes-Pick",
+    "type": "samplebank",
+    "tags" : {
+        "style" : ["rock"],
+        "type" : ["guitar"],
+        "technique" : ["singlenote", "arpeggio"]
+    },    
+    "notes": [40, 61],
+    "velocities": [64, 94, 127],
+    "loudness": [-12, -6, 0],
+    "master": {
+        "gain_db": 6
+    },
+    "credit": {
+        "product": "Kontakt 5 Elektrik Guitar",
+        "vendor": "Native Instruments GmBH"
+    }
+}
