@@ -7,49 +7,84 @@ public class PlayerController : MonoBehaviour {
     bool facingRight = true;
     Rigidbody2D Rigidbody;
     Animator anim;
-    public float jumpForce = 1500f;
-
+    public float jumpForce = 3000f;
     bool grounded = false;
-    public Transform groundCheck; //a transform holds vectors for positions, rotations, and scales of an object
-    //This is the transform of the GroundCheck game object
+    public Transform groundCheck; 
     float groundRadius = 0.2f;
-    public LayerMask whatIsGround; //decides what "ground" is
+    public LayerMask whatIsGround; 
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
+    public AudioClip jumpLand;
+    public AudioSource soundSource;
+    public AudioClip jump;
+    public AudioSource jumpSource;
+
+
 
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundSource.clip = jumpLand;
+        jumpSource.clip = jump;
     }
+
 
     void FixedUpdate()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        //if grounded is true we're on the ground, if not we're not. This is being check every frame
+        ////JUMP SETUP//// 
         anim.SetBool("Ground", grounded);
+        anim.SetFloat("vSpeed", Rigidbody.velocity.y);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
-        anim.SetFloat("vSpeed", Rigidbody.velocity.y); //get y velocity and set to vertical speed
+        ///HORIZONTAL MOVEMENT////
+        float move = Input.GetAxis("Horizontal");
+        anim.SetFloat("Speed", Mathf.Abs(move));
+        Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
 
-
-     float move = Input.GetAxisRaw("Horizontal"); //1 or -1?
-     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y); //velocity either 10 or -10?
-        //set the velocity of player's rigidbody using vector(x,y)
-
-        anim.SetFloat("Speed", Mathf.Abs(move)); //check if speed is not 0 (get 
-        //absolute value and set it equal to speed float). It's either 1 or not
-
+        ////////// FLIPPING LEFT OR RIGHT /////
         if (move > 0 && !facingRight)
         { Flip(); }
         else if (move < 0 && facingRight)
         { Flip(); }
+        //////////
     }
 
     private void Update()
     {
-        //input more accurate in update
-        if (grounded && Input.GetKeyDown(KeyCode.UpArrow)) //check if either w or up arrow... try KeyCode.UpArrow too
+        ////JUMPING////
+
+        //Landing sound
+        if (Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround) && !grounded)
         {
-            anim.SetBool("Ground", false); //jumping immediately makes grounded false
-            Rigidbody.AddForce(new Vector2(0, jumpForce)); 
+            soundSource.Play();
+        }
+
+        //Pressing up
+        if (grounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            jumpSource.Play();
+            isJumping = true;
+            jumpTimeCounter = jumpTime; //reset to initial jump time value
+            Rigidbody.velocity = Vector2.up * jumpForce;
+        }
+        if (Input.GetKey(KeyCode.UpArrow) && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                Rigidbody.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime; //decrease time counter each second
+            }
+            else
+            {
+                isJumping = false;
+                
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            isJumping = false;
         }
     }
 
