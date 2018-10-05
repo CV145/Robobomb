@@ -41,6 +41,27 @@ public class PlayerController : MonoBehaviour {
         ///HORIZONTAL MOVEMENT////
         float move = Input.GetAxis("Horizontal");
         anim.SetFloat("Speed", Mathf.Abs(move));
+
+        if (anim.GetFloat("Speed") >= 1.0)
+        {
+            maxSpeed += 1; //increase maxSpeed by 1
+
+            if (maxSpeed >= 95)
+            {
+                maxSpeed = 95;
+            }
+
+            if (maxSpeed > 90)
+            {
+                anim.speed = 2.0f;
+            }
+        }
+        else if (anim.GetFloat("Speed") <= 0)
+        {
+            maxSpeed = 50;
+            anim.speed = 1.0f;
+        }
+
         Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
 
         ////////// FLIPPING LEFT OR RIGHT /////
