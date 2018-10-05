@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     public float maxSpeed = 50f;
     bool facingRight = true;
     Rigidbody2D Rigidbody;
     Animator anim;
     public float jumpForce = 3000f;
     bool grounded = false;
-    public Transform groundCheck; 
-    float groundRadius = 0.2f;
-    public LayerMask whatIsGround; 
+    public Transform groundCheck;
+    float groundRadius = 0.6f;
+    public LayerMask whatIsGround;
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
@@ -20,6 +21,17 @@ public class PlayerController : MonoBehaviour {
     public AudioClip jump;
     public AudioSource jumpSource;
 
+    bool upperHit = false;
+    bool lowerHit = false;
+    public LayerMask walls;
+    Vector2 direction;
+    public Transform lowerCheck;
+    public Transform upperCheck;
+    bool hanging = false;
+    Vector2 groundBoxSize;
+    Vector2 upperBoxSize;
+    Vector2 lowerBoxSize;
+    RigidbodyConstraints2D originalConstraints;
 
 
     void Start()
@@ -28,15 +40,18 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
+        originalConstraints = Rigidbody.constraints;
     }
 
 
     void FixedUpdate()
     {
         ////JUMP SETUP//// 
+        groundBoxSize.x = 1f;
+        groundBoxSize.y = 0.5f;
         anim.SetBool("Ground", grounded);
         anim.SetFloat("vSpeed", Rigidbody.velocity.y);
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 90f, whatIsGround);
 
         ///HORIZONTAL MOVEMENT////
         float move = Input.GetAxis("Horizontal");
@@ -74,6 +89,10 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+        ///LEDGE HANGING///
+        LedgeGrab();
+        //////
+
         ////JUMPING////
 
         //Landing sound
@@ -100,7 +119,7 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 isJumping = false;
-                
+
             }
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
@@ -111,9 +130,55 @@ public class PlayerController : MonoBehaviour {
 
     void Flip()
     {
+        if (maxSpeed >= 90)
+        {
+            //play skid animation
+        }
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1; //go from 1 to -1 to 1 again
         transform.localScale = theScale;
+
+        if (facingRight)
+        {
+            direction.x = 1;
+            direction.y = 0;
+        }
+        else if (!facingRight)
+        {
+            direction.x = -1;
+            direction.y = 0;
+        }
     }
+
+    void LedgeGrab()
+    {
+        upperBoxSize.x = 10;
+        upperBoxSize.y = 20;
+
+        lowerBoxSize.x = 10;
+        lowerBoxSize.y = 20;
+
+        upperHit = Physics2D.OverlapBox(upperCheck.position, upperBoxSize, 90f, walls);
+        lowerHit = Physics2D.OverlapBox(lowerCheck.position, lowerBoxSize, 90f, walls);
+
+
+        if (grounded == false && anim.GetFloat("vSpeed") < 0)
+        {
+            if (lowerHit && !upperHit)
+            {
+                hanging = true;
+                Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                anim.SetBool("Climb", hanging);
+            }
+        }
+        else
+        {
+            hanging = false;
+        }
+
+        
+        Debug.Log(hanging);
+    }
+
 }

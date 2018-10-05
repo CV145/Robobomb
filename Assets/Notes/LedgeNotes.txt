@@ -1,0 +1,41 @@
+Ledge Climbing (Separate script)
+
+- when Robo has a tile in front of him and there's nothing
+above that tile...
+ - change animation to legde climbing
+ 
+ void OnCollisionEnter2D (Collision2D other)
+{
+ if (other.GameObject.name == "ledge")
+	{
+	debug.log("Impact with ledge");
+	change animation
+	GetComponent<Rigidbody2D>().velocity = new vector2(0,0);
+	GetComponent<Rigidbody2D>().gravityScale = 0;
+	anim.setTrigger("climbnow");
+
+---
+To grab a ledge, grounded has to be FALSE and vSpeed LESS THAN 0 (falling)
+Player emits two raycasts, one on lower half and one on upper half.
+If the lower half is true and the upper half is false...
+
+
+Else if both are true do nothing.
+If both are false do nothing.
+If the upper is true but lower is false do nothing.
+
+
+Vector2 direction is (-1,0) if flipped left, and (1,0) if flipped right
+
+
+Walls Layer (layer masking)
+
+RaycastHit2D upperHit((Rigidbody.transform.position.x, Rigidbody.transform.posiiton.y) , direction, 10?, layerMask walls)
+RaycastHit2D lowerHit
+
+///
+upperBoxSize.x = 10;
+upperBoxSize.y = 5;
+
+lowerBoxSize.x = 10;
+lowerBoxSize.y = 10;
