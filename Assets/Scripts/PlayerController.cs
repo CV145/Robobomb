@@ -54,30 +54,74 @@ public class PlayerController : MonoBehaviour
         grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 90f, whatIsGround);
 
         ///HORIZONTAL MOVEMENT////
+        ///
+
         float move = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", Mathf.Abs(move));
 
-        if (anim.GetFloat("Speed") >= 1.0)
+        if (!hanging)
         {
-            maxSpeed += 1; //increase maxSpeed by 1
+            
+            anim.SetFloat("Speed", Mathf.Abs(move));
 
-            if (maxSpeed >= 95)
+            if (anim.GetFloat("Speed") >= 1.0)
             {
-                maxSpeed = 95;
+                maxSpeed += 1; //increase maxSpeed by 1
+
+                if (maxSpeed >= 95)
+                {
+                    maxSpeed = 95;
+                }
+
+                if (maxSpeed > 90)
+                {
+                    anim.speed = 2.0f;
+                }
+            }
+            else if (anim.GetFloat("Speed") <= 0)
+            {
+                maxSpeed = 50;
+                anim.speed = 1.0f;
             }
 
-            if (maxSpeed > 90)
+            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+        }
+        ///////////////////////
+
+        /////LEDGE CONTROLS/////
+        if (hanging)
+        {
+            if (facingRight)
             {
-                anim.speed = 2.0f;
+                if (move > 0)
+                {
+                    //climb up
+                    //public Vector2 climbPos;
+
+                   // GetComponent<Transform>().position = new Vector2(climPos.x + 3,
+                   // climbPos.y + 3);
+                }
+                if (move < 0)
+                {
+                    anim.SetBool("Climb", false);
+                    
+                    Rigidbody.gravityScale = 50;
+                }
+            }
+
+            else if (!facingRight)
+            {
+                if (move < 0)
+                {
+                    //climb up
+                }
+                if (move > 0)
+                {
+                    anim.SetBool("Climb", false);
+                    Rigidbody.gravityScale = 50;
+                }
             }
         }
-        else if (anim.GetFloat("Speed") <= 0)
-        {
-            maxSpeed = 50;
-            anim.speed = 1.0f;
-        }
 
-        Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
 
         ////////// FLIPPING LEFT OR RIGHT /////
         if (move > 0 && !facingRight)
@@ -92,6 +136,15 @@ public class PlayerController : MonoBehaviour
         ///LEDGE HANGING///
         LedgeGrab();
         //////
+        ///
+
+        ///GRAVITY FAILSAFE//
+        ///
+        if (anim.GetFloat("vSpeed") > 0 && anim.GetBool("Climb") == true)
+        {
+            Rigidbody.gravityScale = 50f;
+        }
+        ////
 
         ////JUMPING////
 
@@ -159,17 +212,29 @@ public class PlayerController : MonoBehaviour
         lowerBoxSize.x = 10;
         lowerBoxSize.y = 20;
 
+        //lowerCheck.GetComponent<BoxCollider2D>().transform.position;
+
         upperHit = Physics2D.OverlapBox(upperCheck.position, upperBoxSize, 90f, walls);
         lowerHit = Physics2D.OverlapBox(lowerCheck.position, lowerBoxSize, 90f, walls);
 
 
-        if (grounded == false && anim.GetFloat("vSpeed") < 0)
+        if (grounded == false && anim.GetFloat("vSpeed") <= 0)
         {
             if (lowerHit && !upperHit)
             {
                 hanging = true;
-                Rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                Rigidbody.gravityScale = 0.0f;
+                Rigidbody.velocity = new Vector2(0, 0);
                 anim.SetBool("Climb", hanging);
+
+                if (facingRight)
+                {
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x + 3, lowerCheck.position.y + 5));
+                }
+                if (!facingRight)
+                {
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x - 3, lowerCheck.position.y + 5));
+                }
             }
         }
         else

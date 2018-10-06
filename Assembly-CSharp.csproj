@@ -70,8 +70,8 @@
     <Compile Include="Assets\Melodrive\Examples\Scripts\ProjectExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\SeedChangeExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\StyleChangeExample.cs" />
-    <Compile Include="Assets\MovementAnim.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\LowerCheck.cs" />
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\Notes\Notes100118.txt" />

@@ -39,3 +39,23 @@ upperBoxSize.y = 5;
 
 lowerBoxSize.x = 10;
 lowerBoxSize.y = 10;
+
+/////////
+
+When Robo touches wall tile and hanging is true
+- Set the offset to the wall minues some x number (wall will always 
+be touched by lower body)
+(Maybe robo anim can be him holding with one hand)
+
+Rigidbody.MovePosition(lowerCheck.position);
+
+We have a box (10,20) overlapping a tile.
+
+
+////////
+Failsafe
+
+if (vSpeed > 0 && Climb == true)
+{
+Rigidbody.gravityScale = 50f;
+}
