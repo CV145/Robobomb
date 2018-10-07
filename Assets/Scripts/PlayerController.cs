@@ -143,6 +143,13 @@ public class PlayerController : MonoBehaviour
             Rigidbody.gravityScale = 50f;
         }
         ////
+        ///
+        ///CLIMB FAILSAFE//
+        ///
+        if (anim.GetBool("Ground") == true && anim.GetBool("Climb") == true)
+        {
+            anim.SetBool("Climb", false); 
+        }
 
         ////JUMPING////
 
