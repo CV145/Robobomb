@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     bool upperHit = false;
     bool lowerHit = false;
-    public LayerMask walls;
+    public LayerMask grabbables;
     Vector2 direction;
     public Transform lowerCheck;
     public Transform upperCheck;
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     Vector2 groundBoxSize;
     Vector2 upperBoxSize;
     Vector2 lowerBoxSize;
-    RigidbodyConstraints2D originalConstraints;
 
 
     void Start()
@@ -40,7 +39,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
-        originalConstraints = Rigidbody.constraints;
     }
 
 
@@ -206,19 +204,18 @@ public class PlayerController : MonoBehaviour
 
     void LedgeGrab()
     {
-        upperBoxSize.x = 10;
+        upperBoxSize.x = 5;
         upperBoxSize.y = 20;
 
-        lowerBoxSize.x = 10;
+        lowerBoxSize.x = 5;
         lowerBoxSize.y = 20;
 
-        //lowerCheck.GetComponent<BoxCollider2D>().transform.position;
 
-        upperHit = Physics2D.OverlapBox(upperCheck.position, upperBoxSize, 90f, walls);
-        lowerHit = Physics2D.OverlapBox(lowerCheck.position, lowerBoxSize, 90f, walls);
+        upperHit = Physics2D.OverlapBox(upperCheck.position, upperBoxSize, 90f, grabbables);
+        lowerHit = Physics2D.OverlapBox(lowerCheck.position, lowerBoxSize, 90f, grabbables);
 
 
-        if (grounded == false && anim.GetFloat("vSpeed") <= 0)
+        if (grounded == false && anim.GetFloat("vSpeed") < 100)
         {
             if (lowerHit && !upperHit)
             {
@@ -229,11 +226,11 @@ public class PlayerController : MonoBehaviour
 
                 if (facingRight)
                 {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x + 3, lowerCheck.position.y + 5));
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x + 3, lowerCheck.position.y));
                 }
                 if (!facingRight)
                 {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x - 3, lowerCheck.position.y + 5));
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x - 3, lowerCheck.position.y));
                 }
             }
         }
