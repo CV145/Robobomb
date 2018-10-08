@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     Vector2 groundBoxSize;
     Vector2 upperBoxSize;
     Vector2 lowerBoxSize;
+    float move;
 
 
     void Start()
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
         ///HORIZONTAL MOVEMENT////
         ///
 
-        float move = Input.GetAxis("Horizontal");
+        move = Input.GetAxis("Horizontal");
 
         if (!hanging)
         {
@@ -216,10 +217,11 @@ public class PlayerController : MonoBehaviour
 
         lowerBoxSize.x = 5;
         lowerBoxSize.y = 20;
+       
+        upperHit = Physics2D.Raycast(upperCheck.position, direction, 5f, grabbables);
+        lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
 
-
-        upperHit = Physics2D.OverlapBox(upperCheck.position, upperBoxSize, 90f, grabbables);
-        lowerHit = Physics2D.OverlapBox(lowerCheck.position, lowerBoxSize, 90f, grabbables);
+        //Debug.DrawLine(upperCheck.position, new Vector2(upperCheck.position.x + 5, upperCheck.position.y));
 
 
         if (grounded == false && anim.GetFloat("vSpeed") < 100)
@@ -233,11 +235,11 @@ public class PlayerController : MonoBehaviour
 
                 if (facingRight)
                 {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x + 3, lowerCheck.position.y));
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x, lowerCheck.position.y));
                 }
                 if (!facingRight)
                 {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x - 3, lowerCheck.position.y));
+                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x, lowerCheck.position.y));
                 }
             }
         }
@@ -245,6 +247,7 @@ public class PlayerController : MonoBehaviour
         {
             hanging = false;
         }
+        
 
         
         Debug.Log(hanging);

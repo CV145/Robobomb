@@ -1,0 +1,7 @@
+Climbing Up
+
+if (facingRight)
+ - if (right is pressed)
+- play climb animation (temp)
+- Robo needs to slide up (kinematic?) diagonally 
+(right vector + up vector = diagonal vector)
