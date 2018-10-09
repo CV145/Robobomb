@@ -1,0 +1,21 @@
+Size 35
+Ref. 192x192
+
+---
+SDD tile sizes are 16x16
+Outline for a tile was H147.7, S32.5, V15.7. Have outlines be 
+somewhere around this color.
+
+Should Robo be 25x16 instead?
+- Either a high saturation or a high value on main char
+Outline S87.5, V 15.7
+///
+Tiles
+S 54.4
+V 67.1
+Around the midrange. Not too saturated like Robo (most important 
+sprite) but not unsaturated like backgrounds(things
+with no collision etc). Some details in foreground are as 
+saturated as robo
+//
+S32.5, V15.7
