@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     bool leftDown = false;
     bool rightDown = false;
-    bool mouseDown = false;
+    bool jumpDown = false;
 
 
     void Start()
@@ -70,12 +70,12 @@ public class PlayerController : MonoBehaviour
             {
                 maxSpeed += 1; //increase maxSpeed by 1
 
-                if (maxSpeed >= 95)
+                if (maxSpeed >= 70)
                 {
-                    maxSpeed = 95;
+                    maxSpeed = 70;
                 }
 
-                if (maxSpeed > 90)
+                if (maxSpeed > 65)
                 {
                     anim.speed = 2.0f;
                 }
@@ -93,14 +93,6 @@ public class PlayerController : MonoBehaviour
 
 
         /////HORIZONTAL MOBILE MOVEMENT/////
-
-
-        ///MOUSE CLICK CHECK///
-        ///
-        if (Input.GetMouseButtonDown(0))
-        {
-            mouseDown = true;
-        }
 
         ///LEFT///
         if (leftDown)
@@ -150,12 +142,12 @@ public class PlayerController : MonoBehaviour
                 {
                     maxSpeed += 1; //increase maxSpeed by 1
 
-                    if (maxSpeed >= 95)
+                    if (maxSpeed >= 70)
                     {
-                        maxSpeed = 95;
+                        maxSpeed = 70;
                     }
 
-                    if (maxSpeed > 90)
+                    if (maxSpeed > 70)
                     {
                         anim.speed = 2.0f;
                     }
@@ -269,6 +261,23 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+
+        ///MOBILE JUMPING UPDATE////
+        ///
+
+        if (jumpDown == true && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                Rigidbody.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime; //decrease time counter each second
+            }
+            else
+            {
+                isJumping = false;
+
+            }
+        }
     }
 
     void Flip()
@@ -358,5 +367,24 @@ public class PlayerController : MonoBehaviour
     public void RightUp()
     {
         rightDown = false;
+    }
+
+    public void JumpClick()
+    {
+        jumpDown = true;
+
+        if (grounded)
+        {
+            jumpSource.Play();
+            isJumping = true;
+            jumpTimeCounter = jumpTime; //reset to initial jump time value
+            Rigidbody.velocity = Vector2.up * jumpForce;
+        }
+    }
+
+    public void JumpUp()
+    {
+        jumpDown = false;
+        isJumping = false;
     }
 }
