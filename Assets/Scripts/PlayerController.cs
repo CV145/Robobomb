@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
                 if (maxSpeed > 65)
                 {
-                    anim.speed = 2.0f;
+                    anim.speed = 1.4f;
                 }
             }
             else if (anim.GetFloat("Speed") <= 0)
