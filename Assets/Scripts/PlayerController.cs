@@ -50,11 +50,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         ////JUMP SETUP//// 
-        groundBoxSize.x = 1f;
+        groundBoxSize.x = 10f;
         groundBoxSize.y = 0.5f;
         anim.SetBool("Ground", grounded);
         anim.SetFloat("vSpeed", Rigidbody.velocity.y);
-        grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 90f, whatIsGround);
+        grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
 
         ///HORIZONTAL MOVEMENT////
         ///
@@ -228,6 +228,20 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Climb", false);
         }
 
+
+        ////BOMB THROWING///
+        ///
+        if (Input.GetKey(KeyCode.Z) || Input.GetKeyDown(KeyCode.X))
+        {
+            anim.SetBool("Ready", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X))
+        {
+            anim.SetBool("Ready", false);
+            anim.SetBool("Fire", true);
+        }
+
+
         ////JUMPING////
 
         //Landing sound
@@ -386,5 +400,11 @@ public class PlayerController : MonoBehaviour
     {
         jumpDown = false;
         isJumping = false;
+    }
+
+    //This event goes off when the fire animation is over
+    public void FireDone()
+    {
+        anim.SetBool("Fire", false);
     }
 }

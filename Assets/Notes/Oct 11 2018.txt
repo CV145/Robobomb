@@ -1,0 +1,10 @@
+Today's goal: Pressing either z or x changes Robo's animation to 
+READY. Once they're let go of Robo changes to FIRE. Have a new
+bomb game object spawn in front of Robo and fall to the ground
+using gravity (more physics can be added later)
+- Debug
+
+Tomorrow's goal (Friday Oct 12): Whenever a bomb is created give it
+a diagonal upwards force in the corresponding direction. Place a 
+placeholder enemy in the scene. If a bomb hits either a wall or an
+enemy its animation changes to an explosion. 

@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\Notes\Notes100118.txt" />
+    <None Include="Assets\Notes\Oct 11 2018.txt" />
     <None Include="Assets\Notes\Climbing.txt" />
     <None Include="Assets\Notes\LedgeNotes.txt" />
     <None Include="Assets\Notes\Pixel Analysis.txt" />
