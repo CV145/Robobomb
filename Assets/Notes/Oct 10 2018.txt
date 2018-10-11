@@ -1,0 +1,49 @@
+Today's Goal:
+ Pressing the PLAY button changes the scene to a level.
+ First through click input, next through touch.
+
+Tomorrow's Goal:
+ Now that I know how to have on-screen buttons receive touch input, 
+add movement (left, right and jump) buttons with placeholders (large
+red squares with black outlines approximating the size of the real 
+buttons). Movement and jumping should be possible on mobile.
+---
+
+PLAY has a script that says when this sprite is touched/clicked
+the game begins.
+
+GameObject >> UI >> Canvas
+GameObject >> UI >> Button?
+
+alt click on PC for anchor presets... Do my buttons needs to be 
+anchored on screen?
+
+Canvas size width 1001
+Button at 500.5?
+
+====================
+using UnityEngine.SceneManagement;
+
+public void LoadByIndex (int sceneIndex)
+{
+	SceneManager.LoadScene(sceneIndex);
+	//load scene inputted into function
+	//This script is dragged into the On Click
+	//inside the Button Script
+
+======================
+When the left button is clicked/touched, Robo needs to move left
+- Set Robo's move to -1 when tapped, 0 when released?
+
+How to change horizontal axis button to an on screen button?
+
+
+=====================
+When the mouse is clicked, mouseClicked = true
+(under updating, check every frame)
+
+When the pointer is down, set right bool to true and left to false
+and vice versa
+
+When mouse is hovering over a button, if mouseClicked = true,
+set that functionality (pointerEnter)

@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     Vector2 lowerBoxSize;
     float move;
 
+    bool leftDown = false;
+    bool rightDown = false;
+    bool mouseDown = false;
+
 
     void Start()
     {
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if (!hanging)
         {
-            
+
             anim.SetFloat("Speed", Mathf.Abs(move));
 
             if (anim.GetFloat("Speed") >= 1.0)
@@ -85,6 +89,86 @@ public class PlayerController : MonoBehaviour
             Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
         }
         ///////////////////////
+        ///
+
+
+        /////HORIZONTAL MOBILE MOVEMENT/////
+
+
+        ///MOUSE CLICK CHECK///
+        ///
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseDown = true;
+        }
+
+        ///LEFT///
+        if (leftDown)
+        {
+            move = -1;
+            if (!hanging)
+            {
+
+                anim.SetFloat("Speed", Mathf.Abs(move));
+
+                if (anim.GetFloat("Speed") >= 1.0)
+                {
+                    maxSpeed += 1; //increase maxSpeed by 1
+
+                    if (maxSpeed >= 95)
+                    {
+                        maxSpeed = 95;
+                    }
+
+                    if (maxSpeed > 90)
+                    {
+                        anim.speed = 2.0f;
+                    }
+                }
+                else if (anim.GetFloat("Speed") <= 0)
+                {
+                    maxSpeed = 50;
+                    anim.speed = 1.0f;
+                }
+
+                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+            }
+        }
+
+        ///RIGHT///
+        ///
+
+        if (rightDown)
+        {
+            move = 1;
+            if (!hanging)
+            {
+
+                anim.SetFloat("Speed", Mathf.Abs(move));
+
+                if (anim.GetFloat("Speed") >= 1.0)
+                {
+                    maxSpeed += 1; //increase maxSpeed by 1
+
+                    if (maxSpeed >= 95)
+                    {
+                        maxSpeed = 95;
+                    }
+
+                    if (maxSpeed > 90)
+                    {
+                        anim.speed = 2.0f;
+                    }
+                }
+                else if (anim.GetFloat("Speed") <= 0)
+                {
+                    maxSpeed = 50;
+                    anim.speed = 1.0f;
+                }
+
+                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+            }
+        }
 
         /////LEDGE CONTROLS/////
         if (hanging)
@@ -96,13 +180,13 @@ public class PlayerController : MonoBehaviour
                     //climb up
                     //public Vector2 climbPos;
 
-                   // GetComponent<Transform>().position = new Vector2(climPos.x + 3,
-                   // climbPos.y + 3);
+                    // GetComponent<Transform>().position = new Vector2(climPos.x + 3,
+                    // climbPos.y + 3);
                 }
                 if (move < 0)
                 {
                     anim.SetBool("Climb", false);
-                    
+
                     Rigidbody.gravityScale = 50;
                 }
             }
@@ -149,7 +233,7 @@ public class PlayerController : MonoBehaviour
         ///
         if (anim.GetBool("Ground") == true && anim.GetBool("Climb") == true)
         {
-            anim.SetBool("Climb", false); 
+            anim.SetBool("Climb", false);
         }
 
         ////JUMPING////
@@ -217,7 +301,7 @@ public class PlayerController : MonoBehaviour
 
         lowerBoxSize.x = 5;
         lowerBoxSize.y = 20;
-       
+
         upperHit = Physics2D.Raycast(upperCheck.position, direction, 5f, grabbables);
         lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
 
@@ -247,10 +331,32 @@ public class PlayerController : MonoBehaviour
         {
             hanging = false;
         }
-        
 
-        
-        Debug.Log(hanging);
+
     }
 
+
+    /// MOBILE TOUCH CONTROLS ///
+
+    public void LeftClick() //function called when on-screen button pressed
+    {
+        leftDown = true;
+        rightDown = false;
+    }
+
+    public void LeftUp()
+    {
+        leftDown = false;
+    }
+
+    public void RightClick()
+    {
+        rightDown = true;
+        leftDown = false;
+    }
+
+    public void RightUp()
+    {
+        rightDown = false;
+    }
 }

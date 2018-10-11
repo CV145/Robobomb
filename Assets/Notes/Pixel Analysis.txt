@@ -19,3 +19,27 @@ with no collision etc). Some details in foreground are as
 saturated as robo
 //
 S32.5, V15.7
+
+
+///
+Title screen
+S 84.8
+V 43.9
+///
+On-screen buttons
+Length 35
+Height 28
+
+The color is a pure white standing out from the rest. It is
+light on detail and not too obstrusive. Located right at the very
+edge of the screen.
+///
+Side notes:
+- Canvas reference resolution is 800x800, scaling with screen size 
+- Reference pixels per... is 1
+- Pixel perfect check
+
+The button is multiplied by 4. For some reason its original size is
+too small.
+
+
