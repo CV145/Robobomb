@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     bool leftDown = false;
     bool rightDown = false;
     bool jumpDown = false;
+    public GameObject Bomb;
 
 
     void Start()
@@ -235,10 +236,11 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Ready", true);
         }
-        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X)) //have bomb spawn here
         {
             anim.SetBool("Ready", false);
             anim.SetBool("Fire", true);
+            
         }
 
 
@@ -406,5 +408,13 @@ public class PlayerController : MonoBehaviour
     public void FireDone()
     {
         anim.SetBool("Fire", false);
+        if (facingRight)
+        {
+            Instantiate(Bomb, new Vector2(transform.position.x + 7, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+        }
+        if (!facingRight)
+        {
+            Instantiate(Bomb, new Vector2(transform.position.x - 7, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+        }
     }
 }

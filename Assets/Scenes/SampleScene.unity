@@ -212,7 +212,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 204.6
+      value: 316.7
       objectReference: {fileID: 0}
     - target: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -435,6 +435,12 @@ Prefab:
       propertyPath: grabbables.m_Bits
       value: 2048
       objectReference: {fileID: 0}
+    - target: {fileID: 114105397378852324, guid: eee7b485339f63344814076dce4c8f0b,
+        type: 2}
+      propertyPath: Bomb
+      value: 
+      objectReference: {fileID: 1371412923011698, guid: 2569c765f041654458b4eec0f710be53,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
   m_IsPrefabAsset: 0
