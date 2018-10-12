@@ -1,0 +1,38 @@
+Today's goal (Friday Oct 12): Whenever a bomb is created give it
+a diagonal upwards force in the corresponding direction. Place a 
+placeholder enemy in the scene. If a bomb hits either a wall or an
+enemy its animation changes to an explosion. 
+ Dabble in c# HW
+
+Tomorrow's Goal (Saturday Oct 13): Pixel art and level design stuff.
+Dabble in C# HW
+
+=========
+Playercontroller has a variable called PlayerBombs (set to public
+for debugging)
+
+Also BombLv, FireLv, and Health
+
+BombLv and FireLv = 1;
+
+When the bomb is created set its "maxSpeed" to 5 or -5. This speed
+needs to be recreated. This could be done inside the bomb script
+
+Bomb maxSpeed: This is actually just playing into 
+a velocity vector. 
+Rigidbody 2D Rigidbody;
+Rigidbody = GetComponent<Rigidbody2D>();
+
+if (facingRight)
+Rigidbody.velocity = new Vector 2(5, Rigidbody.velocity.y);
+if (!facingRight)
+Rigidbody.velocity = new Vector 2(-5, Rigidbody.velocity.y);
+
+"Push self sharply towards a new Vector2 x 1 or -1, y -1 with
+a force of 10 (Rigidbody.AddForce(Vector2 force, ForceMode2D mode))
+
+---
+Instantiate a player explosion... at x and y center of self
+ Or change animation when 
+colliding with a layerMask of walls and enemies or other bombs
+Set playerBombs to playerBombs - 1

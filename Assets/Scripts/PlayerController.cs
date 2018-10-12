@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
     bool jumpDown = false;
     public GameObject Bomb;
 
+    public bool FacingRightGetter()
+    {
+        return facingRight;
+    }
+
 
     void Start()
     {
