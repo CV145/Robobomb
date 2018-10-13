@@ -86,6 +86,7 @@
     <None Include="Assets\Notes\MovementNotes93018.txt" />
     <None Include="Assets\Notes\Oct 12 2018.txt" />
     <None Include="Assets\Melodrive\Melodrive EULA.txt" />
+    <None Include="Assets\Notes\Oct 13 2018 Notes.txt" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>D:/Projects/Robobomb/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>

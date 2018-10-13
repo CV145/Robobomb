@@ -1,0 +1,6 @@
+Today's Goal: Expand buttons so that there are invisible 
+"safe zones" that also trigger mobile touch input.
+- Pressing down spawns a bomb drop, an untriggered bomb, 
+that explodes in 3 seconds or, when kicked, explodes when
+hitting a wall
+- Add a mobile button for bomb dropping
