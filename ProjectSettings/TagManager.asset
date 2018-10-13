@@ -19,9 +19,9 @@ TagManager:
   - Walls
   - Grabbable
   - Background
-  - 
-  - 
-  - 
+  - Enemy
+  - Objects
+  - Explosions
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 4004483509
+    locked: 0
+  - name: Objects
+    uniqueID: 1508134293
     locked: 0

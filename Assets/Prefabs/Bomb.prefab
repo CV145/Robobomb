@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 50419729745060056}
   - component: {fileID: 58629255227471508}
   - component: {fileID: 114898847955283506}
-  m_Layer: 0
+  - component: {fileID: 95956251783110412}
+  - component: {fileID: 114949203167858778}
+  m_Layer: 14
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371412923011698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 332.2, y: 70.2, z: -4.975977}
+  m_LocalPosition: {x: 294.7, y: 15.8, z: -4.975977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,12 +74,30 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &95956251783110412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371412923011698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af672ea9870bb884e9adaea65433f950, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114898847955283506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +109,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c21d4c1761278549abfd2569a8d706a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114949203167858778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371412923011698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607689cd8e767894f96b2537761bfd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1903054830587522, guid: dc8be926dabaddb4b9e0b8bccbb0907c,
+    type: 2}
+  explosionDuration: 0.5
+  ExplosionLayers:
+    serializedVersion: 2
+    m_Bits: 44032
+  BombScript: {fileID: 114898847955283506}
 --- !u!212 &212950877720689708
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,8 +159,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1508134293
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c27c5b57c8699cc4fbb20d76f8e00b4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

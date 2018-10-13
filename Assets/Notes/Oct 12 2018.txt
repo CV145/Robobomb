@@ -29,10 +29,17 @@ if (!facingRight)
 Rigidbody.velocity = new Vector 2(-5, Rigidbody.velocity.y);
 
 "Push self sharply towards a new Vector2 x 1 or -1, y -1 with
-a force of 10 (Rigidbody.AddForce(Vector2 force, ForceMode2D mode))
+a force of 10 (Rigidbody.AddForce(Vector2 (1 or -1, -1)
+, ForceMode2D mode))
 
 ---
 Instantiate a player explosion... at x and y center of self
  Or change animation when 
 colliding with a layerMask of walls and enemies or other bombs
 Set playerBombs to playerBombs - 1
+
+LayerMask ExplosionLayers;
+
+Enemy, Solids, Grabbable
+
+Physics2D.OverlapCircle(new Vector2 (explosionPosition) 2f, ExplosionLayers);

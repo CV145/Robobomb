@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     bool rightDown = false;
     bool jumpDown = false;
     public GameObject Bomb;
+    bool bombDown;
+    bool bombNotDown;
 
     public bool FacingRightGetter()
     {
@@ -237,11 +239,11 @@ public class PlayerController : MonoBehaviour
 
         ////BOMB THROWING///
         ///
-        if (Input.GetKey(KeyCode.Z) || Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKey(KeyCode.Z) == true || Input.GetKey(KeyCode.X) == true || bombDown == true)
         {
             anim.SetBool("Ready", true);
         }
-        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X)) //have bomb spawn here
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X) || bombNotDown == true) 
         {
             anim.SetBool("Ready", false);
             anim.SetBool("Fire", true);
@@ -403,6 +405,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void BombClick()
+    {
+        bombDown = true;
+        bombNotDown = false;
+        Debug.Log("bombDown: " + bombDown);
+        Debug.Log("bombNotDown: " + bombNotDown);
+    }
+
+    public void BombClickUp()
+    {
+        bombDown = false;
+        bombNotDown = true;
+    }
+
     public void JumpUp()
     {
         jumpDown = false;
@@ -415,11 +431,13 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Fire", false);
         if (facingRight)
         {
-            Instantiate(Bomb, new Vector2(transform.position.x + 7, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
         }
         if (!facingRight)
         {
-            Instantiate(Bomb, new Vector2(transform.position.x - 7, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
         }
+        bombDown = false;
+        bombNotDown = false;
     }
 }
