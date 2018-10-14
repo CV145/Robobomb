@@ -111,14 +111,18 @@ public class PlayerController : MonoBehaviour
         if (leftDown)
         {
             move = -1;
+            if (move <= -1)
+            {
+                move = -1;
+            }
             if (!hanging)
             {
 
                 anim.SetFloat("Speed", Mathf.Abs(move));
 
-                if (anim.GetFloat("Speed") >= 1.0)
-                {
-                    maxSpeed += 1; //increase maxSpeed by 1
+                //if (anim.GetFloat("Speed") >= 1.0)
+               // {
+                    maxSpeed += 1; //increase maxSpeed by 1... and stays there. Needs to increase
 
                     if (maxSpeed >= 95)
                     {
@@ -129,7 +133,7 @@ public class PlayerController : MonoBehaviour
                     {
                         anim.speed = 2.0f;
                     }
-                }
+               // }
                 else if (anim.GetFloat("Speed") <= 0)
                 {
                     maxSpeed = 50;
@@ -145,33 +149,40 @@ public class PlayerController : MonoBehaviour
 
         if (rightDown)
         {
-            move = 1;
-            if (!hanging)
+            
+                move = 1f;
+            
+            if (move >= 1)
             {
-
-                anim.SetFloat("Speed", Mathf.Abs(move));
-
-                if (anim.GetFloat("Speed") >= 1.0)
+                move = 1;
+            }
+                if (!hanging)
                 {
-                    maxSpeed += 1; //increase maxSpeed by 1
 
-                    if (maxSpeed >= 70)
+                    anim.SetFloat("Speed", Mathf.Abs(move));
+
+                    if (anim.GetFloat("Speed") >= 1.0)
                     {
-                        maxSpeed = 70;
+                        maxSpeed = maxSpeed + 1; //increase maxSpeed by 1
+
+                        if (maxSpeed >= 70)
+                        {
+                            maxSpeed = 70;
+                        }
+
+                        if (maxSpeed > 70)
+                        {
+                            anim.speed = 2.0f;
+                        }
+                    }
+                    else if (anim.GetFloat("Speed") <= 0)
+                    {
+                        maxSpeed = 50;
+                        anim.speed = 1.0f;
                     }
 
-                    if (maxSpeed > 70)
-                    {
-                        anim.speed = 2.0f;
-                    }
-                }
-                else if (anim.GetFloat("Speed") <= 0)
-                {
-                    maxSpeed = 50;
-                    anim.speed = 1.0f;
-                }
-
-                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                    Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                
             }
         }
 

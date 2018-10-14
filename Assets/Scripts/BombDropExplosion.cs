@@ -35,7 +35,6 @@ public class BombDropExplosion : MonoBehaviour {
 
     public void Explode()
     {
-        Camera.main.GetComponent<CameraControl>().Shake(0.5f, 10, 50);
         GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, this.explosionDuration);
         Destroy(this.gameObject);
