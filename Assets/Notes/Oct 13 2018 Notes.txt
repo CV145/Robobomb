@@ -10,3 +10,8 @@ hitting a wall
 - Create new game object called Bomb Drop, duplicate of Bomb
 - Pressing down spawns a dud bomb. Almost just a simple 
 physics object just that it explodes after 3 seconds
+
+=====
+
+Camera shake when bombs explode?
+Camera.main.GetComponent<CameraControl>().Shake(0.5f, 10, 1);
