@@ -21,15 +21,13 @@ public class PlayerController : MonoBehaviour
     public AudioClip jump;
     public AudioSource jumpSource;
 
-    bool upperHit = false;
+ 
     bool lowerHit = false;
     public LayerMask grabbables;
     Vector2 direction;
     public Transform lowerCheck;
-    public Transform upperCheck;
     bool hanging = false;
     Vector2 groundBoxSize;
-    Vector2 upperBoxSize;
     Vector2 lowerBoxSize;
     float move;
 
@@ -43,7 +41,9 @@ public class PlayerController : MonoBehaviour
     bool drop = false;
     bool throwed = false;
     bool dropDown = false;
-    bool dropNotDown = false;
+    bool hangOver;
+    RigidbodyConstraints2D originalConstraints;
+    public bool stopMoving = false;
 
     public bool FacingRightGetter()
     {
@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
+        originalConstraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
 
@@ -72,7 +73,10 @@ public class PlayerController : MonoBehaviour
         ///HORIZONTAL MOVEMENT////
         ///
 
-        move = Input.GetAxis("Horizontal");
+        if (!stopMoving)
+        {
+            move = Input.GetAxis("Horizontal");
+        }
 
         if (!hanging)
         {
@@ -193,17 +197,24 @@ public class PlayerController : MonoBehaviour
             {
                 if (move > 0)
                 {
-                    //climb up
-                    //public Vector2 climbPos;
-
-                    // GetComponent<Transform>().position = new Vector2(climPos.x + 3,
-                    // climbPos.y + 3);
+                    if (hangOver == true) //when hanging animation finishes set bool
+                    {
+                        Vector2 climbPos = new Vector2(transform.position.x, transform.position.y); //current position
+                        GetComponent<Transform>().position = new Vector2(climbPos.x + 12, climbPos.y + 24); //change Robo position
+                        anim.SetBool("Climb", false); //ends the hanging animation
+                         //freeze position for a bit
+                        StartCoroutine("BriefPause");
+                        Rigidbody.gravityScale = 50; //reset gravity
+                        hanging = false;
+                        hangOver = false;
+                    }
                 }
                 if (move < 0)
                 {
                     anim.SetBool("Climb", false);
-
                     Rigidbody.gravityScale = 50;
+                    hanging = false;
+                    hangOver = false;
                 }
             }
 
@@ -211,12 +222,24 @@ public class PlayerController : MonoBehaviour
             {
                 if (move < 0)
                 {
-                    //climb up
+                    if (hangOver == true) //when hanging animation finishes set bool
+                    {
+                        Vector2 climbPos = new Vector2(transform.position.x, transform.position.y); //current position
+                        GetComponent<Transform>().position = new Vector2(climbPos.x - 12, climbPos.y + 24); //change Robo position
+                        anim.SetBool("Climb", false); //ends the hanging animation
+                        //freeze position for a bit
+                        StartCoroutine("BriefPause");
+                        Rigidbody.gravityScale = 50; //reset gravity
+                        hanging = false;
+                        hangOver = false;
+                    }
                 }
                 if (move > 0)
                 {
                     anim.SetBool("Climb", false);
                     Rigidbody.gravityScale = 50;
+                    hanging = false;
+                    hangOver = false;
                 }
             }
         }
@@ -228,6 +251,16 @@ public class PlayerController : MonoBehaviour
         else if (move < 0 && facingRight)
         { Flip(); }
         //////////
+    }
+
+    IEnumerator BriefPause()
+    {
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        stopMoving = true;
+        move = 0;
+        yield return new WaitForSeconds(.6f);
+        stopMoving = false;
+        Rigidbody.constraints = originalConstraints; //unfreeze
     }
 
     private void Update()
@@ -353,21 +386,16 @@ public class PlayerController : MonoBehaviour
 
     void LedgeGrab()
     {
-        upperBoxSize.x = 5;
-        upperBoxSize.y = 20;
-
         lowerBoxSize.x = 5;
         lowerBoxSize.y = 20;
-
-        upperHit = Physics2D.Raycast(upperCheck.position, direction, 5f, grabbables);
         lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
 
-        //Debug.DrawLine(upperCheck.position, new Vector2(upperCheck.position.x + 5, upperCheck.position.y));
+        
 
 
         if (grounded == false && anim.GetFloat("vSpeed") < 100)
         {
-            if (lowerHit && !upperHit)
+            if (lowerHit)
             {
                 hanging = true;
                 Rigidbody.gravityScale = 0.0f;
@@ -453,7 +481,6 @@ public class PlayerController : MonoBehaviour
     public void BombDropClick()
     {
         dropDown = true;
-        //dropNotDown = false;
     }
 
     //This event goes off when the fire animation is over
@@ -490,5 +517,10 @@ public class PlayerController : MonoBehaviour
             dropDown = false;
           //  dropNotDown = false;
         }
+    }
+
+    public void hangFinished()
+    {
+        hangOver = true;
     }
 }

@@ -1,0 +1,27 @@
+Today's Goal: Fix ledge climbing. A single raycast that 
+checks only when Robo is falling whether there is a 
+grabbable in front. Works because grabbales are manually 
+placed in level, so I can rest assured there won't be any 
+tiles above.
+
+After that, work on the homework. Finish it. 
+
+
+Tomorrow's goal 10/15 Monday: Tomorrow I can make the 
+powerups. Search up how to do powerups and increase bomb
+and fire levels respectively when collecting one. Higher
+fire level increases explosion scale, while higher bomb level
+increases cap on bombs to throw.
+
+
+===
+When Robo climbs up, freeze position still for a bit then
+resume movement
+
+IEnumerator BriefPause()
+{
+yield return new WaitForSeconds(1);
+}
+
+StartCoroutine("BriefPause");
+
