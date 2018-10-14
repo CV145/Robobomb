@@ -514,7 +514,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 316.7
+      value: 200.2
       objectReference: {fileID: 0}
     - target: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -561,11 +561,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4996611532530800, guid: d1bc93c49e5303a41ba060560320c311, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 451.3
+      value: 422.4
       objectReference: {fileID: 0}
     - target: {fileID: 4996611532530800, guid: d1bc93c49e5303a41ba060560320c311, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.7
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4996611532530800, guid: d1bc93c49e5303a41ba060560320c311, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1988,24 +1988,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 591176340}
-          m_MethodName: BombClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 591176340}
-          m_MethodName: BombClickUp
+          m_MethodName: BombDropClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3916,12 +3899,12 @@ Prefab:
     - target: {fileID: 224167615510027910, guid: 32df8dfe4c5030f43bdddb66b106f852,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224099725833996248, guid: 32df8dfe4c5030f43bdddb66b106f852,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224099725833996248, guid: 32df8dfe4c5030f43bdddb66b106f852,
         type: 2}

@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
     public GameObject Bomb;
     bool bombDown;
     bool bombNotDown;
+    public GameObject BombDrop;
+    bool drop = false;
+    bool throwed = false;
+    bool dropDown = false;
+    bool dropNotDown = false;
 
     public bool FacingRightGetter()
     {
@@ -247,9 +252,18 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Ready", false);
             anim.SetBool("Fire", true);
-            
+            throwed = true;
         }
 
+        //////////////////
+        ///
+        ////BOMB DROPPING////
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) || dropDown == true)
+        {
+            anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
+            drop = true;
+        }
 
         ////JUMPING////
 
@@ -425,19 +439,45 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
+    public void BombDropClick()
+    {
+        dropDown = true;
+        //dropNotDown = false;
+    }
+
     //This event goes off when the fire animation is over
     public void FireDone()
     {
-        anim.SetBool("Fire", false);
-        if (facingRight)
+        if (throwed)
         {
-            Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            anim.SetBool("Fire", false);
+            if (facingRight)
+            {
+                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            }
+            if (!facingRight)
+            {
+                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            }
+            bombDown = false;
+            bombNotDown = false;
+            throwed = false;
         }
-        if (!facingRight)
+
+        if (drop)
         {
-            Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+            anim.SetBool("Fire", false);
+            if (facingRight)
+            {
+                Instantiate(BombDrop, new Vector2(transform.position.x + 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
+            }
+            if (!facingRight)
+            {
+                Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
+            }
+            drop = false;
+            dropDown = false;
+          //  dropNotDown = false;
         }
-        bombDown = false;
-        bombNotDown = false;
     }
 }

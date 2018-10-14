@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bomb : MonoBehaviour {
 
     Rigidbody2D Rigidbody;
-   // bool moveRight;
     GameObject Robo;
     PlayerController playerScript;
     private Vector2 explosionPosition;

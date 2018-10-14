@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4032269531167226}
-  - component: {fileID: 61952122645091238}
   m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -114,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857591374322194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 316.7, y: 16.6, z: 0}
+  m_LocalPosition: {x: 316.7, y: 17.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032269531167226}
@@ -150,7 +149,7 @@ Rigidbody2D:
   m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 50
+  m_GravityScale: 55
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -180,31 +179,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 6.0554047, y: 27.424196}
-  m_EdgeRadius: 0
---- !u!61 &61952122645091238
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052814153817134}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0007196944, y: 0.0000043163163}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!82 &82018360084889878
 AudioSource:
@@ -632,6 +606,7 @@ MonoBehaviour:
   lowerCheck: {fileID: 4920401810115502}
   upperCheck: {fileID: 4504049962014628}
   Bomb: {fileID: 1371412923011698, guid: 2569c765f041654458b4eec0f710be53, type: 2}
+  BombDrop: {fileID: 1823749725694688, guid: 59b8cda700df70f448a2d28e11d3edcc, type: 2}
 --- !u!212 &212186207990143002
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,3 +4,9 @@ Today's Goal: Expand buttons so that there are invisible
 that explodes in 3 seconds or, when kicked, explodes when
 hitting a wall
 - Add a mobile button for bomb dropping
+
+=============
+
+- Create new game object called Bomb Drop, duplicate of Bomb
+- Pressing down spawns a dud bomb. Almost just a simple 
+physics object just that it explodes after 3 seconds

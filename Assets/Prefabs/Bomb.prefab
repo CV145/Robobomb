@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114898847955283506}
   - component: {fileID: 95956251783110412}
   - component: {fileID: 114949203167858778}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   explosionDuration: 0.5
   ExplosionLayers:
     serializedVersion: 2
-    m_Bits: 44032
+    m_Bits: 109568
   BombScript: {fileID: 114898847955283506}
 --- !u!212 &212950877720689708
 SpriteRenderer:
