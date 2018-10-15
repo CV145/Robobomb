@@ -75,34 +75,12 @@ public class PlayerController : MonoBehaviour
 
         if (!stopMoving)
         {
-            move = Input.GetAxis("Horizontal");
+            move = Input.GetAxisRaw("Horizontal");
         }
 
-        if (!hanging)
+  if (!hanging)
         {
-
             anim.SetFloat("Speed", Mathf.Abs(move));
-
-            if (anim.GetFloat("Speed") >= 1.0)
-            {
-                maxSpeed += 1; //increase maxSpeed by 1
-
-                if (maxSpeed >= 70)
-                {
-                    maxSpeed = 70;
-                }
-
-                if (maxSpeed > 65)
-                {
-                    anim.speed = 1.4f;
-                }
-            }
-            else if (anim.GetFloat("Speed") <= 0)
-            {
-                maxSpeed = 50;
-                anim.speed = 1.0f;
-            }
-
             Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
         }
         ///////////////////////
@@ -115,35 +93,9 @@ public class PlayerController : MonoBehaviour
         if (leftDown)
         {
             move = -1;
-            if (move <= -1)
-            {
-                move = -1;
-            }
             if (!hanging)
             {
-
                 anim.SetFloat("Speed", Mathf.Abs(move));
-
-                //if (anim.GetFloat("Speed") >= 1.0)
-               // {
-                    maxSpeed += 1; //increase maxSpeed by 1... and stays there. Needs to increase
-
-                    if (maxSpeed >= 95)
-                    {
-                        maxSpeed = 95;
-                    }
-
-                    if (maxSpeed > 90)
-                    {
-                        anim.speed = 2.0f;
-                    }
-               // }
-                else if (anim.GetFloat("Speed") <= 0)
-                {
-                    maxSpeed = 50;
-                    anim.speed = 1.0f;
-                }
-
                 Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
             }
         }
@@ -152,42 +104,14 @@ public class PlayerController : MonoBehaviour
         ///
 
         if (rightDown)
-        {
-            
+        {          
                 move = 1f;
-            
-            if (move >= 1)
-            {
-                move = 1;
-            }
                 if (!hanging)
                 {
 
                     anim.SetFloat("Speed", Mathf.Abs(move));
-
-                    if (anim.GetFloat("Speed") >= 1.0)
-                    {
-                        maxSpeed = maxSpeed + 1; //increase maxSpeed by 1
-
-                        if (maxSpeed >= 70)
-                        {
-                            maxSpeed = 70;
-                        }
-
-                        if (maxSpeed > 70)
-                        {
-                            anim.speed = 2.0f;
-                        }
-                    }
-                    else if (anim.GetFloat("Speed") <= 0)
-                    {
-                        maxSpeed = 50;
-                        anim.speed = 1.0f;
-                    }
-
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-                
-            }
+                }
         }
 
         /////LEDGE CONTROLS/////
@@ -255,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator BriefPause()
     {
-        Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         stopMoving = true;
         move = 0;
         yield return new WaitForSeconds(.6f);
