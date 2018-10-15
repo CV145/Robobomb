@@ -114,10 +114,13 @@ MonoBehaviour:
   explosionDuration: 0.5
   ExplosionLayers:
     serializedVersion: 2
-    m_Bits: 40960
+    m_Bits: 44032
   Player:
     serializedVersion: 2
     m_Bits: 512
+  DefaultExplosions:
+    serializedVersion: 2
+    m_Bits: 40960
   BombDropScript: {fileID: 114768921823036580}
 --- !u!114 &114768921823036580
 MonoBehaviour:

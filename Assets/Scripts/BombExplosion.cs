@@ -11,9 +11,17 @@ public class BombExplosion : MonoBehaviour {
     private float explosionDuration = 1f;
     public LayerMask ExplosionLayers;
     public Bomb BombScript;
+    GameObject RoboPlayer;
+
+    public void Start()
+    {
+        RoboPlayer = GameObject.Find("RoboPlayer");
+        RoboPlayer.GetComponent<PickupsAndStats>().AnotherBombOnScreen(); //increase bomb on screen by 1
+    }
 
     public void Explode()
     {
+        RoboPlayer.GetComponent<PickupsAndStats>().ABombLessOnScreen(); //lower bomb on screen by 1
         GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, this.explosionDuration);
         Destroy(this.gameObject);
@@ -30,7 +38,6 @@ public class BombExplosion : MonoBehaviour {
         if (Physics2D.OverlapCircle(gameObject.transform.position, 
             2f, ExplosionLayers)) //100 radius as extreme...
         {
-            Debug.Log(true);
             Explode();
         }
     }

@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     RigidbodyConstraints2D originalConstraints;
     public bool stopMoving = false;
 
+    public PickupsAndStats RoboStats;
+
     public bool FacingRightGetter()
     {
         return facingRight;
@@ -209,28 +211,45 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Climb", false);
         }
 
+        Debug.Log("Bombs on screen: " + RoboStats.GetBombsOnScreen());
+        Debug.Log("Bomb LV: " + RoboStats.GetBombLV());
 
         ////BOMB THROWING///
         ///
-        if (Input.GetKey(KeyCode.Z) == true || Input.GetKey(KeyCode.X) == true || bombDown == true)
+
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
         {
-            anim.SetBool("Ready", true);
+            if (Input.GetKey(KeyCode.Z) == true || Input.GetKey(KeyCode.X) == true)
+            {
+                anim.SetBool("Ready", true);
+            }
+            if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X))
+            {
+                anim.SetBool("Ready", false);
+                anim.SetBool("Fire", true);
+                throwed = true;
+            }
+
+            //////////////////
+            ///
+            ////BOMB DROPPING////
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (!bombNotDown && !bombDown)
+                {
+                    if (anim.GetBool("Ready") == false)
+                    {
+                        anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
+                        drop = true;
+                    }
+                }
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X) || bombNotDown == true) 
+        else
         {
             anim.SetBool("Ready", false);
-            anim.SetBool("Fire", true);
-            throwed = true;
-        }
-
-        //////////////////
-        ///
-        ////BOMB DROPPING////
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) || dropDown == true)
-        {
-            anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
-            drop = true;
+            anim.SetBool("Fire", false);
         }
 
         ////JUMPING////
@@ -383,17 +402,18 @@ public class PlayerController : MonoBehaviour
     }
 
     public void BombClick()
-    {
-        bombDown = true;
-        bombNotDown = false;
-        Debug.Log("bombDown: " + bombDown);
-        Debug.Log("bombNotDown: " + bombNotDown);
+    { //ready
+       anim.SetBool("Ready", true);
     }
 
     public void BombClickUp()
-    {
-        bombDown = false;
-        bombNotDown = true;
+    {//fire
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
+        {
+            anim.SetBool("Ready", false);
+            anim.SetBool("Fire", true);
+            throwed = true;
+        }
     }
 
     public void JumpUp()
@@ -404,7 +424,14 @@ public class PlayerController : MonoBehaviour
 
     public void BombDropClick()
     {
-        dropDown = true;
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
+        {
+            if (anim.GetBool("Ready") == false)
+            {
+                anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
+                drop = true;
+            }
+        }
     }
 
     //This event goes off when the fire animation is over
@@ -428,18 +455,20 @@ public class PlayerController : MonoBehaviour
 
         if (drop)
         {
-            anim.SetBool("Fire", false);
-            if (facingRight)
-            {
-                Instantiate(BombDrop, new Vector2(transform.position.x + 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
-            }
-            if (!facingRight)
-            {
-                Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
-            }
-            drop = false;
-            dropDown = false;
-          //  dropNotDown = false;
+           
+                anim.SetBool("Fire", false);
+                if (facingRight)
+                {
+                    Instantiate(BombDrop, new Vector2(transform.position.x + 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
+                }
+                if (!facingRight)
+                {
+                    Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
+                }
+                drop = false;
+                dropDown = false;
+                //  dropNotDown = false;
+            
         }
     }
 

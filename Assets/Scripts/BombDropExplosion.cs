@@ -11,6 +11,7 @@ public class BombDropExplosion : MonoBehaviour {
     private float explosionDuration = 1f;
     public LayerMask ExplosionLayers;
     public LayerMask Player; //layer mask for the player
+    public LayerMask DefaultExplosions; //explode when not kicked when hitting an enemy or explosion
     public BombDrop BombDropScript;
     bool kicked = false;
     GameObject Robo;
@@ -22,19 +23,12 @@ public class BombDropExplosion : MonoBehaviour {
         Rigidbody = GetComponent<Rigidbody2D>();
         Robo = GameObject.Find("RoboPlayer");
         playerScript = Robo.GetComponent<PlayerController>();
-
-       /* if (playerScript.FacingRightGetter())
-        {
-            Rigidbody.AddForce(new Vector2(3, Rigidbody.transform.position.y), ForceMode2D.Force); //maybe increase y vector
-        }
-        if (playerScript.FacingRightGetter() == false)
-        {
-            Rigidbody.AddForce(new Vector2(-3, Rigidbody.transform.position.y), ForceMode2D.Force);
-        } */
+        Robo.GetComponent<PickupsAndStats>().AnotherBombOnScreen();
     }
 
     public void Explode()
     {
+        Robo.GetComponent<PickupsAndStats>().ABombLessOnScreen();
         GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, this.explosionDuration);
         Destroy(this.gameObject);
@@ -42,11 +36,15 @@ public class BombDropExplosion : MonoBehaviour {
 
     private void Update()
     {
+        DefaultExplosionTriggerCheck();
         if (kicked == false)
         {
             KickCheck();
         }
-        ExplosionTriggerCheck(); 
+        if (kicked == true)
+        {
+            ExplosionTriggerCheck();
+        }
     }
 
     private void KickCheck()
@@ -72,11 +70,18 @@ public class BombDropExplosion : MonoBehaviour {
         GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
+    private void DefaultExplosionTriggerCheck()
+    {
+        if (Physics2D.OverlapCircle(gameObject.transform.position, 2f, DefaultExplosions))
+        {
+            Explode();
+        }
+    }
 
     private void ExplosionTriggerCheck() 
     {
-        if (Physics2D.OverlapCircle(gameObject.transform.position,
-            2f, ExplosionLayers)) 
+        if (Physics2D.OverlapBox(gameObject.transform.position, new Vector2 (5f, 0.1f),
+            0f, ExplosionLayers)) 
         {
             Explode();
         }

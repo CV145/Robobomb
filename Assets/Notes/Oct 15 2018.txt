@@ -1,0 +1,100 @@
+Goal: Make the powerups. Picking up a fireup increases 
+explosion scale and a bombup increases bomb limit. There
+could be a total of 5 levels. Set up a UI on the canvas, 
+placeholder, that shows current fire and bomb levels.
+- Finish BlackDynamite then. After, quiz 
+Also, have a brief delay when throwing bombs to warn and
+stop player from running into their own explosions.
+
+Tomorrow 10/16: Finish anything not finished today. Add a
+breakable block that drops powerups.
+---
+in powerup script...
+BombupScript
+
+LayerMask Player;
+
+
+
+If (Collider2D.IsTouching(Player))
+{
+- Destroy this object
+- Increase BombLV by 1 (call a setter function)
+}
+
+----
+
+Robo Pickup Manager and Stats Script
+
+LayerMask Bombups;
+LayerMask Fireups;
+LayerMask Health;
+
+public int fireLV = 1;
+public int bombLV = 1;
+public int currentHealth = 4;
+public int maxHealth = 4;
+
+int bombsOnScreen;
+public PlayerController player; //setup in inspector
+
+//In bomb script, reference this script and increase 
+bombsOnScreen by 1. Then have a function called 
+CanStillMakeBombs() which, if returning false, prevents 
+PlayerScript from making more bombs
+
+
+
+void Start()
+{
+}
+
+void Update()
+{
+}
+
+public void AnotherBombOnScreen() 
+{
+//called at a bomb script's Start()
+bombsOnScreen++;
+}
+
+public void ABombLessOnScreen()
+{
+//called when a bomb Explode() happens
+bombsOnScreen--;
+}
+
+public void FireLVUp()
+{
+fireLV++;
+}
+
+public void BombLVUp()
+{
+bombLV++
+}
+/////////
+Making the bomb limit
+
+If there is 2 bombs on screen, and bombLV is 2, don't create
+any more bombs until there are no more bombs on screen.
+if (bombsOnScreen < bombLV)
+
+
+//////////
+
+When setting bombDown to true, do NOT set it if dropDown is 
+already true. Same for dropDown, if bombDown button is already
+true do not activate dropDown button.
+
+DropClicked
+- dropDown set to true
+... When is dropDown set to false?
+After the bomb is instantiated
+(What if dropDown is set to false 
+
+If you click the bomb drop button, then slide to bomb throw 
+button... Bomb throw will be true, and remain true until the drop
+explodes and another bomb can be created. 
+If bombLV is 1 and drop = true, set bombDown to false
