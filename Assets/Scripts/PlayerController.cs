@@ -199,6 +199,11 @@ public class PlayerController : MonoBehaviour
         Rigidbody.constraints = originalConstraints; //unfreeze
     }
 
+    public bool GetGrounded()
+    {
+        return grounded;
+    }
+
     private void Update()
     {
         ///LEDGE HANGING///

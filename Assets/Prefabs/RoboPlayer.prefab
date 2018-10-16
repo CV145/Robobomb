@@ -566,7 +566,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4032269531167226}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 85303
+    m_Bits: 1133879
   jumpTime: 0.35
   jumpLand: {fileID: 8300000, guid: 5304e3095e6690e48a1ecbc10dbf9750, type: 3}
   soundSource: {fileID: 82018360084889878}

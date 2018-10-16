@@ -1,0 +1,46 @@
+Today's goal 10/16/18:
+- Create a box that, when colliding with an explosion, destroys 
+itself and spawns a powerup chosen from the inspector, if any
+
+
+Tomorrow's goal 10/17/18:
+Finish the camera. Then try to mess around with the controls. Get
+it so when starting to move there is a brief moment of really 
+slow movement, then it gradually increases to Robo's current 
+speed right now (like 50 or so). Remember, just update
+transform.position.x not the velocity.
+---
+
+When pressing a button, key or touch, set a value at either 1, or
+-1. 0 when none of them are pressed. 
+
+Inside the update(), always be checking for movement. Something
+like this:
+void Update()
+{
+    // 2 - Movement
+    Vector3 movement = new Vector3(
+        speed.x * direction.x,
+        speed.y * direction.y,
+        0);
+   
+    movement *= Time.deltaTime;
+    transform.Translate(movement);
+}
+
+All the button presses are doing is setting up the direction. 
+Afterwards, when updating seperately from buttons, make an 
+alghorithm using delta time, slowly increasing movement as time
+goes by and 1 is able to be multiplied instead of 0.
+
+---
+As for the camera, the y of the camera needs to be still when Robo
+is within a certain threshold of the camera. When Robo leaves
+this threshold (y + or - some number) the camera follows Robo.
+
+So when Robo's y is greater than the camera, move camera y, then
+lock the y when he's not greater.
+When Robo's y is less than the camera, move camera y, then lock 
+the y when he's not less.
+
+Play around and have making custom, personalized algorithms.

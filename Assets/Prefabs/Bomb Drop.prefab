@@ -114,7 +114,7 @@ MonoBehaviour:
   explosionDuration: 0.5
   ExplosionLayers:
     serializedVersion: 2
-    m_Bits: 44032
+    m_Bits: 1092608
   Player:
     serializedVersion: 2
     m_Bits: 512

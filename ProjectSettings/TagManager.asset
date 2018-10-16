@@ -26,7 +26,7 @@ TagManager:
   - Bombs
   - Bombup
   - Fireup
-  - 
+  - Explo.Trigger
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 4004483509
+    locked: 0
+  - name: Items
+    uniqueID: 1242355989
     locked: 0
   - name: Objects
     uniqueID: 1508134293

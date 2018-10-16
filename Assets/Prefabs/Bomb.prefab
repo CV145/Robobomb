@@ -125,7 +125,7 @@ MonoBehaviour:
   explosionDuration: 0.5
   ExplosionLayers:
     serializedVersion: 2
-    m_Bits: 44032
+    m_Bits: 1092608
   BombScript: {fileID: 114898847955283506}
 --- !u!212 &212950877720689708
 SpriteRenderer:
