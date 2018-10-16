@@ -189,6 +189,16 @@ public class PlayerController : MonoBehaviour
         Rigidbody.constraints = originalConstraints; //unfreeze
     }
 
+    IEnumerator BrieferPause()
+    {
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+        stopMoving = true;
+        move = 0;
+        yield return new WaitForSeconds(.15f);
+        stopMoving = false;
+        Rigidbody.constraints = originalConstraints; //unfreeze
+    }
+
     private void Update()
     {
         ///LEDGE HANGING///
@@ -211,8 +221,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Climb", false);
         }
 
-        Debug.Log("Bombs on screen: " + RoboStats.GetBombsOnScreen());
-        Debug.Log("Bomb LV: " + RoboStats.GetBombLV());
 
         ////BOMB THROWING///
         ///
@@ -451,6 +459,7 @@ public class PlayerController : MonoBehaviour
             bombDown = false;
             bombNotDown = false;
             throwed = false;
+            StartCoroutine("BrieferPause");
         }
 
         if (drop)
@@ -467,8 +476,8 @@ public class PlayerController : MonoBehaviour
                 }
                 drop = false;
                 dropDown = false;
-                //  dropNotDown = false;
-            
+            StartCoroutine("BrieferPause");
+
         }
     }
 

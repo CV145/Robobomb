@@ -98,3 +98,7 @@ If you click the bomb drop button, then slide to bomb throw
 button... Bomb throw will be true, and remain true until the drop
 explodes and another bomb can be created. 
 If bombLV is 1 and drop = true, set bombDown to false
+
+////
+
+When fire animation is played, temporarily stop Robo 

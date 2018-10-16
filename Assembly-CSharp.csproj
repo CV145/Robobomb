@@ -61,8 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BombupScript.cs" />
-    <Compile Include="Assets\ExplosionFade.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\BeatReactor.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DirectEmotionExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DiscreteEmotionExample.cs" />
@@ -72,16 +70,19 @@
     <Compile Include="Assets\Melodrive\Examples\Scripts\ProjectExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\SeedChangeExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\StyleChangeExample.cs" />
-    <Compile Include="Assets\PickupsAndStats.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />
     <Compile Include="Assets\Scripts\BombDropExplosion.cs" />
     <Compile Include="Assets\Scripts\BombExplosion.cs" />
+    <Compile Include="Assets\Scripts\BombupScript.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CamShakeSimple.cs" />
+    <Compile Include="Assets\Scripts\ExplosionFade.cs" />
+    <Compile Include="Assets\Scripts\FireupScript.cs" />
     <Compile Include="Assets\Scripts\LeftMoveButtonClick.cs" />
     <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Scripts\PickupsAndStats.cs" />
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
