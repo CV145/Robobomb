@@ -426,6 +426,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Ready", false);
             anim.SetBool("Fire", true);
             throwed = true;
+            drop = false;
         }
     }
 
@@ -443,6 +444,7 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
                 drop = true;
+               // throwed = false;
             }
         }
     }
