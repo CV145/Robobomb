@@ -1,0 +1,15 @@
+Today's goal:
+ Keep smooth camera movement, but make camera go faster when falling.
+
+Player game object is created when becoming a host, but for some
+reason is invisible
+
+
+Camera needs to follow the player's own Robo only
+
+void OnCollisionEnter(collision col)
+{
+ if (col.gameObject.layers == fireup)
+{
+ fireupIncrease();
+}

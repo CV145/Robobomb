@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         ////JUMP SETUP//// 
         groundBoxSize.x = 10f;
-        groundBoxSize.y = 0.5f;
+        groundBoxSize.y = 0.3f;
         anim.SetBool("Ground", grounded);
         anim.SetFloat("vSpeed", Rigidbody.velocity.y);
         grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);

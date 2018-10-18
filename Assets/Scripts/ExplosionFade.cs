@@ -19,19 +19,19 @@ public class ExplosionFade : MonoBehaviour {
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 2)
         {
-            Camera.main.GetComponent<CameraControl>().Shake(2f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
+            Camera.main.GetComponent<CameraControl>().Shake(1.4f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 3)
         {
-            Camera.main.GetComponent<CameraControl>().Shake(3f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
+            Camera.main.GetComponent<CameraControl>().Shake(1.8f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 4)
         {
-            Camera.main.GetComponent<CameraControl>().Shake(4f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
+            Camera.main.GetComponent<CameraControl>().Shake(2.2f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 5)
         {
-            Camera.main.GetComponent<CameraControl>().Shake(5f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
+            Camera.main.GetComponent<CameraControl>().Shake(2.6f, 10, 50); // 1f, 2f, 3f, 4f... 6f, 10 shakes death bomb?
         }
 
         renderer = GetComponent<SpriteRenderer>();
@@ -48,22 +48,22 @@ public class ExplosionFade : MonoBehaviour {
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 2)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.02f, .02f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.014f, .014f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 3)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.03f, .03f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.018f, .018f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 4)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.04f, .04f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.022f, .022f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 5)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.05f, .05f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.026f, .026f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
 
         color.a -= 0.01f;
