@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         ///HORIZONTAL MOVEMENT////
         ///
 
-        if (!stopMoving)
+        if (!stopMoving && !isJumping)
         {
             move = Input.GetAxisRaw("Horizontal");
         }

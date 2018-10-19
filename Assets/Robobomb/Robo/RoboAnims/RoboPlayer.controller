@@ -1269,7 +1269,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: RoboWalkAnim
-  m_Speed: 0.3
+  m_Speed: 0.45
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101019718022874256}
