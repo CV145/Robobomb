@@ -72,10 +72,18 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("vSpeed", Rigidbody.velocity.y);
         grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
 
+
+        ///GRAB SETUP///
+        ///
+        lowerBoxSize.x = 5;
+        lowerBoxSize.y = 20;
+        lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
+        //check if lower hit is true then do ledge grab function
+
         ///HORIZONTAL MOVEMENT////
         ///
 
-        if (!stopMoving && !isJumping)
+        if (!stopMoving)
         {
             move = Input.GetAxisRaw("Horizontal");
         }
@@ -207,9 +215,27 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ///LEDGE HANGING///
-        LedgeGrab();
+        ///
+        if (lowerHit)
+        {
+            Debug.Log("lower is hit");
+            LedgeGrab();
+        }
         //////
         ///
+
+        ///CHECK DIRECTION///
+        ///
+        if (facingRight)
+        {
+            direction.x = 1;
+            direction.y = 0;
+        }
+        else if (!facingRight)
+        {
+            direction.x = -1;
+            direction.y = 0;
+        }
 
         ///GRAVITY FAILSAFE//
         ///
@@ -327,27 +353,13 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1; //go from 1 to -1 to 1 again
         transform.localScale = theScale;
-
-        if (facingRight)
-        {
-            direction.x = 1;
-            direction.y = 0;
-        }
-        else if (!facingRight)
-        {
-            direction.x = -1;
-            direction.y = 0;
-        }
     }
 
     void LedgeGrab()
     {
-        lowerBoxSize.x = 5;
-        lowerBoxSize.y = 20;
-        lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
-
-        
-
+        //lowerBoxSize.x = 5;
+        //lowerBoxSize.y = 20;
+        //lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
 
         if (grounded == false && anim.GetFloat("vSpeed") < 100)
         {

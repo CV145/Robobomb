@@ -15,10 +15,11 @@ public class PickupsAndStats : MonoBehaviour {
 
     int bombsOnScreen = 0;
     public PlayerController player; //setup in inspector
+    GameObject BeginPosition;
 
     // Use this for initialization
     void Start () {
-		
+        BeginPosition = GameObject.Find("Start");
 	}
 	
 	// Update is called once per frame
@@ -39,6 +40,14 @@ public class PickupsAndStats : MonoBehaviour {
     public int GetBombsOnScreen()
     {
         return bombsOnScreen;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 15 || collision.gameObject.layer == 13)
+        {
+            transform.position = BeginPosition.transform.position;
+        }
     }
 
     public void AnotherBombOnScreen()

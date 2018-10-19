@@ -1,0 +1,8 @@
+Today's Goal (10/19/2018):
+ When Robo touches an explosion or an enemy, respawn
+
+The stats script, void OnCollisionEnter2D, if 
+collider is an explosion or enemy, set transform position
+to start.transform.position
+
+GameObject start = gameObject.find("Start")
