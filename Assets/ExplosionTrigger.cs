@@ -8,7 +8,7 @@ public class ExplosionTrigger : MonoBehaviour {
     public GameObject Fireup;
     public GameObject Bombup;
     bool instantiated;
-
+    public float destroyTime;
     public bool spawnFireup;
     public bool spawnBombup;
     public bool spawnHeart;
@@ -17,12 +17,14 @@ public class ExplosionTrigger : MonoBehaviour {
 	void Start () {
 		
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () {
         if (Physics2D.OverlapBox(transform.position, new Vector2(16, 16), 0f, Explosions))
         {
-            Object.Destroy(gameObject, 1f);
+            Object.Destroy(gameObject, destroyTime);
             if (!instantiated)
             {
                 if (spawnFireup)

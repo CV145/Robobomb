@@ -6,3 +6,16 @@ collider is an explosion or enemy, set transform position
 to start.transform.position
 
 GameObject start = gameObject.find("Start")
+
+////
+
+Make a list of ideas for enemies and mechanics...
+
+
+Bun-o, every time it touches the ground it waits for a
+split second then jumps.
+
+
+if (Physics2D.OverlapCircle(new Vector2, groundRadius, whatIsGround)
+{
+Rigidbody.velocity = Vector2.up * jumpForce;

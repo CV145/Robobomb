@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ExplosionTrigger.cs" />
+    <Compile Include="Assets\Jump.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\BeatReactor.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DirectEmotionExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DiscreteEmotionExample.cs" />
