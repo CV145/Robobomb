@@ -62,7 +62,9 @@ public class PlayerController : MonoBehaviour
         originalConstraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-
+    //
+    /// ////////////
+    
     void FixedUpdate()
     {
         ////JUMP SETUP//// 

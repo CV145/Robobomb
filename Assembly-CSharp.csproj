@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\PickupsAndStats.cs" />
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\SwitchTrigger.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Oct 20 2018.txt" />
     <None Include="Assets\Notes\Oct 16 2018.txt" />

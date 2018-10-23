@@ -95,6 +95,7 @@ MonoBehaviour:
     m_Bits: 32768
   Fireup: {fileID: 0}
   Bombup: {fileID: 0}
+  isDestructible: 1
   destroyTime: 0.6
   spawnFireup: 0
   spawnBombup: 0
