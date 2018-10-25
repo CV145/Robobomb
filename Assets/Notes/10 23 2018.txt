@@ -1,0 +1,23 @@
+Today's Goal: Create the guardbot
+- GameObject with bright red square as sprite, 16x16
+- Script called Guardbot Script. Every frame transform either increases
+or decreases depending on starting direction bool.
+- Two raycasts, one on the right and one on the left. If either of those
+hit do a Flip() to change directions (reverse transform). Just multiply
+by -1 whenever this happens (-1 * -1 = 1, 1 * -1 = -1)
+- Raycast checks against a layerMask for any solids, grabbables, objects,
+or player
+
+Variables 
+- FacingRight bool
+- LayerMask collidables
+- Direction float
+
+Functions
+- Flip() multiplies direction by -1
+- Update() checks if bool is FacingRight, set transform to
+new Vector2 (direction + or - 1, y)
+
+or direction + direction every frame
+
+- Also check if either left or right raycasts are hit then do Flip()
