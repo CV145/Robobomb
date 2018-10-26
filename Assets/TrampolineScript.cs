@@ -18,7 +18,7 @@ public class TrampolineScript : MonoBehaviour
     {
         if (Physics2D.OverlapBox(transform.position, new Vector2(28, 8), 0f, jumpLayer))
             {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 250;
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 180;
         }
     }
 

@@ -8,12 +8,14 @@ public class CellScript : MonoBehaviour {
     //choose which switch connects with this cell in inspector
     Animator anim;
     BoxCollider2D collider;
+    Rigidbody2D rigidbody;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
-	}
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,6 +23,7 @@ public class CellScript : MonoBehaviour {
         {
             anim.SetBool("Opened", true);
             Destroy(collider);
+            Destroy(rigidbody);
         }
 	}
 }

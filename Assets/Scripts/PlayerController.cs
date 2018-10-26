@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
                         anim.SetBool("Climb", false); //ends the hanging animation
                          //freeze position for a bit
                         StartCoroutine("BriefPause");
-                        Rigidbody.gravityScale = 50; //reset gravity
+                        Rigidbody.gravityScale = 40; //reset gravity
                         hanging = false;
                         hangOver = false;
                     }
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
                 if (move < 0)
                 {
                     anim.SetBool("Climb", false);
-                    Rigidbody.gravityScale = 50;
+                    Rigidbody.gravityScale = 40;
                     hanging = false;
                     hangOver = false;
                 }
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
                         anim.SetBool("Climb", false); //ends the hanging animation
                         //freeze position for a bit
                         StartCoroutine("BriefPause");
-                        Rigidbody.gravityScale = 50; //reset gravity
+                        Rigidbody.gravityScale = 40; //reset gravity
                         hanging = false;
                         hangOver = false;
                     }
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
                 if (move > 0)
                 {
                     anim.SetBool("Climb", false);
-                    Rigidbody.gravityScale = 50;
+                    Rigidbody.gravityScale = 40;
                     hanging = false;
                     hangOver = false;
                 }

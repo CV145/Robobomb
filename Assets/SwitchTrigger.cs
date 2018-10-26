@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchTrigger : MonoBehaviour
 {
     public Animator anim;
-
+    private bool hit;
 
     // Use this for initialization
     void Start()
@@ -18,12 +18,18 @@ public class SwitchTrigger : MonoBehaviour
     {
     }
 
+    public bool GetHit()
+    {
+        return hit;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collide");
         if (collision.gameObject.layer == 15)
         {
             anim.SetBool("Hit", true);
+            hit = true;
         }
     }
 }
