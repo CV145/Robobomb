@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     bool hangOver;
     RigidbodyConstraints2D originalConstraints;
     public bool stopMoving = false;
+    public bool arcade = false;
+    Vector3 startPosition;
 
     public PickupsAndStats RoboStats;
 
@@ -59,7 +61,15 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
-        originalConstraints = RigidbodyConstraints2D.FreezeRotation;
+        if (!arcade)
+        {
+            originalConstraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            originalConstraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            startPosition = new Vector2(transform.position.x, transform.position.y);
+        }
     }
 
     //
@@ -84,16 +94,44 @@ public class PlayerController : MonoBehaviour
 
         ///HORIZONTAL MOVEMENT////
         ///
-
         if (!stopMoving)
         {
             move = Input.GetAxisRaw("Horizontal");
         }
 
-  if (!hanging)
+        if (!hanging)
         {
-            anim.SetFloat("Speed", Mathf.Abs(move));
-            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+            if (!arcade) //if arcade is false change velovity and move normally
+            {
+                anim.SetFloat("Speed", Mathf.Abs(move));
+                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+            }
+            else //if it is true slightly budge in corresponding direction
+            {
+                if (facingRight)
+                {
+                    //should budge through a double tap. First tap changes direction
+                    if (Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        if (grounded)
+                        {
+                            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                        }
+                        //StartCoroutine("MoveForABit");
+                    }
+                }
+                else if (!facingRight)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        if (grounded)
+                        {
+                            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                        }
+                        //StartCoroutine("MoveForABit");
+                    }
+                }
+            }
         }
         ///////////////////////
         ///
@@ -107,8 +145,11 @@ public class PlayerController : MonoBehaviour
             move = -1;
             if (!hanging)
             {
-                anim.SetFloat("Speed", Mathf.Abs(move));
-                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                if (!arcade)
+                {
+                    anim.SetFloat("Speed", Mathf.Abs(move));
+                    Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                }
             }
         }
 
@@ -118,12 +159,14 @@ public class PlayerController : MonoBehaviour
         if (rightDown)
         {          
                 move = 1f;
-                if (!hanging)
+            if (!hanging)
+            {
+                if (!arcade)
                 {
-
                     anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
                 }
+            }
         }
 
         /////LEDGE CONTROLS/////
@@ -188,6 +231,32 @@ public class PlayerController : MonoBehaviour
         { Flip(); }
         //////////
     }
+
+    IEnumerator MoveForABit ()
+    {
+        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation; //unfreeze x movement
+        Rigidbody.velocity = new Vector2((move * maxSpeed), Rigidbody.velocity.y);
+        stopMoving = true; //don't move anymore after that
+        yield return new WaitForSeconds(.2f); //last for this many seconds
+        Rigidbody.velocity = new Vector2(-1 * (move * maxSpeed), Rigidbody.velocity.y); //after seconds are up, move back
+        if (facingRight)
+        {
+           if (transform.position.x >= startPosition.x)
+            {
+                stopMoving = false; //give back control to player
+                Rigidbody.constraints = originalConstraints; //freeze x again
+            }
+        }
+        else if (!facingRight)
+        {
+            if (transform.position.x <= startPosition.x)
+            {
+                stopMoving = false;
+                Rigidbody.constraints = originalConstraints;
+            }
+        }
+    }
+
 
     IEnumerator BriefPause()
     {
@@ -359,10 +428,6 @@ public class PlayerController : MonoBehaviour
 
     void LedgeGrab()
     {
-        //lowerBoxSize.x = 5;
-        //lowerBoxSize.y = 20;
-        //lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
-
         if (grounded == false && anim.GetFloat("vSpeed") < 100)
         {
             if (lowerHit)
@@ -450,24 +515,27 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
-    public void BombDropClick()
+    public void BombDropClick() //even that fires when the bomb drop UI is clicked
     {
-        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging) //only do this if not hanging and bomb limit not reached
         {
             if (anim.GetBool("Ready") == false)
-            {
-                anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
-                drop = true;
-               // throwed = false;
+            { 
+                //a bomb drop is instant, but you can't drop a bomb if you're preparing to throw one
+                anim.SetBool("Fire", true); //begins the fire animation, which then leads to the FireDone()
+                drop = true; //used to tell FireDone() that we're dropping a bomb, not throwing
             }
         }
     }
 
-    //This event goes off when the fire animation is over
+    //This event goes off when the fire animation is over. It checks which button was pressed to spawn 
+    //the corresponding bomb
     public void FireDone()
     {
-        if (throwed)
+        if (throwed) //do this is you're bomb throwing
         {
+            //stop the fire animation and spawn a bomb depending on where you're facing
+            
             anim.SetBool("Fire", false);
             if (facingRight)
             {
@@ -477,15 +545,17 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
             }
-            bombDown = false;
-            bombNotDown = false;
+           // bombDown = false;
+            //bombNotDown = false;
+            //Reset to be able to begin process again and briefly pause after the throw
             throwed = false;
             StartCoroutine("BrieferPause");
         }
 
-        if (drop)
+        if (drop) //do this if you're bomb dropping
         {
-           
+           //stop the fire animation, then spawn a new bomb drop depending on whether facing right or not
+           //Afterwards drop bools are set to false to begin process over again
                 anim.SetBool("Fire", false);
                 if (facingRight)
                 {
@@ -496,13 +566,14 @@ public class PlayerController : MonoBehaviour
                     Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
                 }
                 drop = false;
-                dropDown = false;
+               // dropDown = false;
+            //Pause briefly afterwards
             StartCoroutine("BrieferPause");
 
         }
     }
 
-    public void hangFinished()
+    public void hangFinished() //calls out that player is no longer hanging anymore
     {
         hangOver = true;
     }

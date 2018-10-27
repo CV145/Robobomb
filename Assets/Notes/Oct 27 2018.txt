@@ -1,0 +1,28 @@
+Separate scripts added to bombup and fireup that, depending on a bool,
+move back and forth like the guardbot
+- Most things in this game are gonna be moving back and forth 
+
+----
+
+Change the controls so one tap changes direction,
+ and a second tap in the same direction makes Robo “kick" and slightly 
+budge
+- 
+
+
+
+(Is there any way I can take my programming classes in uni instead? In
+case I need more upper level hours)
+
+a second tap in the same direction makes Robo “kick" and slightly budge
+- if facingRight (and arcade is true), slightly budge
+- bomb drop only works if not budging
+
+
+if (facingRight)
+and right is pressed
+then budge
+
+if (!facingRight)
+and left is pressed
+then budge
