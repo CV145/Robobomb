@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public bool stopMoving = false;
     public bool arcade = false;
     Vector3 startPosition;
+    bool kicking;
 
     public PickupsAndStats RoboStats;
 
@@ -99,6 +100,8 @@ public class PlayerController : MonoBehaviour
             move = Input.GetAxisRaw("Horizontal");
         }
 
+        Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+
         if (!hanging)
         {
             if (!arcade) //if arcade is false change velovity and move normally
@@ -106,32 +109,51 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("Speed", Mathf.Abs(move));
                 Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
             }
-            else //if it is true slightly budge in corresponding direction
+
+
+
+
+
+
+
+
+            else //if arcade then slightly budge in corresponding direction
             {
                 if (facingRight)
                 {
                     //should budge through a double tap. First tap changes direction
                     if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
-                        if (grounded)
+                        if (grounded && !kicking && !drop)
                         {
-                            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                            Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                            Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                            transform.position = new Vector2(transform.position.x + 4, transform.position.y);
+                            StartCoroutine("MoveForABit");
+                            Rigidbody.constraints = originalConstraints;   
                         }
-                        //StartCoroutine("MoveForABit");
                     }
                 }
                 else if (!facingRight)
                 {
                     if (Input.GetKeyDown(KeyCode.LeftArrow))
                     {
-                        if (grounded)
+                        if (grounded && !kicking && !drop)
                         {
-                            Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
+                            Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                            Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                            transform.position = new Vector2(transform.position.x - 4, transform.position.y);
+                            StartCoroutine("MoveForABit");
+                            Rigidbody.constraints = originalConstraints;
                         }
-                        //StartCoroutine("MoveForABit");
                     }
                 }
             }
+
+
+
+
+
         }
         ///////////////////////
         ///
@@ -234,27 +256,12 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator MoveForABit ()
     {
-        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation; //unfreeze x movement
-        Rigidbody.velocity = new Vector2((move * maxSpeed), Rigidbody.velocity.y);
-        stopMoving = true; //don't move anymore after that
-        yield return new WaitForSeconds(.2f); //last for this many seconds
-        Rigidbody.velocity = new Vector2(-1 * (move * maxSpeed), Rigidbody.velocity.y); //after seconds are up, move back
-        if (facingRight)
-        {
-           if (transform.position.x >= startPosition.x)
-            {
-                stopMoving = false; //give back control to player
-                Rigidbody.constraints = originalConstraints; //freeze x again
-            }
-        }
-        else if (!facingRight)
-        {
-            if (transform.position.x <= startPosition.x)
-            {
-                stopMoving = false;
-                Rigidbody.constraints = originalConstraints;
-            }
-        }
+        kicking = true;
+        yield return new WaitForSeconds(.22f); //wait for .2 secs
+        transform.position = startPosition;
+        kicking = false;
+        leftDown = false;
+        rightDown = false;
     }
 
 
@@ -346,7 +353,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (!bombNotDown && !bombDown)
+                if (!bombNotDown && !bombDown && !kicking)
                 {
                     if (anim.GetBool("Ready") == false)
                     {
@@ -462,6 +469,18 @@ public class PlayerController : MonoBehaviour
     {
         leftDown = true;
         rightDown = false;
+
+        if (!facingRight)
+        {
+            if (grounded && !kicking && !drop)
+            {
+                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                transform.position = new Vector2(transform.position.x - 4, transform.position.y);
+                StartCoroutine("MoveForABit");
+                Rigidbody.constraints = originalConstraints;
+            }
+        }
     }
 
     public void LeftUp()
@@ -473,6 +492,18 @@ public class PlayerController : MonoBehaviour
     {
         rightDown = true;
         leftDown = false;
+
+        if (facingRight)
+        {
+            if (grounded && !kicking && !drop)
+            {
+                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                transform.position = new Vector2(transform.position.x + 4, transform.position.y);
+                StartCoroutine("MoveForABit");
+                Rigidbody.constraints = originalConstraints;
+            }
+        }
     }
 
     public void RightUp()
@@ -519,7 +550,7 @@ public class PlayerController : MonoBehaviour
     {
         if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging) //only do this if not hanging and bomb limit not reached
         {
-            if (anim.GetBool("Ready") == false)
+            if (anim.GetBool("Ready") == false && !kicking)
             { 
                 //a bomb drop is instant, but you can't drop a bomb if you're preparing to throw one
                 anim.SetBool("Fire", true); //begins the fire animation, which then leads to the FireDone()

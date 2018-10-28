@@ -1,0 +1,7 @@
+Today's goal (10.28.2018):
+If facing right and right is pressed:
+- Remove x lock constraint
+- Increase velocity for a bit
+- Then, while velocity is greater than start position, move  player back
+to start
+
