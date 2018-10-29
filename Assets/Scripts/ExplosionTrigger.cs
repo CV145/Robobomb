@@ -14,10 +14,13 @@ public class ExplosionTrigger : MonoBehaviour {
     public bool spawnBombup;
     public bool spawnHeart;
     bool hit;
+    public bool hasAnim;
+    public Animator anim;
+    Rigidbody2D rigidbody;
 
 	// Use this for initialization
 	void Start () {
-
+        rigidbody = GetComponent<Rigidbody2D>();
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +30,16 @@ public class ExplosionTrigger : MonoBehaviour {
             Debug.Log("collision works");
             if (isDestructible)
             { 
+                if (hasAnim)
+                {
+                    
+                    anim.SetBool("isHit", true);
+                }
+
+                rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
                 Object.Destroy(gameObject, destroyTime);
+
+
                 if (!instantiated)
                 {
                     if (spawnFireup)

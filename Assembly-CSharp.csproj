@@ -61,10 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CellScript.cs" />
-    <Compile Include="Assets\ExplosionTrigger.cs" />
-    <Compile Include="Assets\GuardbotScript.cs" />
-    <Compile Include="Assets\Jump.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\BeatReactor.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DirectEmotionExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DiscreteEmotionExample.cs" />
@@ -82,15 +78,19 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CamShakeSimple.cs" />
+    <Compile Include="Assets\Scripts\CellScript.cs" />
     <Compile Include="Assets\Scripts\ExplosionFade.cs" />
+    <Compile Include="Assets\Scripts\ExplosionTrigger.cs" />
     <Compile Include="Assets\Scripts\FireupScript.cs" />
+    <Compile Include="Assets\Scripts\GuardbotScript.cs" />
+    <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\LeftMoveButtonClick.cs" />
     <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\PickupsAndStats.cs" />
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\SwitchTrigger.cs" />
-    <Compile Include="Assets\TrampolineScript.cs" />
+    <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
+    <Compile Include="Assets\Scripts\TrampolineScript.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Oct 20 2018.txt" />
     <None Include="Assets\Notes\Oct 16 2018.txt" />

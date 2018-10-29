@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114821713884253626}
   - component: {fileID: 50794286515949796}
   - component: {fileID: 61409814861305650}
+  - component: {fileID: 95648046163761448}
+  - component: {fileID: 114359705372603220}
   m_Layer: 13
   m_Name: Guardbot
   m_TagString: Untagged
@@ -36,8 +38,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760253203841200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 465.5, y: 113.5, z: -0.8958333}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -114.628296, y: -123.164, z: 91.354164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &61409814861305650
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -79,7 +81,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
+    oldSize: {x: 32, y: 32}
     newSize: {x: 16, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -88,6 +90,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!95 &95648046163761448
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760253203841200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85768db87d02632449a0c30af796de6f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114359705372603220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760253203841200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470c060900bbe1049b05f7428cf43225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosions:
+    serializedVersion: 2
+    m_Bits: 32768
+  Fireup: {fileID: 0}
+  Bombup: {fileID: 0}
+  isDestructible: 1
+  destroyTime: 1
+  spawnFireup: 0
+  spawnBombup: 0
+  spawnHeart: 0
+  hasAnim: 1
+  anim: {fileID: 95648046163761448}
 --- !u!114 &114821713884253626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e3784548f1e757e4e8a3166c8d54053a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56923825358599e40b2ffe3b062602a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
