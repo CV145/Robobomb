@@ -42,6 +42,23 @@ public class PickupsAndStats : MonoBehaviour {
         return bombsOnScreen;
     }
 
+    ///RETURN STRINGS FOR HUD ///
+    ///
+
+        public string GetFireText()
+    {
+        return fireLV.ToString();
+    }
+
+    public string GetBombText()
+    {
+        return bombLV.ToString();
+    }
+
+
+    /// ////////////
+    /// 
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 15 || collision.gameObject.layer == 13)

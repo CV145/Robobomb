@@ -771,7 +771,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4245634392109022, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
@@ -1517,6 +1517,11 @@ Prefab:
       propertyPath: m_Name
       value: BombText
       objectReference: {fileID: 0}
+    - target: {fileID: 114150535530414020, guid: 32df8dfe4c5030f43bdddb66b106f852,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32df8dfe4c5030f43bdddb66b106f852, type: 2}
   m_IsPrefabAsset: 0
@@ -1617,6 +1622,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1bc93c49e5303a41ba060560320c311, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &986309703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1042331329820096, guid: 32df8dfe4c5030f43bdddb66b106f852,
+    type: 2}
+  m_PrefabInternal: {fileID: 819344403}
+--- !u!114 &986309707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986309703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adb9e6fdc7627844ac5e38104d9bbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisText: 1
 --- !u!114 &986869140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114105397378852324, guid: eee7b485339f63344814076dce4c8f0b,
@@ -1906,7 +1928,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4245634392109022, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1380265172385450, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
       propertyPath: m_Name
@@ -1944,7 +1966,7 @@ Transform:
   m_Children:
   - {fileID: 372069535}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1215092687
 Prefab:
@@ -2013,6 +2035,7 @@ GameObject:
   - component: {fileID: 1361946656}
   - component: {fileID: 1361946658}
   - component: {fileID: 1361946657}
+  - component: {fileID: 1361946659}
   m_Layer: 5
   m_Name: Fire Text
   m_TagString: Untagged
@@ -2081,6 +2104,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1361946655}
   m_CullTransparentMesh: 0
+--- !u!114 &1361946659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1361946655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adb9e6fdc7627844ac5e38104d9bbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisText: 0
 --- !u!1001 &1411425427
 Prefab:
   m_ObjectHideFlags: 0
@@ -2479,7 +2514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4299278484478278, guid: 5c24326748fdc994aa3749ef117394b5, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1330030210885556, guid: 5c24326748fdc994aa3749ef117394b5, type: 2}
       propertyPath: m_Name
