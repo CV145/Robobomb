@@ -70,6 +70,7 @@
     <Compile Include="Assets\Melodrive\Examples\Scripts\ProjectExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\SeedChangeExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\StyleChangeExample.cs" />
+    <Compile Include="Assets\Patrol.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />
     <Compile Include="Assets\Scripts\BombDropExplosion.cs" />
