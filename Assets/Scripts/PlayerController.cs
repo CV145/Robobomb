@@ -378,14 +378,14 @@ public class PlayerController : MonoBehaviour
         }
 
         //Pressing up
-        if (grounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+        if (grounded == true && !kicking && Input.GetKeyDown(KeyCode.UpArrow))
         {
             jumpSource.Play();
             isJumping = true;
             jumpTimeCounter = jumpTime; //reset to initial jump time value
             Rigidbody.velocity = Vector2.up * jumpForce;
         }
-        if (Input.GetKey(KeyCode.UpArrow) && isJumping == true)
+        if (Input.GetKey(KeyCode.UpArrow) && isJumping == true &&!kicking)
         {
             if (jumpTimeCounter > 0)
             {
@@ -406,7 +406,7 @@ public class PlayerController : MonoBehaviour
         ///MOBILE JUMPING UPDATE////
         ///
 
-        if (jumpDown == true && isJumping == true)
+        if (jumpDown == true && isJumping == true && !kicking)
         {
             if (jumpTimeCounter > 0)
             {
@@ -513,14 +513,17 @@ public class PlayerController : MonoBehaviour
 
     public void JumpClick()
     {
-        jumpDown = true;
-
-        if (grounded)
+        if (!kicking)
         {
-            jumpSource.Play();
-            isJumping = true;
-            jumpTimeCounter = jumpTime; //reset to initial jump time value
-            Rigidbody.velocity = Vector2.up * jumpForce;
+            jumpDown = true;
+
+            if (grounded)
+            {
+                jumpSource.Play();
+                isJumping = true;
+                jumpTimeCounter = jumpTime; //reset to initial jump time value
+                Rigidbody.velocity = Vector2.up * jumpForce;
+            }
         }
     }
 

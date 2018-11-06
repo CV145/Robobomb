@@ -10,6 +10,7 @@ public class Patrol : MonoBehaviour
     public Transform collisionDetection;
     public LayerMask walls;
     bool isAlive = true;
+    Vector2 direction;
     //the transform of the game object checking for collisions
 
         public bool IsAlive
@@ -28,22 +29,40 @@ public class Patrol : MonoBehaviour
 
     void Update()
     {
+        ///CHECK DIRECTION///
+        ///
+        if (movingRight)
+        {
+            direction.x = 1;
+            direction.y = 0;
+        }
+        else if (!movingRight)
+        {
+            direction.x = -1;
+            direction.y = 0;
+        }
+
+
         if (isAlive)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             //move to the right by your speed each delta time second?
         }
-        RaycastHit2D checker = Physics2D.Raycast(collisionDetection.position, Vector2.right, 2f, walls);
+        RaycastHit2D checker = Physics2D.Raycast(collisionDetection.position, direction, 2f, walls);
 
         if (checker.collider)
         {
-                movingRight = !movingRight;
-                Vector3 theScale = transform.localScale;
-                theScale.x *= -1; //go from 1 to -1 to 1 again
-                transform.localScale = theScale;
-            speed *= -1;
+            Flip();
         }
     }
 
-    
+    void Flip()
+    {
+        movingRight = !movingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1; //go from 1 to -1 to 1 again
+        transform.localScale = theScale;
+        speed *= -1;
+    }
+
 }

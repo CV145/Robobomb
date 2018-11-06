@@ -30,24 +30,7 @@ public class Jump : MonoBehaviour
         {
             rigidbody.velocity = Vector2.up * 25;
         }
-
-
-        if (patrol.movingRight && !facingRight)
-        {
-            Flip();
-        }
-        if (!patrol.movingRight && facingRight)
-        {
-            Flip();
-        }
     }
 
 
-    void Flip()
-    {
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1; //go from 1 to -1 to 1 again
-        transform.localScale = theScale;
-        facingRight = !facingRight;
-    }
 }
