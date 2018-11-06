@@ -17,6 +17,7 @@ public class ExplosionTrigger : MonoBehaviour {
     public bool hasAnim;
     public Animator anim;
     Rigidbody2D rigidbody;
+    public Patrol patrol;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,20 @@ public class ExplosionTrigger : MonoBehaviour {
                 }
 
                 rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                patrol.IsAlive = false;
+                rigidbody.bodyType = RigidbodyType2D.Static;
+
+                foreach(BoxCollider2D c in GetComponents<BoxCollider2D>())
+                {
+                    Destroy(c);
+                }
+                foreach (CircleCollider2D c in GetComponents<CircleCollider2D>())
+                {
+                    Destroy(c);
+                }
+
+                Destroy(patrol);
+                transform.Translate(new Vector3(0, 0, 0));
                 Object.Destroy(gameObject, destroyTime);
 
 

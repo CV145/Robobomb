@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4165048030191946}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: CollisionChecker
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695608589394022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.1, y: 0.5, z: -95.617805}
+  m_LocalPosition: {x: -6.3, y: 0.5, z: -95.617805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4996611532530800}
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715963382330134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 996.9664, y: -174.03946, z: 90.63344}
+  m_LocalPosition: {x: -155.29938, y: -129.22733, z: 182.88344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4165048030191946}
@@ -151,6 +151,7 @@ MonoBehaviour:
   spawnHeart: 0
   hasAnim: 1
   anim: {fileID: 95527825346194272}
+  patrol: {fileID: 114150854906675062}
 --- !u!114 &114150854906675062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 30
   movingRight: 1
   collisionDetection: {fileID: 4165048030191946}
   walls:
@@ -182,6 +183,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 19456
+  patrol: {fileID: 114150854906675062}
 --- !u!212 &212241579004700794
 SpriteRenderer:
   m_ObjectHideFlags: 1

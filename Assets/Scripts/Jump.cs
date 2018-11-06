@@ -9,6 +9,7 @@ public class Jump : MonoBehaviour
     Rigidbody2D rigidbody;
     Transform player;
     bool facingRight;
+    public Patrol patrol;
 
     // Use this for initialization
     void Start()
@@ -31,15 +32,13 @@ public class Jump : MonoBehaviour
         }
 
 
-        if (player.position.x > transform.position.x && !facingRight)
+        if (patrol.movingRight && !facingRight)
         {
             Flip();
-            facingRight = true;
         }
-        if (player.position.x < transform.position.x && facingRight)
+        if (!patrol.movingRight && facingRight)
         {
             Flip();
-            facingRight = false;
         }
     }
 
@@ -49,5 +48,6 @@ public class Jump : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1; //go from 1 to -1 to 1 again
         transform.localScale = theScale;
+        facingRight = !facingRight;
     }
 }

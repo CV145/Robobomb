@@ -1,0 +1,3 @@
+Issues:
+- Bun-Os aren't colliding properly and don't flip well
+- Robo shouldn't be able to jump when lunging
