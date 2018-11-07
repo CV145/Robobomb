@@ -1,0 +1,8 @@
+Enemy Types:
+- Mini-Guardbot (small size robot that can be hit more easily with a
+kicked bomb)
+
+- Bird/bat enemy (flying enemy that can be hit with a jump and bomb 
+throw)
+
+- 

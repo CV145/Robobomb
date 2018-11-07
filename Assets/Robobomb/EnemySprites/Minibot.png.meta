@@ -100,6 +100,26 @@ TextureImporter:
       name: Minibot_0
       rect:
         serializedVersion: 2
+        x: 9
+        y: 0
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb53d749f38b2b940bc1bba2eafa0286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minibot_1
+      rect:
+        serializedVersion: 2
         x: 2
         y: 0
         width: 6
@@ -111,27 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc2276e3eefb5c046a5d9f0b0a50604a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minibot_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99acb1ee180511b40862adafef0bbd0d
+      spriteID: 2a673fe0e17deda4cba754a5d1df79c3
       vertices: []
       indices: 
       edges: []
