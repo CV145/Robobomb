@@ -562,6 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 60
+  facingRight: 1
   jumpForce: 75
   groundCheck: {fileID: 4032269531167226}
   whatIsGround:
@@ -606,6 +607,7 @@ MonoBehaviour:
   currentHealth: 4
   maxHealth: 4
   player: {fileID: 114105397378852324}
+  myCG: {fileID: 0}
 --- !u!212 &212186207990143002
 SpriteRenderer:
   m_ObjectHideFlags: 1

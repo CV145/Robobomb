@@ -5,4 +5,3 @@ kicked bomb)
 - Bird/bat enemy (flying enemy that can be hit with a jump and bomb 
 throw)
 
-- 

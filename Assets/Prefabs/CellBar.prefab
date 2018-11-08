@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50407914648778952}
   - component: {fileID: 61868465661761436}
   - component: {fileID: 114038343921933122}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CellBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384043177749362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187.5, y: 21.1, z: -0.20915647}
+  m_LocalPosition: {x: 793, y: -170.37762, z: -0.20915647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

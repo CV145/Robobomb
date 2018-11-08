@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PickupsAndStats : MonoBehaviour {
@@ -17,6 +19,9 @@ public class PickupsAndStats : MonoBehaviour {
     public PlayerController player; //setup in inspector
     GameObject BeginPosition;
 
+    public CanvasGroup myCG;
+    private bool flash = false;
+
     // Use this for initialization
     void Start () {
         BeginPosition = GameObject.Find("Start");
@@ -24,8 +29,29 @@ public class PickupsAndStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (flash)
+        {
+            myCG.alpha = myCG.alpha - Time.deltaTime;
+            if (myCG.alpha <= 0)
+            {
+                myCG.alpha = 0;
+                flash = false;
+            }
+        }
+    }
+    
+
+    public void MineHit()
+    {
+        flash = true;
+        myCG.alpha = 1;
+        GetComponent<Rigidbody2D>().transform.rotation = Quaternion.Euler(0, 0, -10);
+        GetComponent<Rigidbody2D>().velocity = Vector2.up * 5 ;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+    }
+
+
 
     public int GetBombLV()
     {
@@ -63,8 +89,29 @@ public class PickupsAndStats : MonoBehaviour {
     {
         if (collision.gameObject.layer == 15 || collision.gameObject.layer == 13)
         {
-            transform.position = BeginPosition.transform.position;
+            MineHit();
+            StartCoroutine(LoadYourAsyncScene());
+            //Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        yield return new WaitForSeconds(0.5f); //WaitForSeconds seems to be a class type
+
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        //// Wait until the asynchronous scene fully loads
+        //while (!asyncLoad.isDone)
+        //{
+        //    yield return null;
+        //}
     }
 
     public void AnotherBombOnScreen()

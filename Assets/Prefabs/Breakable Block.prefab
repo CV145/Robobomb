@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1088002075691360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 368.40375, y: 25.507044, z: 1.383679}
+  m_LocalPosition: {x: 729.11487, y: -156.4599, z: 1.383679}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 75
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 30
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!61 &61656751801674914
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -109,6 +109,9 @@ MonoBehaviour:
   spawnFireup: 0
   spawnBombup: 0
   spawnHeart: 0
+  hasAnim: 0
+  anim: {fileID: 0}
+  patrol: {fileID: 0}
 --- !u!212 &212089988386618268
 SpriteRenderer:
   m_ObjectHideFlags: 1

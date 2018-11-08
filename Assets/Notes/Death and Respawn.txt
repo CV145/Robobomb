@@ -1,0 +1,33 @@
+- When player touches an enemy have screen flash white
+- Show results menu, share button to share score, rankings, etc...
+- Return to the main menu or start over
+
+
+---
+
+using UnityEngine.UI;
+
+
+public CanvasGroup myCG;
+private bool flash = false;
+
+void Update()
+{
+if (flash)
+{
+ myCG.alpha = CG.alpha - Time.deltaTime;
+ if (myCG.alpha <= 0)
+  {
+   myCG.alpha = 0;
+   flash = false;
+  }
+}
+
+}
+
+public void MineHit()
+{
+flash = true;
+myCG.alpha = 1;
+}
+ 

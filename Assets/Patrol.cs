@@ -11,6 +11,8 @@ public class Patrol : MonoBehaviour
     public LayerMask walls;
     bool isAlive = true;
     Vector2 direction;
+    GameObject player;
+    PickupsAndStats stats;
     //the transform of the game object checking for collisions
 
         public bool IsAlive
@@ -25,6 +27,13 @@ public class Patrol : MonoBehaviour
         }
     }
 
+
+    private void Start()
+    {
+        player = GameObject.Find("RoboPlayer");
+        stats = player.GetComponent<PickupsAndStats>();
+        speed = speed + (3 * stats.GetFireLV()) + (3 * stats.GetBombLV());
+    }
 
 
     void Update()

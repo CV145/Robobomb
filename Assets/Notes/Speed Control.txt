@@ -1,0 +1,10 @@
+Increase enemy speed by 3 or 5 whenever getting a powerup
+
+Increasing the difficulty through powerups increases the chances of
+getting more points by defeating multiple enemies at the same time
+(multiplier)
+
+This is only applied at the start of a level/game. There's a check that
+looks at Robo's powerups and adjusts speed accordingly
+
+speed = speed + (3 * fireLV) + (3 * bombLV);

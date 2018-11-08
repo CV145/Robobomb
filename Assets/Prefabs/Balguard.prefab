@@ -214,12 +214,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 15
   movingRight: 1
   collisionDetection: {fileID: 4392325284562926}
   walls:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 19456
 --- !u!212 &212879622903441084
 SpriteRenderer:
   m_ObjectHideFlags: 1

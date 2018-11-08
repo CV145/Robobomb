@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
     <Compile Include="Assets\Text.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
+    <None Include="Assets\Notes\Death and Respawn.txt" />
     <None Include="Assets\Notes\Oct 20 2018.txt" />
     <None Include="Assets\Notes\Oct 16 2018.txt" />
     <None Include="Assets\Notes\Notes100118.txt" />
@@ -105,6 +106,7 @@
     <None Include="Assets\Notes\Pixel Analysis.txt" />
     <None Include="Assets\Notes\Oct 10 2018.txt" />
     <None Include="Assets\Notes\MovementNotes93018.txt" />
+    <None Include="Assets\Notes\Speed Control.txt" />
     <None Include="Assets\Notes\Oct 17 2018.txt" />
     <None Include="Assets\Notes\10 19 2018.txt" />
     <None Include="Assets\Notes\Oct 28 2018.txt" />

@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1695608589394022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -1.8, z: -4.984375}
+  m_LocalPosition: {x: -0.36, y: -0.23, z: -4.984375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4996611532530800}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715963382330134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 740.63226, y: -168.91711, z: 92.25}
+  m_LocalPosition: {x: 690.9326, y: -168.91711, z: 92.25}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4165048030191946}
@@ -158,7 +158,7 @@ MonoBehaviour:
   spawnFireup: 0
   spawnBombup: 0
   spawnHeart: 0
-  hasAnim: 0
+  hasAnim: 1
   anim: {fileID: 95169243319670524}
   patrol: {fileID: 114150854906675062}
 --- !u!114 &114150854906675062
@@ -172,12 +172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   movingRight: 1
   collisionDetection: {fileID: 4165048030191946}
   walls:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 19456
 --- !u!212 &212241579004700794
 SpriteRenderer:
   m_ObjectHideFlags: 1
