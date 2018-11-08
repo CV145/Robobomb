@@ -14,7 +14,7 @@ public class PickupsAndStats : MonoBehaviour {
     public int bombLV = 1;
     public int currentHealth = 4;
     public int maxHealth = 4;
-
+   
     int bombsOnScreen = 0;
     public PlayerController player; //setup in inspector
     GameObject BeginPosition;

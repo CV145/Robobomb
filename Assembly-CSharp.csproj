@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
+    <Compile Include="Assets\Spawner.cs" />
     <Compile Include="Assets\Text.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Death and Respawn.txt" />
@@ -108,6 +109,7 @@
     <None Include="Assets\Notes\MovementNotes93018.txt" />
     <None Include="Assets\Notes\Speed Control.txt" />
     <None Include="Assets\Notes\Oct 17 2018.txt" />
+    <None Include="Assets\Notes\Spawner.txt" />
     <None Include="Assets\Notes\10 19 2018.txt" />
     <None Include="Assets\Notes\Oct 28 2018.txt" />
     <None Include="Assets\Notes\Oct 15 2018.txt" />

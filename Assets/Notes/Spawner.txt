@@ -1,0 +1,37 @@
+Update()
+
+- wait until time = time + periodBetweenSpawn;
+
+if (time = time + periodBetweenSpawn)
+{
+ switch (SpawnThis)
+{
+ case BunO:
+ public GameObject Bun-O;
+ Instantiate... Bun-O;
+ break;
+
+ ...
+
+}
+
+}
+
+
+
+////
+
+
+periodBetweenSpawn -= Time.deltaTime;
+if (periodBetweenSpawn <= 0f)
+{
+ Instantiate()
+ }
+
+
+///
+
+Have periodBetweenSpawn be a random number between startTime and 
+endTime float values
+
+Random.Range(startTime, endTime);

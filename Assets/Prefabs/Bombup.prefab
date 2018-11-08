@@ -22,10 +22,26 @@ GameObject:
   - component: {fileID: 212095786338168712}
   - component: {fileID: 114597947097083520}
   - component: {fileID: 61875891937129726}
+  - component: {fileID: 114815035392751212}
   m_Layer: 18
   m_Name: Bombup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1363262946024868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4662718672157060}
+  m_Layer: 0
+  m_Name: CollisionChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36,10 +52,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1330030210885556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323.4, y: 28.62819, z: 110.73582}
+  m_LocalPosition: {x: 892.2996, y: -146.21123, z: 110.73582}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4662718672157060}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4662718672157060
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363262946024868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0.21, z: -23.470184}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4299278484478278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61875891937129726
@@ -81,6 +111,23 @@ MonoBehaviour:
   Player:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114815035392751212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330030210885556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  movingRight: 1
+  collisionDetection: {fileID: 4662718672157060}
+  walls:
+    serializedVersion: 2
+    m_Bits: 3072
 --- !u!212 &212095786338168712
 SpriteRenderer:
   m_ObjectHideFlags: 1

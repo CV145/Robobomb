@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1380265172385450}
   m_IsPrefabAsset: 1
+--- !u!1 &1321301578520560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4641830402714280}
+  m_Layer: 0
+  m_Name: CollisionChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1380265172385450
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,6 +37,7 @@ GameObject:
   - component: {fileID: 212815564682334542}
   - component: {fileID: 61962273235382926}
   - component: {fileID: 114326181398915916}
+  - component: {fileID: 114655617750333318}
   m_Layer: 19
   m_Name: Fireup
   m_TagString: Untagged
@@ -36,10 +52,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1380265172385450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 359.6631, y: 20.922932, z: 115.05208}
+  m_LocalPosition: {x: 942.8691, y: -172.5495, z: 115.05208}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4641830402714280}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4641830402714280
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1321301578520560}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07, y: 0.05, z: -27.786446}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4245634392109022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61962273235382926
@@ -81,6 +111,23 @@ MonoBehaviour:
   Player:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114655617750333318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380265172385450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  movingRight: 1
+  collisionDetection: {fileID: 4641830402714280}
+  walls:
+    serializedVersion: 2
+    m_Bits: 3072
 --- !u!212 &212815564682334542
 SpriteRenderer:
   m_ObjectHideFlags: 1

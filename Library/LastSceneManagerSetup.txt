@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Box.unity
+- path: Assets/Scenes/Spawner.unity
   isLoaded: 1
   isActive: 1

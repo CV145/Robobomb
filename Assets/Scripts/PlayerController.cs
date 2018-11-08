@@ -470,17 +470,17 @@ public class PlayerController : MonoBehaviour
         leftDown = true;
         rightDown = false;
 
-        if (!facingRight)
-        {
-            if (grounded && !kicking && !drop)
-            {
-                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-                transform.position = new Vector2(transform.position.x - 4, transform.position.y);
-                StartCoroutine("MoveForABit");
-                Rigidbody.constraints = originalConstraints;
-            }
-        }
+        //if (!facingRight)
+        //{
+        //    if (grounded && !kicking && !drop)
+        //    {
+        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //        transform.position = new Vector2(transform.position.x - 4, transform.position.y);
+        //        StartCoroutine("MoveForABit");
+        //        Rigidbody.constraints = originalConstraints;
+        //    }
+        //}
     }
 
     public void LeftUp()
@@ -493,17 +493,17 @@ public class PlayerController : MonoBehaviour
         rightDown = true;
         leftDown = false;
 
-        if (facingRight)
-        {
-            if (grounded && !kicking && !drop)
-            {
-                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-                transform.position = new Vector2(transform.position.x + 4, transform.position.y);
-                StartCoroutine("MoveForABit");
-                Rigidbody.constraints = originalConstraints;
-            }
-        }
+        //if (facingRight)
+        //{
+        //    if (grounded && !kicking && !drop)
+        //    {
+        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //        transform.position = new Vector2(transform.position.x + 4, transform.position.y);
+        //        StartCoroutine("MoveForABit");
+        //        Rigidbody.constraints = originalConstraints;
+        //    }
+        //}
     }
 
     public void RightUp()
