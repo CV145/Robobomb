@@ -1,0 +1,21 @@
+- Make a new scene called Level Select
+- Add this scene to BuildSettings (3)
+- When clicking on PLAY in the menu, go to this scene
+- This scene has a canvas called Planets
+- This canvas has 5 large buttons that will be considered planets
+
+(A canvas is a HUD. The rectangle is a simulation of how it would
+look with a camera. The camera is separate from the canvas however. It
+cannot be moved and looks like it's locked into place)
+
+Original: 208 x 104
+Upscaled: 416 x 208
+
+
+----------
+
+- If the screen is swiped down, move the canvas down to show the planets
+above. If the screen is swiped up, move the canvas up
+
+Have one big Planet Container game object that holds the different 
+planets
