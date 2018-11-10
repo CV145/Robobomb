@@ -1,0 +1,9 @@
+Trigger List Enum:
+- Enter a region
+- Defeat a specific enemy
+- Defeat a certain number of enemies
+- No trigger
+
+
+
+

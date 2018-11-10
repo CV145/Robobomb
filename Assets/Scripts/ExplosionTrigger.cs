@@ -30,7 +30,6 @@ public class ExplosionTrigger : MonoBehaviour {
         { 
         if (collision.gameObject.layer == 15)
         {
-            Debug.Log("collision works");
                 if (isDestructible)
                 {
                     if (hasAnim)

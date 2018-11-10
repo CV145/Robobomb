@@ -6,7 +6,7 @@ public class Patrol : MonoBehaviour
 {
 
     public float speed;
-    public bool movingRight = true;
+    public bool movingRight;
     public Transform collisionDetection;
     public LayerMask walls;
     bool isAlive = true;
@@ -68,19 +68,11 @@ public class Patrol : MonoBehaviour
 
         if (isAlive)
         {
-            if (!grounded)
-            {
-                //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            }
-            else
-            {
                 if (!isItem)
                 {
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 }
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            //move to the right by your speed each delta time second?
         }
         RaycastHit2D checker = Physics2D.Raycast(collisionDetection.position, direction, 2f, walls);
 

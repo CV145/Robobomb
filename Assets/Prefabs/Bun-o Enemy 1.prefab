@@ -48,6 +48,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1935021197066398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4370249690507420}
+  m_Layer: 9
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: 737772323e1a2e44188801b4615c7a53, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4165048030191946
 Transform:
   m_ObjectHideFlags: 1
@@ -61,6 +76,19 @@ Transform:
   m_Father: {fileID: 4996611532530800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4370249690507420
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935021197066398}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16, y: -4.14, z: -182.88344}
+  m_LocalScale: {x: -1000, y: 1000, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4996611532530800}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4996611532530800
 Transform:
   m_ObjectHideFlags: 1
@@ -68,10 +96,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715963382330134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 180.0321, y: -129.22733, z: 182.88344}
+  m_LocalPosition: {x: 1029.5793, y: -174.0874, z: 182.88344}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4165048030191946}
+  - {fileID: 4370249690507420}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,6 +196,12 @@ MonoBehaviour:
   movingRight: 1
   collisionDetection: {fileID: 4165048030191946}
   walls:
+    serializedVersion: 2
+    m_Bits: 19456
+  isItem: 1
+  groundCheck: {fileID: 4370249690507420}
+  grounded: 0
+  whatIsGround:
     serializedVersion: 2
     m_Bits: 19456
 --- !u!114 &114736749153570262
