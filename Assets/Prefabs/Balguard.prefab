@@ -229,6 +229,7 @@ MonoBehaviour:
   spawnFireup: 0
   spawnBombup: 0
   spawnHeart: 0
+  isEnemy: 1
   hasAnim: 1
   anim: {fileID: 95648046163761448}
   patrol: {fileID: 114628593738430350}

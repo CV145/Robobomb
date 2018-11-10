@@ -13,23 +13,27 @@ public class ExplosionTrigger : MonoBehaviour {
     public bool spawnFireup;
     public bool spawnBombup;
     public bool spawnHeart;
+    public bool isEnemy;
+    PickupsAndStats stats;
     bool hit;
     public bool hasAnim;
     public Animator anim;
     Rigidbody2D rigidbody;
     public Patrol patrol;
+    bool killed = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         rigidbody = GetComponent<Rigidbody2D>();
-	}
+        stats = GameObject.Find("RoboPlayer").GetComponent<PickupsAndStats>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {      
+    {
         if (hasAnim)
-        { 
-        if (collision.gameObject.layer == 15)
         {
+            if (collision.gameObject.layer == 15)
+            {
                 if (isDestructible)
                 {
                     if (hasAnim)
@@ -50,9 +54,17 @@ public class ExplosionTrigger : MonoBehaviour {
                     {
                         Destroy(c);
                     }
-
                     Destroy(patrol);
                     transform.Translate(new Vector3(0, 0, 0));
+                    if (isEnemy)
+                    {
+                        if (!killed)
+                        {
+                            increaseKill();
+                            killed = true;
+                            Debug.Log(killed);
+                        }
+                    }
                     Object.Destroy(gameObject, destroyTime);
                 }
 
@@ -71,15 +83,22 @@ public class ExplosionTrigger : MonoBehaviour {
                             Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
                             instantiated = true;
                         }
-                        if (spawnHeart)
-                        {
-
-                        }
                     }
                 }
             }
         }
-        
+
+    }
+
+    IEnumerator deathPause()
+        {
+        yield return new WaitForSeconds(destroyTime);
+    }
+
+    void increaseKill()
+    {
+            stats.Kills++;
+            return;
     }
 
     // Update is called once per frame

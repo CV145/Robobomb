@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MENUS/Level Select.unity
     guid: da4da2fd73bc7e14bb100c565c2cd2ba
+  - enabled: 1
+    path: Assets/Scenes/PLANET1/Hanging Cage.unity
+    guid: c302ee7b5ceab9c4db71845787bf14fc
   m_configObjects: {}

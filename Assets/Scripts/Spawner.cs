@@ -23,6 +23,9 @@ public class Spawner : MonoBehaviour {
     public GameObject Balguard;
 
     int spawnedCount = 0;
+    ///
+    int killCount; //keep track of enemies killed
+    public int triggerGoal;//the # of enemies required to kill to activate spawns
 
     // Use this for initialization
     void Start () {

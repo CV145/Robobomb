@@ -52,7 +52,6 @@ public class BombDropExplosion : MonoBehaviour {
         if (Physics2D.OverlapCircle(gameObject.transform.position, 2f, Player))
         {
             kicked = true;
-            Debug.Log("true");
             if (playerScript.FacingRightGetter())
             {
                 Rigidbody.velocity = new Vector2(100, Rigidbody.velocity.y); 

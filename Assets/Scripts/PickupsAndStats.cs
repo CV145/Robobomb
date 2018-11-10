@@ -8,12 +8,10 @@ public class PickupsAndStats : MonoBehaviour {
 
     public LayerMask Bombups;
     public LayerMask Fireups;
-    public LayerMask Health;
 
     public int fireLV = 1;
     public int bombLV = 1;
-    public int currentHealth = 4;
-    public int maxHealth = 4;
+    public int killCount;
    
     int bombsOnScreen = 0;
     public PlayerController player; //setup in inspector
@@ -51,7 +49,17 @@ public class PickupsAndStats : MonoBehaviour {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 
-
+    public int Kills
+    {
+        get
+        {
+            return killCount;
+        }
+        set
+        {
+            killCount = value;
+        }
+    }
 
     public int GetBombLV()
     {
@@ -91,7 +99,6 @@ public class PickupsAndStats : MonoBehaviour {
         {
             MineHit();
             StartCoroutine(LoadYourAsyncScene());
-            //Destroy(this.gameObject);
         }
     }
 
@@ -103,15 +110,7 @@ public class PickupsAndStats : MonoBehaviour {
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
         yield return new WaitForSeconds(0.5f); //WaitForSeconds seems to be a class type
-
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        //// Wait until the asynchronous scene fully loads
-        //while (!asyncLoad.isDone)
-        //{
-        //    yield return null;
-        //}
     }
 
     public void AnotherBombOnScreen()
