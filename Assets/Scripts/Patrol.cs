@@ -10,10 +10,14 @@ public class Patrol : MonoBehaviour
     public Transform collisionDetection;
     public LayerMask walls;
     bool isAlive = true;
+    public bool isItem;
     Vector2 direction;
     GameObject player;
     PickupsAndStats stats;
-    //the transform of the game object checking for collisions
+    public Transform groundCheck;
+    Vector2 groundBoxSize;
+    public bool grounded = false;
+    public LayerMask whatIsGround;
 
         public bool IsAlive
     {
@@ -35,6 +39,16 @@ public class Patrol : MonoBehaviour
         speed = speed + (3 * stats.GetFireLV()) + (3 * stats.GetBombLV());
     }
 
+    private void FixedUpdate()
+    {
+        if (!isItem)
+        {
+            groundBoxSize.x = 10f;
+            groundBoxSize.y = 0.3f;
+            grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
+        }
+    }
+
 
     void Update()
     {
@@ -54,7 +68,18 @@ public class Patrol : MonoBehaviour
 
         if (isAlive)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            if (!grounded)
+            {
+                //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            }
+            else
+            {
+                if (!isItem)
+                {
+                    GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
             //move to the right by your speed each delta time second?
         }
         RaycastHit2D checker = Physics2D.Raycast(collisionDetection.position, direction, 2f, walls);

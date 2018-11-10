@@ -19,3 +19,17 @@ above. If the screen is swiped up, move the canvas up
 
 Have one big Planet Container game object that holds the different 
 planets
+
+
+-------
+
+Clicking on a selection item should quickly scroll to that item's
+corresponding page
+
+-------
+
+On clicking a planet, activate another UI that displays on top of the 
+panel and scroll snap. This UI has a semi-transparent image color that
+darkens the planet behind. With it comes an image that represents the
+current area over to the right, and buttons that represent the 
+planet's levels
