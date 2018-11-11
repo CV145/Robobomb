@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     bool hangOver;
     RigidbodyConstraints2D originalConstraints;
     public bool stopMoving = false;
-    public bool arcade = false;
+    public bool arcade;
     Vector3 startPosition;
     bool kicking;
 
@@ -109,14 +109,6 @@ public class PlayerController : MonoBehaviour
                 anim.SetFloat("Speed", Mathf.Abs(move));
                 Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
             }
-
-
-
-
-
-
-
-
             else //if arcade then slightly budge in corresponding direction
             {
                 if (facingRight)
@@ -470,17 +462,17 @@ public class PlayerController : MonoBehaviour
         leftDown = true;
         rightDown = false;
 
-        //if (!facingRight)
-        //{
-        //    if (grounded && !kicking && !drop)
-        //    {
-        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //        transform.position = new Vector2(transform.position.x - 4, transform.position.y);
-        //        StartCoroutine("MoveForABit");
-        //        Rigidbody.constraints = originalConstraints;
-        //    }
-        //}
+        if (!facingRight)
+        {
+            if (grounded && !kicking && !drop)
+            {
+                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                transform.position = new Vector2(transform.position.x - 4, transform.position.y);
+                StartCoroutine("MoveForABit");
+                Rigidbody.constraints = originalConstraints;
+            }
+        }
     }
 
     public void LeftUp()
@@ -493,17 +485,17 @@ public class PlayerController : MonoBehaviour
         rightDown = true;
         leftDown = false;
 
-        //if (facingRight)
-        //{
-        //    if (grounded && !kicking && !drop)
-        //    {
-        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //        transform.position = new Vector2(transform.position.x + 4, transform.position.y);
-        //        StartCoroutine("MoveForABit");
-        //        Rigidbody.constraints = originalConstraints;
-        //    }
-        //}
+        if (facingRight)
+        {
+            if (grounded && !kicking && !drop)
+            {
+                Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
+                Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                transform.position = new Vector2(transform.position.x + 4, transform.position.y);
+                StartCoroutine("MoveForABit");
+                Rigidbody.constraints = originalConstraints;
+            }
+        }
     }
 
     public void RightUp()
@@ -600,7 +592,6 @@ public class PlayerController : MonoBehaviour
                     Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
                 }
                 drop = false;
-               // dropDown = false;
             //Pause briefly afterwards
             StartCoroutine("BrieferPause");
 

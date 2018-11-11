@@ -8,7 +8,7 @@ public class BombDropExplosion : MonoBehaviour {
     private GameObject explosionPrefab;
 
     [SerializeField]
-    private float explosionDuration = 1f;
+    private float explosionDuration = 0.5f;
     public LayerMask ExplosionLayers;
     public LayerMask Player; //layer mask for the player
     public LayerMask DefaultExplosions; //explode when not kicked when hitting an enemy or explosion
@@ -28,6 +28,7 @@ public class BombDropExplosion : MonoBehaviour {
 
     public void Explode()
     {
+        Debug.Log("Explode");
         Robo.GetComponent<PickupsAndStats>().ABombLessOnScreen();
         GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, this.explosionDuration);
@@ -73,6 +74,7 @@ public class BombDropExplosion : MonoBehaviour {
     {
         if (Physics2D.OverlapCircle(gameObject.transform.position, 2f, DefaultExplosions))
         {
+            Debug.Log("Check");
             Explode();
         }
     }

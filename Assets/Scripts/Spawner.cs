@@ -9,11 +9,15 @@ public class Spawner : MonoBehaviour {
         //Enemies
         BunO,
         Minibot,
-        Balguard
+        Balguard,
+        //Items
+        Bombup,
+        Fireup
     }
     public ObjectsToSpawn SpawnThis;
     public float startTime;
     public float endTime;
+    public bool endless;
     public int spawnThisManyTimes;
     float periodBetweenSpawn;
     float timer;
@@ -21,21 +25,26 @@ public class Spawner : MonoBehaviour {
     public GameObject BunO;
     public GameObject Minibot;
     public GameObject Balguard;
+    public GameObject Fireup;
+    public GameObject Bombup;
+    PickupsAndStats stats;
 
     int spawnedCount = 0;
     ///
-    int killCount; //keep track of enemies killed
     public int triggerGoal;//the # of enemies required to kill to activate spawns
 
     // Use this for initialization
     void Start () {
         periodBetweenSpawn = Random.Range(startTime, endTime);
         timer = periodBetweenSpawn; //set timer to 5 for example
+        stats = GameObject.Find("RoboPlayer").GetComponent<PickupsAndStats>();
     }
 
 	// Update is called once per frame
 	void Update ()
     {
+        if (stats.Kills >= triggerGoal)
+        {
             timer -= Time.deltaTime; //
             if (timer <= Time.deltaTime - periodBetweenSpawn)
             {
@@ -50,15 +59,22 @@ public class Spawner : MonoBehaviour {
                     case ObjectsToSpawn.Balguard:
                         Instantiate(Balguard, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
                         break;
+                    case ObjectsToSpawn.Fireup:
+                        Instantiate(Fireup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                        break;
+                    case ObjectsToSpawn.Bombup:
+                        Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                        break;
                 }
-            spawnedCount++;
-            periodBetweenSpawn = Random.Range(startTime, endTime);
-            timer = periodBetweenSpawn; //then reset timer to start over again 
+                spawnedCount++;
+                periodBetweenSpawn = Random.Range(startTime, endTime);
+                timer = periodBetweenSpawn; //then reset timer to start over again 
             }
-        if (spawnedCount >= spawnThisManyTimes)
-        {
-            Debug.Log("Destoryed");
-            Destroy(gameObject);
+            if (!endless && spawnedCount >= spawnThisManyTimes)
+            {
+                Debug.Log("Destoryed");
+                Destroy(gameObject);
+            }
         }
 	}
 }

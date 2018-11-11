@@ -86,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857591374322194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 840.7, y: -167.5, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 837.8, y: -167.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032269531167226}
   - {fileID: 4920401810115502}
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &61626183048667702
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 35
-  facingRight: 0
+  facingRight: 1
   jumpForce: 75
   groundCheck: {fileID: 4032269531167226}
   whatIsGround:
@@ -580,7 +580,7 @@ MonoBehaviour:
   Bomb: {fileID: 1371412923011698, guid: 2569c765f041654458b4eec0f710be53, type: 2}
   BombDrop: {fileID: 1823749725694688, guid: 59b8cda700df70f448a2d28e11d3edcc, type: 2}
   stopMoving: 0
-  arcade: 0
+  arcade: 1
   RoboStats: {fileID: 114845553519111708}
 --- !u!114 &114845553519111708
 MonoBehaviour:
@@ -598,14 +598,10 @@ MonoBehaviour:
     m_Bits: 262144
   Fireups:
     serializedVersion: 2
-    m_Bits: 0
-  Health:
-    serializedVersion: 2
-    m_Bits: 0
-  fireLV: 3
-  bombLV: 3
-  currentHealth: 4
-  maxHealth: 4
+    m_Bits: 524288
+  fireLV: 1
+  bombLV: 1
+  killCount: 0
   player: {fileID: 114105397378852324}
   myCG: {fileID: 0}
 --- !u!212 &212186207990143002
