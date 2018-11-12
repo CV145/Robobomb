@@ -571,8 +571,6 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
             }
-           // bombDown = false;
-            //bombNotDown = false;
             //Reset to be able to begin process again and briefly pause after the throw
             throwed = false;
             StartCoroutine("BrieferPause");

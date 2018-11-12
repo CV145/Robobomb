@@ -34,7 +34,6 @@ public class BombExplosion : MonoBehaviour {
 
     private void ExplosionTriggerCheck()
     {
-        //new Vector2(BombScript.getExplosionPosition().x, BombScript.getExplosionPosition().y)
         if (Physics2D.OverlapCircle(gameObject.transform.position, 
             2f, ExplosionLayers)) //100 radius as extreme...
         {

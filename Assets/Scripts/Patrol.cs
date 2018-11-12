@@ -36,7 +36,7 @@ public class Patrol : MonoBehaviour
     {
         player = GameObject.Find("RoboPlayer");
         stats = player.GetComponent<PickupsAndStats>();
-        speed = speed + (3 * stats.GetFireLV()) + (3 * stats.GetBombLV());
+       // speed = speed + (0.5f * stats.GetFireLV()) + (0.5f * stats.GetBombLV());
     }
 
     private void FixedUpdate()

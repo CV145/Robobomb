@@ -89,16 +89,26 @@ public class PickupsAndStats : MonoBehaviour {
         return bombLV.ToString();
     }
 
+    public string GetScoreText()
+    {
+        return Kills.ToString();
+    }
+
 
     /// ////////////
     /// 
-  
+    bool isAlive = true;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 15 || collision.gameObject.layer == 13)
+        if (collision.gameObject.layer == 13)
         {
-            MineHit();
-            StartCoroutine(LoadYourAsyncScene());
+            if (isAlive)
+            {
+                MineHit();
+                isAlive = false;
+                StartCoroutine(LoadYourAsyncScene());
+            }
         }
     }
 

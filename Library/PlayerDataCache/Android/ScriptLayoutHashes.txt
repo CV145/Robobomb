@@ -7,6 +7,8 @@ Assets/Scenes/Gates.unity
 Assets/Scenes/Box.unity
 Assets/Scenes/MENUS/Level Select.unity
 Assets/Scenes/PLANET1/Hanging Cage.unity
+Assets/Scenes/Bluffs.unity
+Assets/Scenes/Factory.unity
 SceneListEnd?
 6768aa4941a4b07d3670c31bfcc7cfc3 Assembly-CSharp.dll:.GuardbotScript
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret

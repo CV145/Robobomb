@@ -14,6 +14,7 @@ public class Text : MonoBehaviour {
     {
         ThisIsFireText,
         ThisIsBombText,
+        ThisIsScoreText
     }
     public ChangingText thisText;
 
@@ -34,6 +35,11 @@ public class Text : MonoBehaviour {
         if (thisText == ChangingText.ThisIsFireText)
         {
             GetComponent<UnityEngine.UI.Text>().text = statsScript.GetFireText();
+        }
+
+        if (thisText == ChangingText.ThisIsScoreText)
+        {
+            GetComponent<UnityEngine.UI.Text>().text = statsScript.GetScoreText();
         }
 	}
 }
