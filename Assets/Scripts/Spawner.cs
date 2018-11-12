@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour {
     public GameObject Fireup;
     public GameObject Bombup;
     PickupsAndStats stats;
+    GameControl control;
 
     int spawnedCount = 0;
     ///
@@ -38,42 +39,46 @@ public class Spawner : MonoBehaviour {
         periodBetweenSpawn = Random.Range(startTime, endTime);
         timer = periodBetweenSpawn; //set timer to 5 for example
         stats = GameObject.Find("RoboPlayer").GetComponent<PickupsAndStats>();
+        control = GameObject.Find("RoboPlayer").GetComponent<GameControl>();
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-        if (stats.Kills >= triggerGoal)
+        if (control.GameStart == true)
         {
-            timer -= Time.deltaTime; //
-            if (timer <= Time.deltaTime - periodBetweenSpawn)
+            if (stats.Kills >= triggerGoal)
             {
-                switch (SpawnThis)
+                timer -= Time.deltaTime; //
+                if (timer <= Time.deltaTime - periodBetweenSpawn)
                 {
-                    case ObjectsToSpawn.BunO:
-                        Instantiate(BunO, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                        break;
-                    case ObjectsToSpawn.Minibot:
-                        Instantiate(Minibot, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                        break;
-                    case ObjectsToSpawn.Balguard:
-                        Instantiate(Balguard, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                        break;
-                    case ObjectsToSpawn.Fireup:
-                        Instantiate(Fireup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                        break;
-                    case ObjectsToSpawn.Bombup:
-                        Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                        break;
+                    switch (SpawnThis)
+                    {
+                        case ObjectsToSpawn.BunO:
+                            Instantiate(BunO, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.Minibot:
+                            Instantiate(Minibot, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.Balguard:
+                            Instantiate(Balguard, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.Fireup:
+                            Instantiate(Fireup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.Bombup:
+                            Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                    }
+                    spawnedCount++;
+                    periodBetweenSpawn = Random.Range(startTime, endTime);
+                    timer = periodBetweenSpawn; //then reset timer to start over again 
                 }
-                spawnedCount++;
-                periodBetweenSpawn = Random.Range(startTime, endTime);
-                timer = periodBetweenSpawn; //then reset timer to start over again 
-            }
-            if (!endless && spawnedCount >= spawnThisManyTimes)
-            {
-                Debug.Log("Destoryed");
-                Destroy(gameObject);
+                if (!endless && spawnedCount >= spawnThisManyTimes)
+                {
+                    Debug.Log("Destoryed");
+                    Destroy(gameObject);
+                }
             }
         }
 	}

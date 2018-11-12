@@ -1,0 +1,47 @@
+Pressing PLAY starts the game
+- Robo y constraints are removed
+- Gamecontainer UI is activated
+- Game goes from a paused state to unpaused
+- GameStart bool set to true. Spawners activate as soon as this bool
+is true.
+
+- Enemies are seen roaming around the map as a kind of preview of what 
+the player will be facing. These enemies have a "TitleScreen" component
+activated that, as long as GameStart is false, can freely patrol back 
+and forth. If GameStart is true and they're inside the bounds of the 
+camera they'll have an exclamation mark show up on top and their
+speed will increase to leave the bounds.
+If they're outside the camera bounds they destroy themselves.
+
+Robo's y constraints are removed and maybe these enemies could be on a 
+different layer that don't hurt Robo at all if they collide
+
+----
+
+Player GameControl script
+- bool gameStart = false;
+Property to get and set gameStart (Start)
+
+PLAY button
+- activate function in player that starts game
+
+Any Spawner
+- Begin spawning once gameStart = true;
+- Reference to GameControl script called Control
+
+PlayerController
+In update:
+- If gameStart = false turn on all constraints
+- If gameStart = true set original constraints
+
+----
+When button is pressed, destroy it. Then make the HUD show up
+
+in GameControl
+add reference to PLAYbutton as a game object
+when gameStart == true do PLAYbutton.SetActive (false);
+now add a reference to the HUD container
+when gameStart == true do HUD.SetActive (true);
+----
+Once Robo dies, the results screen will just refresh the screen (with
+a cool transition oc)

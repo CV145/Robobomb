@@ -1532,12 +1532,12 @@ Prefab:
     - target: {fileID: 114845553519111708, guid: eee7b485339f63344814076dce4c8f0b,
         type: 2}
       propertyPath: fireLV
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114845553519111708, guid: eee7b485339f63344814076dce4c8f0b,
         type: 2}
       propertyPath: bombLV
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4780329577998654, guid: eee7b485339f63344814076dce4c8f0b, type: 2}
       propertyPath: m_LocalScale.x
