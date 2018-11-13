@@ -24,7 +24,7 @@ public class GameControl : MonoBehaviour {
     public void Begin()
     {
         GameStart = true;
-        hud.SetActive(true);
+       hud.SetActive(true);
         playButton.SetActive(false);
     }
 

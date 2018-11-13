@@ -16,11 +16,14 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    //Sounds
     public AudioClip jumpLand;
     public AudioSource soundSource;
     public AudioClip jump;
     public AudioSource jumpSource;
-
+    public AudioClip bombThrow;
+    public AudioSource throwSource;
+    //
  
     bool lowerHit = false;
     public LayerMask grabbables;
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
+        throwSource.clip = bombThrow;
         if (!arcade)
         {
             originalConstraints = RigidbodyConstraints2D.FreezeRotation;
@@ -569,7 +573,7 @@ public class PlayerController : MonoBehaviour
         if (throwed) //do this is you're bomb throwing
         {
             //stop the fire animation and spawn a bomb depending on where you're facing
-            
+            throwSource.Play();
             anim.SetBool("Fire", false);
             if (facingRight)
             {

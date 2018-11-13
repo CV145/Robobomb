@@ -42,6 +42,12 @@ add reference to PLAYbutton as a game object
 when gameStart == true do PLAYbutton.SetActive (false);
 now add a reference to the HUD container
 when gameStart == true do HUD.SetActive (true);
+or
+
+a showUI script for each UI element that says
+this.SetActive(true) if (gameStart)
 ----
 Once Robo dies, the results screen will just refresh the screen (with
-a cool transition oc)
+a cool transition oc) when deciding to play again
+----
+Add a death animation where Robo's eyes turn off 

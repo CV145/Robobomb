@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (control.GameStart == true)
+        if (control.GameStart == true && stats.Alive) //if game is started and player is alive, begin spawning
         {
             if (stats.Kills >= triggerGoal)
             {

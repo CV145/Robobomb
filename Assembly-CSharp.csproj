@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
+    <Compile Include="Assets\showUI.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Death and Respawn.txt" />
     <None Include="Assets\Notes\Oct 20 2018.txt" />

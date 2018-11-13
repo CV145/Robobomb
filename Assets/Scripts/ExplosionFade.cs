@@ -7,9 +7,14 @@ public class ExplosionFade : MonoBehaviour {
     SpriteRenderer renderer;
     Color color;
     GameObject Robo;
+    //Sound
+    public AudioClip explosion;
+    public AudioSource explosionSource;
 
     // Use this for initialization
     void Start () {
+        explosionSource.clip = explosion;
+        explosionSource.Play();
 
         Robo = GameObject.Find("RoboPlayer");
 

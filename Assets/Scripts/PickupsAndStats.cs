@@ -12,17 +12,27 @@ public class PickupsAndStats : MonoBehaviour {
     public int fireLV = 1;
     public int bombLV = 1;
     public int killCount;
-   
+    bool isAlive = true;
     int bombsOnScreen = 0;
     public PlayerController player; //setup in inspector
     GameObject BeginPosition;
-
+    //
+    public AudioClip score;
+    public AudioSource scoreSource;
+    public AudioClip hit;
+    public AudioSource hitSource;
+    public AudioClip powerup;
+    public AudioSource powerupSource;
+    //
     public CanvasGroup myCG;
     private bool flash = false;
 
     // Use this for initialization
     void Start () {
         BeginPosition = GameObject.Find("Start");
+        scoreSource.clip = score;
+        hitSource.clip = hit;
+        powerupSource.clip = powerup;
 	}
 	
 	// Update is called once per frame
@@ -42,11 +52,17 @@ public class PickupsAndStats : MonoBehaviour {
     public void MineHit()
     {
         flash = true;
+        hitSource.Play();
+        GetComponent<Animator>().SetBool("Dead", true);
         myCG.alpha = 1;
         GetComponent<Rigidbody2D>().transform.rotation = Quaternion.Euler(0, 0, -10);
         GetComponent<Rigidbody2D>().velocity = Vector2.up * 5 ;
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().mass = 0;
+        GameObject.Destroy(GetComponent<PlayerController>());
+
+        //GetComponent<Rigidbody2D>().gravityScale = 0;
+        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 
     public int Kills
@@ -58,6 +74,7 @@ public class PickupsAndStats : MonoBehaviour {
         set
         {
             killCount = value;
+            scoreSource.Play();
         }
     }
 
@@ -94,10 +111,21 @@ public class PickupsAndStats : MonoBehaviour {
         return Kills.ToString();
     }
 
+    public bool Alive
+    {
+        get
+        {
+            return isAlive;
+        }
+        set
+        {
+            isAlive = value;
+        }
+    }
+
 
     /// ////////////
     /// 
-    bool isAlive = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -107,7 +135,7 @@ public class PickupsAndStats : MonoBehaviour {
             {
                 MineHit();
                 isAlive = false;
-                StartCoroutine(LoadYourAsyncScene());
+               // StartCoroutine(LoadYourAsyncScene());
             }
         }
     }
@@ -139,8 +167,8 @@ public class PickupsAndStats : MonoBehaviour {
         if (fireLV < 5)
         {
             fireLV++;
+            powerupSource.Play();
         }
-        Debug.Log(fireLV);
     }
 
     public void BombLVUp()
@@ -148,6 +176,7 @@ public class PickupsAndStats : MonoBehaviour {
         if (bombLV < 5)
         {
             bombLV++;
+            powerupSource.Play();
         }
     }
 
