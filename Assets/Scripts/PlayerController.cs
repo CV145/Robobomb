@@ -577,11 +577,11 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Fire", false);
             if (facingRight)
             {
-                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 0));
             }
             if (!facingRight)
             {
-                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 90));
+                Instantiate(Bomb, new Vector2(transform.position.x, transform.position.y - 3), Quaternion.Euler(0, 0, 0));
             }
             //Reset to be able to begin process again and briefly pause after the throw
             throwed = false;

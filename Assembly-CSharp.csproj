@@ -125,6 +125,7 @@
     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
     <None Include="Assets\Notes\Spawner Triggers.txt" />
     <None Include="Assets\Notes\Debug Log.txt" />
+    <None Include="Assets\Notes\UI Planning.txt" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>D:/Projects/Robobomb/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>

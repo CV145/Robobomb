@@ -1,0 +1,27 @@
+Game needs to repeat when player dies. 
+
+Results UI should pop up
+
+Results UI:
+- Medal (red to gold)
+//- Score
+//- High score //needs to be saved
+//- A leaderboard connecting to google
+//- A button that, when clicked, restarts the scene back to the PLAY
+- Put an ad banner below
+
+Title UI:
+- Put up the ROBOBOMB title!
+- Add a button that takes you to the level select
+- Add a button that mutes sounds (and music if at that point)
+- Add a button for leaderboards in current planet
+- Add a RATE button
+- Put up a banner ad here
+- Put a button that offers to stop ads
+
+////////
+- When player hit function runs, set UI active to false for HUD
+- Set the results UI active. From here, pressing the Replay button
+resets the scene
+
+public GameObject ThrowBtn, JumpBtn, RightBtn, LeftBtn;

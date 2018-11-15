@@ -111,6 +111,7 @@ public class PickupsAndStats : MonoBehaviour {
         return Kills.ToString();
     }
 
+    //property for isAlive bool
     public bool Alive
     {
         get
@@ -135,9 +136,13 @@ public class PickupsAndStats : MonoBehaviour {
             {
                 MineHit();
                 isAlive = false;
-               // StartCoroutine(LoadYourAsyncScene());
             }
         }
+    }
+
+    public void ReloadScene()
+    {
+        StartCoroutine(LoadYourAsyncScene());
     }
 
     IEnumerator LoadYourAsyncScene()
