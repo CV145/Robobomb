@@ -61,8 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Admanager.cs" />
-    <Compile Include="Assets\GameControl.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />
@@ -112,6 +110,7 @@
     <Compile Include="Assets\Melodrive\Examples\Scripts\ProjectExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\SeedChangeExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\StyleChangeExample.cs" />
+    <Compile Include="Assets\Scripts\Admanager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />
     <Compile Include="Assets\Scripts\BombDropExplosion.cs" />
@@ -121,9 +120,12 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CamShakeSimple.cs" />
     <Compile Include="Assets\Scripts\CellScript.cs" />
+    <Compile Include="Assets\Scripts\CrystalGetScript.cs" />
+    <Compile Include="Assets\Scripts\DestroySelf.cs" />
     <Compile Include="Assets\Scripts\ExplosionFade.cs" />
     <Compile Include="Assets\Scripts\ExplosionTrigger.cs" />
     <Compile Include="Assets\Scripts\FireupScript.cs" />
+    <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GuardbotScript.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\LeftMoveButtonClick.cs" />
@@ -133,11 +135,11 @@
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ScrollSnapRect\ScrollSnapRect.cs" />
+    <Compile Include="Assets\Scripts\showUI.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
-    <Compile Include="Assets\showUI.cs" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Death and Respawn.txt" />
     <None Include="Assets\Notes\Oct 20 2018.txt" />

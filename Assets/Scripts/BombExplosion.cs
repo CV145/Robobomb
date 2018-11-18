@@ -12,6 +12,7 @@ public class BombExplosion : MonoBehaviour {
     public LayerMask ExplosionLayers;
     public Bomb BombScript;
     GameObject RoboPlayer;
+    GameObject explosion;
 
     public void Start()
     {
@@ -21,9 +22,10 @@ public class BombExplosion : MonoBehaviour {
 
     public void Explode()
     {
-        RoboPlayer.GetComponent<PickupsAndStats>().ABombLessOnScreen(); //lower bomb on screen by 1
-        GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
+        
+        explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity) as GameObject;
         Destroy(explosion, this.explosionDuration);
+        RoboPlayer.GetComponent<PickupsAndStats>().ABombLessOnScreen(); //lower bomb on screen by 1
         Destroy(this.gameObject);
     }
 

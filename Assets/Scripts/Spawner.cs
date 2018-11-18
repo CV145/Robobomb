@@ -12,7 +12,8 @@ public class Spawner : MonoBehaviour {
         Balguard,
         //Items
         Bombup,
-        Fireup
+        Fireup,
+        Crystal
     }
     public ObjectsToSpawn SpawnThis;
     public float startTime;
@@ -27,6 +28,7 @@ public class Spawner : MonoBehaviour {
     public GameObject Balguard;
     public GameObject Fireup;
     public GameObject Bombup;
+    public GameObject Crystal;
     PickupsAndStats stats;
     GameControl control;
 
@@ -68,6 +70,9 @@ public class Spawner : MonoBehaviour {
                             break;
                         case ObjectsToSpawn.Bombup:
                             Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.Crystal:
+                            Instantiate(Crystal, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
                             break;
                     }
                     spawnedCount++;

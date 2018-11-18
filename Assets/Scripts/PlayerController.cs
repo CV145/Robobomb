@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
             originalConstraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             startPosition = new Vector2(transform.position.x, transform.position.y);
         }
+
+       // Rigidbody.transform.position = new Vector2(Screen.width / 2, transform.position.y);
     }
 
     //

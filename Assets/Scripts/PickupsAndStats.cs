@@ -11,6 +11,7 @@ public class PickupsAndStats : MonoBehaviour {
 
     public int fireLV = 1;
     public int bombLV = 1;
+    public int Crystals = 0;
     public int killCount;
     bool isAlive = true;
     int bombsOnScreen = 0;
@@ -111,6 +112,11 @@ public class PickupsAndStats : MonoBehaviour {
         return Kills.ToString();
     }
 
+    public string GetCrystalText()
+    {
+        return Crystals.ToString();
+    }
+
     //property for isAlive bool
     public bool Alive
     {
@@ -174,6 +180,11 @@ public class PickupsAndStats : MonoBehaviour {
             fireLV++;
             powerupSource.Play();
         }
+    }
+
+    public void CrystalIncrease()
+    {
+        Crystals++;
     }
 
     public void BombLVUp()
