@@ -13,8 +13,13 @@ public class Admanager : MonoBehaviour {
     private BannerView bannerView;
     private string bannerID = "ca-app-pub-3940256099942544/6300978111";
 
+    private RewardBasedVideoAd rewardBasedVideo;
+
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+       
+
         if (instance == null)
         {
             instance = this;
@@ -23,27 +28,46 @@ public class Admanager : MonoBehaviour {
         {
             Destroy(this);
         }
+
+        
     }
 
     private void Start()
     {
-        RequestBanner();
+        // Get singleton reward based video ad reference.
+        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+        this.RequestRewardBasedVideo();
+
+        //rewardBasedVideo.OnAdClosed += HandleRewardBasedVideoClosed;
     }
 
-    public void RequestBanner()
+    public void RequestRewardBasedVideo()
     {
-        bannerView = new BannerView(bannerID, AdSize.Banner, AdPosition.Bottom);
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+#elif UNITY_IPHONE
+            string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+#else
+            string adUnitId = "unexpected_platform";
+#endif
 
+        // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
-
-        bannerView.LoadAd(request);
-
-        bannerView.Show();
+        // Load the rewarded video ad with the request.
+        this.rewardBasedVideo.LoadAd(request, adUnitId);
     }
 
 
-    public void HideBanner()
+    public void UserOptToWatchAd()
     {
-        bannerView.Hide();
+        if (rewardBasedVideo.IsLoaded())
+        {
+            rewardBasedVideo.Show();
+        }
     }
+
+    //public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
+    //{
+    //    this.RequestRewardBasedVideo();
+    //}
 }

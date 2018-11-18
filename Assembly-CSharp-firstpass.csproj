@@ -73,9 +73,7 @@
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>D:/Projects/Robobomb/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>

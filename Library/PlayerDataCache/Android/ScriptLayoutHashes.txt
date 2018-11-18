@@ -27,6 +27,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 73c6a63742ad59e4da8336b31e5ab002 Assembly-CSharp.dll:.BombDropExplosion
 6d25a7b712fa76aced04b52c1e90053f Assembly-CSharp.dll:.ExplosionFade
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Admanager
 f6637497451c9a030c421de4a1ad5cdb Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 0eaa6611a2fe3f9bafc8639126b2e1a8 Assembly-CSharp.dll:.SwitchTrigger
 b14b4630cc47b6e9ea8a644551a6a8cc Unity.TextMeshPro.dll:TMPro.TMP_Text
@@ -184,7 +185,7 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ProjectExample
-94579d9420821656267ca5cb64d379ec Assembly-CSharp.dll:.GameControl
+6cf93adf9c608628fc9427674a688ee7 Assembly-CSharp.dll:.GameControl
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SeedChangeExample
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:GoogleMobileAds.Common.MobileAdsEventExecutor
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -216,4 +217,3 @@ a2a9b378a7e0ac6e387285e459b614fa Assembly-CSharp.dll:.CellScript
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.showUI
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 cd4384ff3ca2ce9f90cad276b202d3a7 Assembly-CSharp.dll:.Text
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Admanager

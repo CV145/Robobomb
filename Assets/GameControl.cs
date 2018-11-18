@@ -9,6 +9,7 @@ public class GameControl : MonoBehaviour {
     public GameObject hud;
     public GameObject resultsHUD;
     public GameObject ThrowBtn, JumpBtn, RightBtn, LeftBtn;
+    public Admanager instance;
 
     public bool GameStart
     {
@@ -28,6 +29,7 @@ public class GameControl : MonoBehaviour {
         GameStart = true;
        hud.SetActive(true);
         playButton.SetActive(false);
+        //instance.HideBanner();
     }
 
 	// Use this for initialization
@@ -38,7 +40,7 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!GetComponent<PickupsAndStats>().Alive)
+		if (!GetComponent<PickupsAndStats>().Alive) //when Robo dies
         {
             //hud.SetActive(false);
             resultsHUD.SetActive(true);
@@ -46,6 +48,11 @@ public class GameControl : MonoBehaviour {
             JumpBtn.SetActive(false);
             LeftBtn.SetActive(false);
             RightBtn.SetActive(false);
+           // instance.ShowBanner();
+        }
+        if (GetComponent<PickupsAndStats>().Alive)
+        {
+            //instance.HideBanner();
         }
 	}
 }
