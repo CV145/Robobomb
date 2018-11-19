@@ -12,6 +12,7 @@ Assets/Scenes/Factory.unity
 SceneListEnd?
 6768aa4941a4b07d3670c31bfcc7cfc3 Assembly-CSharp.dll:.GuardbotScript
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
+8f4d52309260087cb0868cc908849ad6 Assembly-CSharp.dll:.DestroySelf
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -98,6 +99,7 @@ a44114bd4fa541174f78b4bb92bacb48 UnityEngine.UI.dll:UnityEngine.EventSystems.Sta
 e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+7c4257788e2712bc5f949176d8bd86dd Assembly-CSharp.dll:.CrystalGetScript
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 754551afe4f2531f58476bf14c510657 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -217,5 +219,8 @@ a2a9b378a7e0ac6e387285e459b614fa Assembly-CSharp.dll:.CellScript
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.showUI
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 cd4384ff3ca2ce9f90cad276b202d3a7 Assembly-CSharp.dll:.Text
-8f4d52309260087cb0868cc908849ad6 Assembly-CSharp.dll:.DestroySelf
-7c4257788e2712bc5f949176d8bd86dd Assembly-CSharp.dll:.CrystalGetScript
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RandomRotate
+0386acd33ffb0b7e09c2b857b5579ed3 Assembly-CSharp.dll:.PixelArtCamera
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.CameraPan
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SixtyFPS
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TileSpin

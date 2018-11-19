@@ -2669,6 +2669,61 @@ Prefab:
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_UpscaleRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_PixelSnapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_CropFrameX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_CropFrameY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: orthographic size
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_AllowDynamicResolution
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_RefResolutionX
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_RefResolutionY
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805697156192658, guid: 0fbba7abd972b514597ccf142edb4896,
+        type: 2}
+      propertyPath: m_AssetsPPU
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114503283079341420, guid: 0fbba7abd972b514597ccf142edb4896, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0fbba7abd972b514597ccf142edb4896, type: 2}
