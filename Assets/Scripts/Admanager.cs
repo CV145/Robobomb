@@ -6,6 +6,8 @@ using UnityEngine;
 public class Admanager : MonoBehaviour {
 
     public static Admanager instance;
+    public PickupsAndStats stats;
+    public GameControl control;
 
     //dummy ads still loading even without IDs
     private string appID = "ca-app-pub-1906605411705517~2269664916";
@@ -55,6 +57,20 @@ public class Admanager : MonoBehaviour {
         AdRequest request = new AdRequest.Builder().Build();
         // Load the rewarded video ad with the request.
         this.rewardBasedVideo.LoadAd(request, adUnitId);
+    }
+
+    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+    {
+        string type = args.Type;
+        double amount = args.Amount;
+        //get 20 crystals
+        for (int i = 0; i < 20; i++)
+        {
+            stats.CrystalIncrease();
+                }
+        //save game
+        control.SaveGame();
+        print("User rewarded with: " + amount.ToString() + " " + type);
     }
 
 
