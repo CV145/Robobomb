@@ -13,9 +13,11 @@ public class PickupsAndStats : MonoBehaviour {
     public int bombLV = 1;
     public int Crystals = 0;
     public int killCount;
+    private int highScore = 0;
     bool isAlive = true;
     int bombsOnScreen = 0;
     public PlayerController player; //setup in inspector
+    public GameControl control;
     GameObject BeginPosition;
     //
     public AudioClip score;
@@ -27,6 +29,43 @@ public class PickupsAndStats : MonoBehaviour {
     //
     public CanvasGroup myCG;
     private bool flash = false;
+
+    //Properties
+    public int CrystalsProperty
+    {
+        get
+        {
+            return Crystals;
+        }
+        set
+        {
+            Crystals = value;
+        }
+    }
+
+    public int HighScoreProperty
+    {
+        get
+        {
+            return highScore;
+        }
+        set
+        {
+            highScore = value;
+        }
+    }
+    
+    public int ScoreProperty
+    {
+        get
+        {
+            return killCount;
+        }
+        set
+        {
+            killCount = value;
+        }
+    }
 
     // Use this for initialization
     void Start () {
@@ -62,8 +101,22 @@ public class PickupsAndStats : MonoBehaviour {
         GetComponent<Rigidbody2D>().mass = 0;
         GameObject.Destroy(GetComponent<PlayerController>());
 
-        //GetComponent<Rigidbody2D>().gravityScale = 0;
-        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+        //check if there's a high score
+        HighScoreCheck();
+
+        //save the game here, storing crystals and high score
+        control.SaveGame();
+        //get the current high score and current crystals and save them
+    }
+
+    private void HighScoreCheck()
+    {
+        //function called after game ends or when game is saving to check for high scores
+
+        if (ScoreProperty > HighScoreProperty)
+        {
+            HighScoreProperty = ScoreProperty;
+        }
     }
 
     public int Kills
@@ -110,6 +163,11 @@ public class PickupsAndStats : MonoBehaviour {
     public string GetScoreText()
     {
         return Kills.ToString();
+    }
+
+    public string GetHighScoreText()
+    {
+        return highScore.ToString();
     }
 
     public string GetCrystalText()

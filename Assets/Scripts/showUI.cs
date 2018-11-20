@@ -9,19 +9,19 @@ public class showUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameControl = GameObject.Find("RoboPlayer").GetComponent<GameControl>();
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
-	void Update () {
-		if (gameControl.GameStart)
-        {
-            this.gameObject.SetActive(true);
-        }
+	//void Update () {
+	//	if (gameControl.GameStart)
+ //       {
+ //           this.gameObject.SetActive(true);
+ //       }
 
-        if (!gameControl.GameStart)
-        {
-            this.gameObject.SetActive(false);
-        }
-	}
+ //       if (!gameControl.GameStart)
+ //       {
+ //           this.gameObject.SetActive(false);
+ //       }
+	//}
 }

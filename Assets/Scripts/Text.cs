@@ -15,7 +15,8 @@ public class Text : MonoBehaviour {
         ThisIsFireText,
         ThisIsBombText,
         ThisIsScoreText,
-        ThisIsCrystalText
+        ThisIsCrystalText,
+        ThisIsHighScoreText
     }
     public ChangingText thisText;
 
@@ -28,6 +29,12 @@ public class Text : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (thisText == ChangingText.ThisIsHighScoreText)
+        {
+            GetComponent<UnityEngine.UI.Text>().text = statsScript.GetHighScoreText();
+        }
+
 		if (thisText == ChangingText.ThisIsBombText)
         {
             GetComponent<UnityEngine.UI.Text>().text = statsScript.GetBombText();

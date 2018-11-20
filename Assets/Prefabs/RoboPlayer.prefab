@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857591374322194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 837.8, y: -61.2, z: 0}
+  m_LocalPosition: {x: 840, y: -60.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032269531167226}
@@ -982,6 +982,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 0}
   hud: {fileID: 0}
+  resultsHUD: {fileID: 0}
+  ThrowBtn: {fileID: 0}
+  JumpBtn: {fileID: 0}
+  RightBtn: {fileID: 0}
+  LeftBtn: {fileID: 0}
+  stats: {fileID: 114845553519111708}
+  instance: {fileID: 0}
 --- !u!114 &114845553519111708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1001,8 +1008,10 @@ MonoBehaviour:
     m_Bits: 524288
   fireLV: 1
   bombLV: 1
+  Crystals: 0
   killCount: 0
   player: {fileID: 114105397378852324}
+  control: {fileID: 114665673813741010}
   score: {fileID: 8300000, guid: 67ed6f250b0cbdd40a0a37a88459eaa1, type: 3}
   scoreSource: {fileID: 82832127055178972}
   hit: {fileID: 8300000, guid: 727ebb95dc4873d4dabe393345ebe122, type: 3}

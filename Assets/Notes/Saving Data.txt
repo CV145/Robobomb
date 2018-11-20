@@ -1,0 +1,113 @@
+When player loses, offer a free daily reward then 20 free crystals
+per video ad
+
+
+How to save data in Unity?
+
+
+Things to save:
+- Player high score (int)
+- Number of crystals currently held (int)
+- Planets that are unlocked, and corresponding medals (string list?)
+- Planet currently on (string)
+- A resolution setting to tweak (low and high?) (playerPrefs)
+* Settings such as whether to play music/sounds (bool) (playerPrefs)
+
+///////////////
+(Serialization)
+- Player high score and crystals in possession
+
+- Create a Save script
+- Maybe put in GameControl script
+- Create SaveGame() which could be called every time player loses
+- Create LoadGame() and call it whenever game begins. Should load 
+everything saved, display crystals at start (display HUD at start in
+general)
+
+- Make a settings button in the start
+
+
+///////////////
+The first step to creating a save game file is creating the save file
+ class. Create a script named Save and remove the MonoBehaviour 
+inheritance. Remove the default Start() and Update() methods as well.
+
+- Add int variables for high score and crystals
+- Above class add [System.Serializable]
+
+In GameControl script...
+
+Create an instance of the Save class (script) and return it using a
+function
+
+private void HighScoreCheck()
+{
+//function called after game ends or when game is saving to check for high
+scores
+
+if (stats.ScoreProperty > stats.HighScoreProperty)
+{
+ stats.HighScoreProperty = stats.ScoreProperty; 
+}
+}
+
+private Save CreateSaveGameObject()
+{
+ Save save = new Save(); //create Save instance
+ int i = 0;
+ save.highScore = stats.HighScoreProperty;
+ save.crystals = stats.CrystalsProperty;
+
+ return save; //return an instance of save with above variables stored
+}
+
+public void SaveGame() 
+{
+ //this function is used to save the game
+ //function should be called whenever player loses
+ Save save = CreateSaveGameObject(); //get the save returned from function
+
+ BinaryFormatter bf = new BinaryFormatter();
+ Filestream saveFile = File.Create(Application.persistentDataPath + 
+ "/gamesave.save");
+ bf.Serialize(saveFile, save);
+ file.Close();
+ //creates a file that stores the contents of the save class from the 
+ //function. These contents are serialized, or stored as binary
+ Debug.Log("game saved");
+}
+
+public void LoadGame()
+{
+ //function used to load the game
+ //should be called whenever player starts the game (only called once)
+
+ if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+ {
+ //do the following if there is a save file stored
+ BinaryFormatter bf = new BinaryFormatter();
+ FileStream saveFile = File.Open(Application.persistentDataPath + 
+ "/gamesave.save", FileMode.Open);
+ //^ opens stored save file
+ Save save = (Save)bf.Deserialize(saveFile);
+ //take the contents out of the save file and "deserialize" it, change from
+ //binary to actual code, and put it into an instance of a save class
+ saveFile.Close();
+
+ //now put the contents of what was saved into the actual game
+ stats.CrystalsProperty = save.crystals;
+ stats.HighScoreProperty = save.highScore;
+ }
+ else
+ {
+ Debug.Log("No game saved!");
+ }
+}
+
+ 
+//////////////
+Call Save function as soon as player loses
+Call Load function as soon as game begins
+
+
+ 
