@@ -26,6 +26,9 @@ public class PickupsAndStats : MonoBehaviour {
     public AudioSource hitSource;
     public AudioClip powerup;
     public AudioSource powerupSource;
+    public AudioSource crystalSource;
+    public AudioClip crystalGet;
+
     //
     public CanvasGroup myCG;
     private bool flash = false;
@@ -54,7 +57,7 @@ public class PickupsAndStats : MonoBehaviour {
             highScore = value;
         }
     }
-    
+
     public int ScoreProperty
     {
         get
@@ -68,7 +71,7 @@ public class PickupsAndStats : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         BeginPosition = GameObject.Find("Start");
         scoreSource.clip = score;
         hitSource.clip = hit;
@@ -243,6 +246,8 @@ public class PickupsAndStats : MonoBehaviour {
     public void CrystalIncrease()
     {
         Crystals++;
+        crystalSource.Play();
+
     }
 
     public void BombLVUp()

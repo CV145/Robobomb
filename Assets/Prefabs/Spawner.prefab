@@ -62,6 +62,7 @@ MonoBehaviour:
   Balguard: {fileID: 1760253203841200, guid: 62b30bb551753f244933701e1cae2c51, type: 2}
   Fireup: {fileID: 1380265172385450, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
   Bombup: {fileID: 1330030210885556, guid: 5c24326748fdc994aa3749ef117394b5, type: 2}
+  Crystal: {fileID: 0}
   triggerGoal: 0
 --- !u!212 &212774920673955478
 SpriteRenderer:
@@ -95,8 +96,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -290483787
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 827c9cd4a3943534f909ac6473e17288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

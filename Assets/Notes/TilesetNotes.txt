@@ -1,0 +1,10 @@
+7, 7, 7
+
+21 tiles in length
+Maybe 5-6 tiles below
+
+16 * 21 = 336 pixels long
+
+The last few tiles, the extreme 4 tiles, would rarely be seen and
+should just be generic tiles
+So 17 unique-ish tiles per planet, not counting backgrounds

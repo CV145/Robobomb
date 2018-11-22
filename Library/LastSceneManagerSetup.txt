@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/PLANET1/Hanging Cage.unity
+- path: Assets/Scenes/Planets/RoboFactory.unity
   isLoaded: 1
   isActive: 1
