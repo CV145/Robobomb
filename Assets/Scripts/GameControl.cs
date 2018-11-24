@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameControl : MonoBehaviour {
 
     bool gameStart = false;
-    public GameObject playButton;
+    public GameObject MainMenu;
     public GameObject hud;
     public GameObject resultsHUD;
     public GameObject ThrowBtn, JumpBtn, RightBtn, LeftBtn;
@@ -31,7 +31,7 @@ public class GameControl : MonoBehaviour {
     {
         GameStart = true;
        hud.SetActive(true);
-        playButton.SetActive(false);
+        MainMenu.SetActive(false);
         ThrowBtn.SetActive(true);
         JumpBtn.SetActive(true);
         LeftBtn.SetActive(true);
