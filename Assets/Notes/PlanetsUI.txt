@@ -56,4 +56,39 @@ function that activates planet
 - Also have a list of bools for each planet
 - If a certain bool is true set corresponding planet ActivatePlanet()
 - The bool is set to true whenever a purchase is made. The list is
-saved and the game is saved after every purchase.
+saved and the game is saved after every purchase.+
+
+
+---------
+- The next planet availble for unlocking has the amount of crystals
+required on layered onto it
+- It'd be cool if player is unable to progress after next locked 
+planet. Just stop after planet 2.
+Goal: Prevent scrolling after a specific planet
+- Start PlanetContainer with 2 planets, then add more planets to the
+planet container as time goes on. Or just add the cost text in a
+ series, not all at once
+
+- So once planet is unlocked put it into the PlanetContainer when
+calling a function somewhere
+(if planet2IsPurchased, set transform.parent of planet3 game object 
+to planet container)
+
+
+------
+To purchase a planet...
+- Bouncing Exclamation mark appears above planet button
+- Flashing button below planet saying BUY appears
+- Tapping on that button unlocks the planet and increases count
+
+- When button is clicked go to a function in planet shop that activates
+planet only if required crystals are met. That function then subtracts
+those crystals from player's amount. Lastly, save the game.
+
+- When a planet is activated, deactivate the button and cost text, and
+change the image (or animation?)
+
+When a planet is out of player's reach, also deactivate PurchaseUI
+
+if planetActivated == false
+- set nextPurchaseUI to false

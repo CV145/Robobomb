@@ -5,11 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour {
     //script with functions that activate and deactivate the button script and images for its planet
-    bool planetActivated;
+    public bool planetActivated;
+    public GameObject PurchaseUI;
+    public LoadSceneOnClick previousPlanet;
 
     public void Start()
     {
-        planetActivated = false;
+        PurchaseUI.SetActive(true);
+    }
+
+    public void FixedUpdate()
+    {
+        if (previousPlanet.planetActivated == false)
+        {
+            PurchaseUI.SetActive(false);
+        }
+        else
+        {
+            PurchaseUI.SetActive(true);
+        }
     }
 
     public void LoadByIndex(int sceneIndex)
@@ -17,15 +31,13 @@ public class LoadSceneOnClick : MonoBehaviour {
         if (planetActivated == true)
         {
             SceneManager.LoadScene(sceneIndex);
-            //load scene inputted into function
-            //This script is dragged into the On Click
-            //inside the Button Script
         }
     }
 
     public void ActivatePlanet()
     {
         planetActivated = true;
+        PurchaseUI.SetActive(false);
     }
 
 }

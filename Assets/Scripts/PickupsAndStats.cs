@@ -43,6 +43,10 @@ public class PickupsAndStats : MonoBehaviour {
         set
         {
             Crystals = value;
+            //if (Crystals <= 0)
+            //{
+            //    Crystals = 0;
+            //}
         }
     }
 

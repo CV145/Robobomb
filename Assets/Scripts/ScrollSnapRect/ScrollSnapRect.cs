@@ -59,12 +59,15 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     // container with Image components - one Image for each page
     private List<Image> _pageSelectionImages;
 
+    //Reference to PlanetShop script to get page count
+    public PlanetShop shopScript;
+
     //------------------------------------------------------------------------
     void Start() {
         _scrollRectComponent = GetComponent<ScrollRect>();
         _scrollRectRect = GetComponent<RectTransform>();
-        _container = _scrollRectComponent.content;
-        _pageCount = _container.childCount;
+       _container = _scrollRectComponent.content;
+       _pageCount = _container.childCount;
 
         // is it horizontal or vertical scrollrect
         if (_scrollRectComponent.horizontal && !_scrollRectComponent.vertical) {
@@ -94,6 +97,16 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
     //------------------------------------------------------------------------
     void Update() {
+        _container = _scrollRectComponent.content; //
+        _pageCount = shopScript.Count; //
+        //Refer to a function in planet shop script that returns a number to put into the page count
+        //depending on how many planets are unlocked
+
+
+        Debug.Log("Container and page count:");
+        Debug.Log(_container);
+        Debug.Log(_pageCount);
+
         // if moving to target position
         if (_lerp) {
             // prevent overshooting with values greater than 1
