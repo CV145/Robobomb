@@ -115,6 +115,9 @@
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\SixtyFPS.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\TileSpin.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\PixelArtCamera.cs" />
+    <Compile Include="Assets\PlanetScript.cs" />
+    <Compile Include="Assets\PlanetScript2.cs" />
+    <Compile Include="Assets\PlanetShop.cs" />
     <Compile Include="Assets\Scripts\Admanager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />
@@ -165,6 +168,7 @@
     <None Include="Assets\Notes\LevelSelect.txt" />
     <None Include="Assets\Notes\LedgeNotes.txt" />
     <None Include="Assets\Notes\Pixel Analysis.txt" />
+    <None Include="Assets\Notes\PlanetsUI.txt" />
     <None Include="Assets\Ocias\PixelArtCamera\PixelArtFont.shader" />
     <None Include="Assets\Notes\Oct 10 2018.txt" />
     <None Include="Assets\Notes\MovementNotes93018.txt" />

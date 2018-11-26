@@ -10,6 +10,7 @@ public class GameControl : MonoBehaviour {
     public GameObject MainMenu;
     public GameObject hud;
     public GameObject resultsHUD;
+    public GameObject planetsUI;
     public GameObject ThrowBtn, JumpBtn, RightBtn, LeftBtn;
     public PickupsAndStats stats;
     public Admanager instance;
@@ -47,8 +48,16 @@ public class GameControl : MonoBehaviour {
         LeftBtn.SetActive(false);
         RightBtn.SetActive(false);
         resultsHUD.SetActive(false);
+        planetsUI.SetActive(false);
         //load the game stats when starting scene over
         LoadGame();
+    }
+
+    //function that sets planet UI called when planet button pressed
+    public void setPlanets()
+    {
+        planetsUI.SetActive(true);
+        MainMenu.SetActive(false);
     }
 	
 	// Update is called once per frame

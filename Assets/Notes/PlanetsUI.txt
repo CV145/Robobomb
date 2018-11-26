@@ -1,0 +1,59 @@
+- Make shop system
+
+A locked planet is shadowed out. A planet availble for purchase has the
+cost layered on top of it.
+
+1: (Flying block planet)
+- BunO
+- Minibot
+- Balguard
+
+2: (Rainy autumn planet?)
+- BunO
+- Flying enemy
+- Projectile shooting enemy 
+
+3:
+- Digging projectile enemy
+- Bat enemy (a reverse kind of BunO)
+- Balguard
+
+4: 
+- Low and high flying enemy
+- Splashing/diving fish
+---
+- Slow moving white "puff"
+
+5:
+- Minibot
+- Slow moving Robo clone
+- Kamikaze Robo clone
+
+----
+- Click on planet button to make planet UI show up
+
+- Planets UI has a planet script transferred and saved across all scenes
+How to know which planet currently on?
+- Depending on scene. Customize for each scene which planet is set
+
+- if planet is locked, deactivate its Button script
+(Planet shop script)
+- list holding whether the planets are unlocked or not (bool list)
+
+- Maybe planet container has a script that holds all the planets
+- Have an enum for all planets, as well as a list of bool variables for
+each planet
+
+
+
+- Give each planet a script with a function that activates
+ the button script and changes its image
+- If corresponding bool is false, call the above function using the
+game objects in the enum. If it's true (planet1Purchased, etc) call the
+function that activates planet
+
+- Planet shop script has a list of all planet loadScene scripts. 
+- Also have a list of bools for each planet
+- If a certain bool is true set corresponding planet ActivatePlanet()
+- The bool is set to true whenever a purchase is made. The list is
+saved and the game is saved after every purchase.
