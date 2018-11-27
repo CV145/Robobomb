@@ -92,3 +92,9 @@ When a planet is out of player's reach, also deactivate PurchaseUI
 
 if planetActivated == false
 - set nextPurchaseUI to false
+
+if previousPlanet.planetActivated == false
+- set PurchaseUI to false
+
+--------
+-696
