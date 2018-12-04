@@ -1,0 +1,15 @@
+If top colliders are hit, get hurt
+
+Separate game object for the stomach that has a different layer. The box
+collider for the stomach is in this game object.
+
+The main game object has a collider in the head. That's the weak spot.
+
+////////
+Jumping
+
+When Jump() is called
+
+Depending on where facing...
+
+Issue: Bombs shouldn't be pushing enemy around

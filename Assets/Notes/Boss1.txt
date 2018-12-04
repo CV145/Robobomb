@@ -1,0 +1,13 @@
+- Has a specific weak spot like a head or stomach
+- Jumps over Robo (player is hit if in the way) to reach other side
+- Shoots an orb when landing. Slow moving but player needs to time jump
+carefully to not be hit by boss' own jump
+
+Fat toad that breathes blue electric orbs
+
+
+
+
+Flying enemy is just a normal patrol but in the way of the crystals/powerups
+Projectile enemy doesn't try to ram Robo, but stops in one spot to shoot at
+player using the same projectiles boss had (slow moving)

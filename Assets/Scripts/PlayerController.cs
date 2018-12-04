@@ -432,10 +432,6 @@ public class PlayerController : MonoBehaviour
 
     void Flip()
     {
-        if (maxSpeed >= 90)
-        {
-            //play skid animation
-        }
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1; //go from 1 to -1 to 1 again

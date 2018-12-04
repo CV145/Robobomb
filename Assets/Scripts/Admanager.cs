@@ -40,7 +40,23 @@ public class Admanager : MonoBehaviour {
         this.rewardBasedVideo = RewardBasedVideoAd.Instance;
         this.RequestRewardBasedVideo();
 
-        //rewardBasedVideo.OnAdClosed += HandleRewardBasedVideoClosed;
+        //Event Declarations//
+
+        // Called when an ad request has successfully loaded.
+        rewardBasedVideo.OnAdLoaded += HandleRewardBasedVideoLoaded;
+        // Called when an ad request failed to load.
+        rewardBasedVideo.OnAdFailedToLoad += HandleRewardBasedVideoFailedToLoad;
+        // Called when an ad is shown.
+        rewardBasedVideo.OnAdOpening += HandleRewardBasedVideoOpened;
+        // Called when the ad starts to play.
+        rewardBasedVideo.OnAdStarted += HandleRewardBasedVideoStarted;
+        // Called when the user should be rewarded for watching a video.
+        rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
+        // Called when the ad is closed.
+        rewardBasedVideo.OnAdClosed += HandleRewardBasedVideoClosed;
+        // Called when the ad click caused the user to leave the application.
+        rewardBasedVideo.OnAdLeavingApplication += HandleRewardBasedVideoLeftApplication;
+
     }
 
     public void RequestRewardBasedVideo()
@@ -59,6 +75,17 @@ public class Admanager : MonoBehaviour {
         this.rewardBasedVideo.LoadAd(request, adUnitId);
     }
 
+    public void UserOptToWatchAd()
+    {
+        if (rewardBasedVideo.IsLoaded())
+        {
+            rewardBasedVideo.Show();
+            RequestRewardBasedVideo();
+        }
+    }
+
+    ///Handler Events///
+
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
     {
         string type = args.Type;
@@ -74,16 +101,39 @@ public class Admanager : MonoBehaviour {
     }
 
 
-    public void UserOptToWatchAd()
+    public void HandleRewardBasedVideoClosed(object sender, System.EventArgs args)
     {
-        if (rewardBasedVideo.IsLoaded())
-        {
-            rewardBasedVideo.Show();
-        }
+        Debug.Log("Video Closed event?");
+        this.RequestRewardBasedVideo();
     }
 
-    //public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
-    //{
-    //    this.RequestRewardBasedVideo();
-    //}
+
+    public void HandleRewardBasedVideoLoaded(object sender, System.EventArgs args)
+    {
+        MonoBehaviour.print("HandleRewardBasedVideoLoaded event received");
+    }
+
+    public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        MonoBehaviour.print(
+            "HandleRewardBasedVideoFailedToLoad event received with message: "
+                             + args.Message);
+    }
+
+    public void HandleRewardBasedVideoOpened(object sender, System.EventArgs args)
+    {
+        MonoBehaviour.print("HandleRewardBasedVideoOpened event received");
+    }
+
+    public void HandleRewardBasedVideoStarted(object sender, System.EventArgs args)
+    {
+        MonoBehaviour.print("HandleRewardBasedVideoStarted event received");
+    }
+
+
+    public void HandleRewardBasedVideoLeftApplication(object sender, System.EventArgs args)
+    {
+        MonoBehaviour.print("HandleRewardBasedVideoLeftApplication event received");
+    }
+
 }

@@ -1,0 +1,3 @@
+- Click button load ad
+- After ad plays reload ad
+- Goal: When game restarts another ad should load

@@ -1,0 +1,25 @@
+$1 for Robobomb (or sell to publisher)
+One endless planet (no more, unnecessary unless updating) with infinite
+enemies. The higher you go, the more different enemies and bosses you'll
+encounter
+- Crystals are used to buy a heart from the main menu (25 crystals each)
+- Open to video ads but they can be added later. The path is there and 
+always will be. Make the game first, then worry about ads
+
+Make all below first before thinking about ads or publishing
+
+To Red Medal:
+- Balguard, BunO, Minibot
+- Make boss show up after reaching 50? Stop spawning enemies
+To Blue Medal:
+- Two new enemies (flying enemy) (projectile enemy)
+- Boss at 200?
+To Bronze Medal:
+- Two new enemies (Box enemy) (Teleporting enemy)
+- Boss 300?
+To Silver Medal:
+- (Ghost enemy) (Bomb deflect enemy)
+- Boss 400?
+To Gold Medal:
+- (Evil Robo enemy) (Self destruct/kamikaze enemy)
+- Final Boss 500?

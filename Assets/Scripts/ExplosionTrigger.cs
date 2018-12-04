@@ -97,7 +97,7 @@ public class ExplosionTrigger : MonoBehaviour {
 
     void increaseKill()
     {
-            stats.Kills++;
+            stats.Kills++; //Kill count increased here
             return;
     }
 
