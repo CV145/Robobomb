@@ -1325,6 +1325,10 @@ Prefab:
     - target: {fileID: 114180987579668478, guid: 3ed4e303d6b3f7340b78b61b3c9a41cc,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788897517610152, guid: 3ed4e303d6b3f7340b78b61b3c9a41cc, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5210,35 +5214,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
+    - target: {fileID: 114773898491486346, guid: c782681c93d6838408ab4968c985f106,
         type: 2}
-      propertyPath: m_Constraints
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
-        type: 2}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
-        type: 2}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
-        type: 2}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50269397110253632, guid: c782681c93d6838408ab4968c985f106,
-        type: 2}
-      propertyPath: m_CollisionDetection
-      value: 1
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c782681c93d6838408ab4968c985f106, type: 2}

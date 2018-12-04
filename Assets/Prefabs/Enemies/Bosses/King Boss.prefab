@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4493128243574052}
   - component: {fileID: 58292848919250954}
   - component: {fileID: 58123984569212558}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015548130570448}
   - component: {fileID: 61737324510292964}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Stomach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973164988048100}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -124,8 +124,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 1
 --- !u!58 &58057145259038716
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -229,11 +229,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973164988048100}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b1902e09ab95f44fa77f5550d9128a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!212 &212688145807497282
 SpriteRenderer:
   m_ObjectHideFlags: 1

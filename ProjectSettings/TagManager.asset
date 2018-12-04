@@ -22,7 +22,7 @@ TagManager:
   - Enemy
   - Objects
   - Explosions
-  - BombDrop
+  - EnemyNull
   - Bombs
   - Bombup
   - Fireup

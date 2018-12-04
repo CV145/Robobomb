@@ -12,19 +12,13 @@ public class KingBossScript : MonoBehaviour {
     public bool facingRight;
     //bool that checks if "grounded". Automatically true at start and set to false when in midair
     bool grounded = true;
-    //Get Rigidbody
-    Rigidbody2D rigidbody;
     //Get Robo
     GameObject Robo;
-    //Original constraints with frozen x position
-    RigidbodyConstraints2D originalConstraints;
 
 	// Use this for initialization
 	void Start () {
         timer = 3;
-        rigidbody = GetComponent<Rigidbody2D>();
         Robo = GameObject.Find("RoboPlayer");
-        //originalConstraints = rigidbody.constraints;
     }
 	
 	// Update is called once per frame
@@ -80,15 +74,11 @@ public class KingBossScript : MonoBehaviour {
             {
                 grounded = false;
                 transform.position = new Vector2(transform.position.x + 0.5f, -135);
-                //Lock gravity
-                //rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX;
             }
             //When passing Robo move down
             if (transform.position.x >= Robo.transform.position.x + 5)
             {
                 transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.35f);
-                //Unlock gravity
-                //rigidbody.constraints = originalConstraints;
             }
             //Stop at X897 and reset timer
             if (transform.position.x >= 897)
@@ -113,15 +103,11 @@ public class KingBossScript : MonoBehaviour {
             {
                 grounded = false;
                 transform.position = new Vector2(transform.position.x - 0.5f, -135);
-                //Lock gravity
-                //rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX;
             }
             //Move down after passing Robo
             if (transform.position.x <= Robo.transform.position.x - 5)
             {
                 transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y - 0.35f);
-                //Unlock gravity
-                //rigidbody.constraints = originalConstraints;
             }
             //Stop at X785 and reset timer
             if (transform.position.x <= 785)
