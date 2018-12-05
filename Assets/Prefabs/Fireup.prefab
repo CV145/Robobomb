@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 61962273235382926}
   - component: {fileID: 114326181398915916}
   - component: {fileID: 114655617750333318}
+  - component: {fileID: 114680454689492520}
   m_Layer: 19
   m_Name: Fireup
   m_TagString: Untagged
@@ -134,6 +135,18 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &114680454689492520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380265172385450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67a75602bef30e4e83f885e6a6bd4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 20
 --- !u!212 &212815564682334542
 SpriteRenderer:
   m_ObjectHideFlags: 1
