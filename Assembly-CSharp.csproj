@@ -117,6 +117,7 @@
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\SixtyFPS.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\TileSpin.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\PixelArtCamera.cs" />
+    <Compile Include="Assets\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Admanager.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />

@@ -13,3 +13,24 @@ When Jump() is called
 Depending on where facing...
 
 Issue: Bombs shouldn't be pushing enemy around
+////////
+- As soon as landing, spawn a projectile
+
+Projectile should be reusable
+- Projectile script has a variable that makes it shoot either left or right
+and is accessed publicly
+
+Spawn at transform.position.x, -175
+
+(If robo is dead stop in place and laugh)
+
+if (Robo.Alive)
+{ //main code }
+else if (!Robo.Alive)
+{ //stop }
+
+//////////
+GameObject.Find("KingBoss");
+
+When King Boss is spawned, set a bool called Boss or something to true
+If Boss is true, don't spawn 

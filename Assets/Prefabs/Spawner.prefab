@@ -60,6 +60,7 @@ MonoBehaviour:
   BunO: {fileID: 1715963382330134, guid: d1bc93c49e5303a41ba060560320c311, type: 2}
   Minibot: {fileID: 1715963382330134, guid: d79f33063c7c32b4c9ba0b710871c522, type: 2}
   Balguard: {fileID: 1760253203841200, guid: 62b30bb551753f244933701e1cae2c51, type: 2}
+  KingBoss: {fileID: 1973164988048100, guid: c782681c93d6838408ab4968c985f106, type: 2}
   Fireup: {fileID: 1380265172385450, guid: 95af675b000fc2f41af9b239253c820a, type: 2}
   Bombup: {fileID: 1330030210885556, guid: 5c24326748fdc994aa3749ef117394b5, type: 2}
   Crystal: {fileID: 0}

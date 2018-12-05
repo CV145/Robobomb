@@ -11,9 +11,13 @@ public class KingBossScript : MonoBehaviour {
     //Bool that tells which direction currently facing
     public bool facingRight;
     //bool that checks if "grounded". Automatically true at start and set to false when in midair
-    bool grounded = true;
+    bool grounded = false;
+    //bool that makes game object fall down when spawning
+    public bool intro = true;
     //Get Robo
     GameObject Robo;
+    //Projectile
+    public GameObject Projectile;
 
 	// Use this for initialization
 	void Start () {
@@ -23,18 +27,33 @@ public class KingBossScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Trying to keep rotation but preventing from falling over
-        if (transform.eulerAngles.z > 8)
+        if (Robo.GetComponent<PickupsAndStats>().Alive)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            
+            if (!intro)
+            {
+                timer -= Time.deltaTime;
+                //Every 3 seconds, jump. After landing reset timer
+                if (timer <= 0)
+                {
+                    //Keep calling function every frame. Timer is reset from within Jump() when its finished
+                    JumpNShoot();
+                }
+            }
+            //When starting, begin moving down until reaching -170, then set grounded to true 
+            if (intro)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f);
+                if (transform.position.y <= -170)
+                {
+                    intro = false;
+                    grounded = true;
+                }
+            }
         }
-
-        timer -= Time.deltaTime;
-        //Every 3 seconds, jump. After landing reset timer
-        if (timer <= 0)
+        else if (!Robo.GetComponent<PickupsAndStats>().Alive)
         {
-            //Keep calling function every frame. Timer is reset from within Jump() when its finished
-            Jump();
+            //When Robo is dead, stop in place and laugh at player
         }
 	}
 
@@ -59,7 +78,7 @@ public class KingBossScript : MonoBehaviour {
     }
 
     //Function that, depending on where boss is facing, jump and move to opposite direction
-    void Jump()
+    void JumpNShoot()
     {
         if (facingRight)
         {
@@ -80,13 +99,15 @@ public class KingBossScript : MonoBehaviour {
             {
                 transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.35f);
             }
-            //Stop at X897 and reset timer
+            //Stop at X897 and reset timer. Also spawn a projectile
             if (transform.position.x >= 897)
             {
                 transform.position = new Vector2(transform.position.x, transform.position.y);
                 timer = 3;
                 Flip();
                 grounded = true;
+                //Spawn projectile
+                Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
             }
         }
 
@@ -116,6 +137,8 @@ public class KingBossScript : MonoBehaviour {
                 timer = 3;
                 Flip();
                 grounded = true;
+                //Spawn projectile
+                Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
             }
         }
     }
