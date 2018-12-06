@@ -42,5 +42,6 @@ public class UFO : MonoBehaviour {
             Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
             Destroy(this.gameObject);
         }
+        //Against an explosion? Layer 15
     }
 }
