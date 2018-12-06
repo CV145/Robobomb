@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BossExplosionTrigger.cs" />
+    <Compile Include="Assets\EnemyExplosions.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
+    <Compile Include="Assets\UFO.cs" />
     <None Include="Assets\Ocias\PixelArtCamera\PixelArtSpriteDiffuse.shader" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Death and Respawn.txt" />

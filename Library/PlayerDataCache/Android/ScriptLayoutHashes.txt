@@ -207,11 +207,11 @@ aa78e3e4e5798849e06ddb3c045b8546 Assembly-CSharp.dll:.KingBossScript
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 83c0e8288c9cc97204653b6b7be503d6 Assembly-CSharp.dll:.NoteReactor
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DiscreteEmotionExample
-837c21a42a056e24bb1f7aa645705410 Assembly-CSharp.dll:.Spawner
+5fb377977ae80b80c95352e2d626b7a4 Assembly-CSharp.dll:.Spawner
 2d5613dfea5ebe89d441816537142920 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 1e4a8fcfd60e08a4c686a6069daab2a4 Assembly-CSharp.dll:.CameraControl
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.FollowParent
-ec81784abdefc78d140dd7da92d0c531 Assembly-CSharp.dll:.Patrol
+b8dcb271920affb0257904bd64434a73 Assembly-CSharp.dll:.Patrol
 7c4257788e2712bc5f949176d8bd86dd Assembly-CSharp.dll:.FireupScript
 49f05eb1b7dcb677f89a432e08ffa241 MelodriveScripts.dll:.MelodriveEditor
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PositionalEmotionExample
@@ -227,3 +227,5 @@ a2a9b378a7e0ac6e387285e459b614fa Assembly-CSharp.dll:.CellScript
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.showUI
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 cd4384ff3ca2ce9f90cad276b202d3a7 Assembly-CSharp.dll:.Text
+10288da0d03887ff6f4d363f3fd0f578 Assembly-CSharp.dll:.UFO
+cbba169a095dbe837a0d99ec91ee9ac3 Assembly-CSharp.dll:.EnemyExplosions

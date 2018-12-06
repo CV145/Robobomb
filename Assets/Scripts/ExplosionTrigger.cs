@@ -70,19 +70,9 @@ public class ExplosionTrigger : MonoBehaviour {
 
                 else
                 {
-                    Object.Destroy(gameObject, destroyTime);
-                    if (!instantiated)
+                    if (hasAnim)
                     {
-                        if (spawnFireup)
-                        {
-                            Instantiate(Fireup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                            instantiated = true;
-                        }
-                        if (spawnBombup)
-                        {
-                            Instantiate(Bombup, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                            instantiated = true;
-                        }
+                        anim.SetBool("isHit", true);
                     }
                 }
             }

@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
         BunO,
         Minibot,
         Balguard,
+        UFO,
         //Bosses
         KingBoss,
         //Items
@@ -28,6 +29,7 @@ public class Spawner : MonoBehaviour {
     public GameObject BunO;
     public GameObject Minibot;
     public GameObject Balguard;
+    public GameObject UFO;
     ///
     public GameObject KingBoss;
     ///
@@ -74,6 +76,9 @@ public class Spawner : MonoBehaviour {
                             break;
                         case ObjectsToSpawn.Balguard:
                             Instantiate(Balguard, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case ObjectsToSpawn.UFO:
+                            Instantiate(UFO, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
                             break;
                         ///
                         case ObjectsToSpawn.KingBoss:
