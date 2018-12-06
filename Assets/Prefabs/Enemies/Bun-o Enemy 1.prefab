@@ -198,13 +198,8 @@ MonoBehaviour:
   collisionDetection: {fileID: 4165048030191946}
   walls:
     serializedVersion: 2
-    m_Bits: 84992
-  isItem: 1
-  groundCheck: {fileID: 4370249690507420}
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
     m_Bits: 19456
+  isItem: 1
 --- !u!114 &114736749153570262
 MonoBehaviour:
   m_ObjectHideFlags: 1

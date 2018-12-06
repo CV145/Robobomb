@@ -208,7 +208,7 @@ MonoBehaviour:
   collisionDetection: {fileID: 4332271074829622}
   walls:
     serializedVersion: 2
-    m_Bits: 84992
+    m_Bits: 19456
   isItem: 0
 --- !u!114 &114774654181336664
 MonoBehaviour:
