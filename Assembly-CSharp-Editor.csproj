@@ -384,17 +384,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5B2EC4FD-2B73-8822-CEA8-1590EE5A0902}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{DA572EE0-14C4-6149-F844-8C628A0EE5BE}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{D363458E-E493-4954-BA32-B6F053F0663D}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="MelodriveScripts.csproj">
       <Project>{DC9CB473-8EBF-5C14-2EF1-A859381073EF}</Project>

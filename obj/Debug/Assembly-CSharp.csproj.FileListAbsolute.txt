@@ -1,0 +1,2 @@
+D:\Projects\Robobomb\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Projects\Robobomb\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

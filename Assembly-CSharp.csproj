@@ -101,15 +101,6 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\BeatReactor.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\DirectEmotionExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\DiscreteEmotionExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\EnsembleChangeExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\NoteReactor.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\PositionalEmotionExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\ProjectExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\SeedChangeExample.cs" />
-    <Compile Include="Assets\Melodrive\Examples\Scripts\StyleChangeExample.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\CameraPan.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\RandomRotate.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\SixtyFPS.cs" />
@@ -126,7 +117,6 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CamShakeSimple.cs" />
-    <Compile Include="Assets\Scripts\CellScript.cs" />
     <Compile Include="Assets\Scripts\CloudMovement.cs" />
     <Compile Include="Assets\Scripts\CrystalGetScript.cs" />
     <Compile Include="Assets\Scripts\DestroySelf.cs" />
@@ -134,28 +124,19 @@
     <Compile Include="Assets\Scripts\ExplosionFade.cs" />
     <Compile Include="Assets\Scripts\ExplosionTrigger.cs" />
     <Compile Include="Assets\Scripts\FireupScript.cs" />
-    <Compile Include="Assets\Scripts\FollowParent.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GuardbotScript.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\KingBossScript.cs" />
     <Compile Include="Assets\Scripts\LeftMoveButtonClick.cs" />
-    <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Scripts\PickupsAndStats.cs" />
     <Compile Include="Assets\Scripts\PixelBoy.cs" />
-    <Compile Include="Assets\Scripts\PlanetScript.cs" />
-    <Compile Include="Assets\Scripts\PlanetScript2.cs" />
-    <Compile Include="Assets\Scripts\PlanetShop.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
-    <Compile Include="Assets\Scripts\ScrollSnapRect\ScrollSnapRect.cs" />
-    <Compile Include="Assets\Scripts\showUI.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
-    <Compile Include="Assets\Scripts\TrampolineScript.cs" />
     <Compile Include="Assets\Scripts\UFO.cs" />
     <None Include="Assets\Ocias\PixelArtCamera\PixelArtSpriteDiffuse.shader" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
@@ -194,7 +175,6 @@
     <None Include="Assets\Notes\Enemy Types.txt" />
     <None Include="Assets\Notes\Boss1.txt" />
     <None Include="Assets\Notes\Oct 12 2018.txt" />
-    <None Include="Assets\Melodrive\Melodrive EULA.txt" />
     <None Include="Assets\Notes\Oct 13 2018 Notes.txt" />
     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
     <None Include="Assets\Notes\Spawner Triggers.txt" />
@@ -450,10 +430,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5B2EC4FD-2B73-8822-CEA8-1590EE5A0902}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="MelodriveScripts.csproj">
       <Project>{DC9CB473-8EBF-5C14-2EF1-A859381073EF}</Project>
       <Name>MelodriveScripts</Name>

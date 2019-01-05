@@ -11,11 +11,6 @@ public class UFO : MonoBehaviour {
     //Explosion game object
     public GameObject explosion;
 
-    // Use this for initialization
-    void Start () {
-
-    }
-	
 	// Update is called once per frame
 	void Update () {
         //If isHit is true, turn on gravity and unlock rotation. When hitting the floor, destroy self and spawn explosion
@@ -42,6 +37,5 @@ public class UFO : MonoBehaviour {
             Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
             Destroy(this.gameObject);
         }
-        //Against an explosion? Layer 15
     }
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Planets/Hanging Cage.unity
+- path: Assets/Scenes/Hanging Cage.unity
   isLoaded: 1
   isActive: 1

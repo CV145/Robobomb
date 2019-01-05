@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /*Player controller script is in charge of controlling Robo. Controls can be used on both PC and mobile.
+     * Robo can jump, throw bombs, and change directions. 
+     * This script also handles animations.
+         */
+
+
     public float maxSpeed = 50f;
     public bool facingRight = true;
     Rigidbody2D Rigidbody;
@@ -25,11 +31,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource throwSource;
     //
  
-    bool lowerHit = false;
-    public LayerMask grabbables;
     Vector2 direction;
-    public Transform lowerCheck;
-    bool hanging = false;
     Vector2 groundBoxSize;
     Vector2 lowerBoxSize;
     float move;
@@ -40,16 +42,11 @@ public class PlayerController : MonoBehaviour
     public GameObject Bomb;
     bool bombDown;
     bool bombNotDown;
-    public GameObject BombDrop;
-    bool drop = false;
     bool throwed = false;
-    //bool dropDown = false;
-    bool hangOver;
     RigidbodyConstraints2D originalConstraints;
     public bool stopMoving = false;
     public bool arcade;
     Vector3 startPosition;
-    //bool kicking;
 
     public PickupsAndStats RoboStats;
 
@@ -61,27 +58,29 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //When the game begins, set the animator controller, rigidbody, and sounds
         Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
         throwSource.clip = bombThrow;
-        if (!arcade)
-        {
-            originalConstraints = RigidbodyConstraints2D.FreezeRotation;
-        }
-        else
-        {
-            originalConstraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            startPosition = new Vector2(transform.position.x, transform.position.y);
-        }
 
-       // Rigidbody.transform.position = new Vector2(Screen.width / 2, transform.position.y);
+        
+
+        //if (!arcade)
+        //{
+        //    originalConstraints = RigidbodyConstraints2D.FreezeRotation;
+        //}
+        //else
+        //{
+        //    originalConstraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        //    startPosition = new Vector2(transform.position.x, transform.position.y);
+        //}
     }
 
     //
     /// ////////////
-    
+
     void FixedUpdate()
     {
         ////JUMP SETUP//// 
@@ -91,14 +90,6 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("vSpeed", Rigidbody.velocity.y);
         grounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
 
-
-        ///GRAB SETUP///
-        ///
-        lowerBoxSize.x = 5;
-        lowerBoxSize.y = 20;
-        lowerHit = Physics2D.Raycast(lowerCheck.position, direction, 5f, grabbables);
-        //check if lower hit is true then do ledge grab function
-
         ///HORIZONTAL MOVEMENT////
         ///
         if (!stopMoving)
@@ -107,52 +98,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-
-        if (!hanging)
-        {
-            if (!arcade) //if arcade is false change velovity and move normally
-            {
-                anim.SetFloat("Speed", Mathf.Abs(move));
-                Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-            }
-            //else //if arcade then slightly budge in corresponding direction
-            //{
-            //    //if (facingRight)
-                //{
-                //    //should budge through a double tap. First tap changes direction
-                //    if (Input.GetKeyDown(KeyCode.RightArrow))
-                //    {
-                //        if (grounded && !kicking && !drop)
-                //        {
-                //            Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-                //            Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //            transform.position = new Vector2(transform.position.x + 4, transform.position.y);
-                //            StartCoroutine("MoveForABit");
-                //            Rigidbody.constraints = originalConstraints;   
-                //        }
-                //    }
-                //}
-                //else if (!facingRight)
-                //{
-                //    if (Input.GetKeyDown(KeyCode.LeftArrow))
-                //    {
-                //        if (grounded && !kicking && !drop)
-                //        {
-                //            Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-                //            Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //            transform.position = new Vector2(transform.position.x - 4, transform.position.y);
-                //            StartCoroutine("MoveForABit");
-                //            Rigidbody.constraints = originalConstraints;
-                //        }
-                //    }
-                //}
-            //}
-
-
-
-
-
-        }
+    
         ///////////////////////
         ///
 
@@ -163,14 +109,11 @@ public class PlayerController : MonoBehaviour
         if (leftDown)
         {
             move = -1;
-            if (!hanging)
-            {
                 if (!arcade)
                 {
                     anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
                 }
-            }
         }
 
         ///RIGHT///
@@ -179,69 +122,12 @@ public class PlayerController : MonoBehaviour
         if (rightDown)
         {          
                 move = 1f;
-            if (!hanging)
-            {
                 if (!arcade)
                 {
                     anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
                 }
-            }
         }
-
-        /////LEDGE CONTROLS/////
-        //if (hanging)
-        //{
-        //    if (facingRight)
-        //    {
-        //        if (move > 0)
-        //        {
-        //            if (hangOver == true) //when hanging animation finishes set bool
-        //            {
-        //                Vector2 climbPos = new Vector2(transform.position.x, transform.position.y); //current position
-        //                GetComponent<Transform>().position = new Vector2(climbPos.x + 12, climbPos.y + 24); //change Robo position
-        //                anim.SetBool("Climb", false); //ends the hanging animation
-        //                 //freeze position for a bit
-        //                StartCoroutine("BriefPause");
-        //                Rigidbody.gravityScale = 40; //reset gravity
-        //                hanging = false;
-        //                hangOver = false;
-        //            }
-        //        }
-        //        if (move < 0)
-        //        {
-        //            anim.SetBool("Climb", false);
-        //            Rigidbody.gravityScale = 40;
-        //            hanging = false;
-        //            hangOver = false;
-        //        }
-        //    }
-
-        //    else if (!facingRight)
-        //    {
-        //        if (move < 0)
-        //        {
-        //            if (hangOver == true) //when hanging animation finishes set bool
-        //            {
-        //                Vector2 climbPos = new Vector2(transform.position.x, transform.position.y); //current position
-        //                GetComponent<Transform>().position = new Vector2(climbPos.x - 12, climbPos.y + 24); //change Robo position
-        //                anim.SetBool("Climb", false); //ends the hanging animation
-        //                //freeze position for a bit
-        //                StartCoroutine("BriefPause");
-        //                Rigidbody.gravityScale = 40; //reset gravity
-        //                hanging = false;
-        //                hangOver = false;
-        //            }
-        //        }
-        //        if (move > 0)
-        //        {
-        //            anim.SetBool("Climb", false);
-        //            Rigidbody.gravityScale = 40;
-        //            hanging = false;
-        //            hangOver = false;
-        //        }
-        //    }
-        //}
 
 
         ////////// FLIPPING LEFT OR RIGHT /////
@@ -252,17 +138,7 @@ public class PlayerController : MonoBehaviour
         //////////
     }
 
-    //IEnumerator MoveForABit ()
-    //{
-    //    kicking = true;
-    //    yield return new WaitForSeconds(.22f); //wait for .2 secs
-    //    transform.position = startPosition;
-    //    kicking = false;
-    //    leftDown = false;
-    //    rightDown = false;
-    //}
-
-
+    //One of these pauses occur when Robo throws a bomb
     IEnumerator BriefPause()
     {
         Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -283,6 +159,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody.constraints = originalConstraints; //unfreeze
     }
 
+    //Public function that can tell another script if Robo is grounded or not
     public bool GetGrounded()
     {
         return grounded;
@@ -294,22 +171,14 @@ public class PlayerController : MonoBehaviour
         ///
         if (GetComponent<GameControl>().GameStart == false)
         {
+            //Freeze Robo in midair until PLAY is pressed
             Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
         }
         else if (GetComponent<GameControl>().GameStart == true)
         {
+            //Set constraints to original ones in Start() which supposedly are freezepositionx and rotation
             Rigidbody.constraints = originalConstraints;
         }
-
-        ///LEDGE HANGING///
-        ///
-        if (lowerHit)
-        {
-            Debug.Log("lower is hit");
-            LedgeGrab();
-        }
-        //////
-        ///
 
         ///CHECK DIRECTION///
         ///
@@ -324,26 +193,11 @@ public class PlayerController : MonoBehaviour
             direction.y = 0;
         }
 
-        ///GRAVITY FAILSAFE//
-        ///
-        if (anim.GetFloat("vSpeed") > 0 && anim.GetBool("Climb") == true)
-        {
-            Rigidbody.gravityScale = 50f;
-        }
-        ////
-        ///
-        ///CLIMB FAILSAFE//
-        ///
-        if (anim.GetBool("Ground") == true && anim.GetBool("Climb") == true)
-        {
-            anim.SetBool("Climb", false);
-        }
-
 
         ////BOMB THROWING///
         ///
 
-        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV())
         {
             if (Input.GetKey(KeyCode.Z) == true || Input.GetKey(KeyCode.X) == true)
             {
@@ -355,22 +209,6 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("Fire", true);
                 throwed = true;
             }
-
-            //////////////////
-            ///
-            ////BOMB DROPPING////
-
-            //if (Input.GetKeyDown(KeyCode.DownArrow))
-            //{
-            //    if (!bombNotDown && !bombDown && !kicking)
-            //    {
-            //        if (anim.GetBool("Ready") == false)
-            //        {
-            //            anim.SetBool("Fire", true); //bomb will only spawn if animation works because anim event
-            //            drop = true;
-            //        }
-            //    }
-            //}
         }
         else
         {
@@ -438,54 +276,12 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    void LedgeGrab()
-    {
-        if (grounded == false && anim.GetFloat("vSpeed") < 100)
-        {
-            if (lowerHit)
-            {
-                hanging = true;
-                Rigidbody.gravityScale = 0.0f;
-                Rigidbody.velocity = new Vector2(0, 0);
-                anim.SetBool("Climb", hanging);
-
-                if (facingRight)
-                {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x, lowerCheck.position.y));
-                }
-                if (!facingRight)
-                {
-                    Rigidbody.MovePosition(new Vector2(lowerCheck.position.x, lowerCheck.position.y));
-                }
-            }
-        }
-        else
-        {
-            hanging = false;
-        }
-
-
-    }
-
-
     /// MOBILE TOUCH CONTROLS ///
 
     public void LeftClick() //function called when on-screen button pressed
     {
         leftDown = true;
         rightDown = false;
-
-        //if (!facingRight)
-        //{
-        //    if (grounded && !kicking && !drop)
-        //    {
-        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //        transform.position = new Vector2(transform.position.x - 4, transform.position.y);
-        //        StartCoroutine("MoveForABit");
-        //        Rigidbody.constraints = originalConstraints;
-        //    }
-        //}
     }
 
     public void LeftUp()
@@ -497,18 +293,6 @@ public class PlayerController : MonoBehaviour
     {
         rightDown = true;
         leftDown = false;
-
-        //if (facingRight)
-        //{
-        //    if (grounded && !kicking && !drop)
-        //    {
-        //        Rigidbody.constraints = RigidbodyConstraints2D.None; //remove constraints on X
-        //        Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //        transform.position = new Vector2(transform.position.x + 4, transform.position.y);
-        //        StartCoroutine("MoveForABit");
-        //        Rigidbody.constraints = originalConstraints;
-        //    }
-        //}
     }
 
     public void RightUp()
@@ -536,12 +320,11 @@ public class PlayerController : MonoBehaviour
 
     public void BombClickUp()
     {//fire
-        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging)
+        if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV())
         {
             anim.SetBool("Ready", false);
             anim.SetBool("Fire", true);
             throwed = true;
-            //drop = false;
         }
     }
 
@@ -550,19 +333,6 @@ public class PlayerController : MonoBehaviour
         jumpDown = false;
         isJumping = false;
     }
-
-    //public void BombDropClick() //even that fires when the bomb drop UI is clicked
-    //{
-    //    if (RoboStats.GetBombsOnScreen() < RoboStats.GetBombLV() && !hanging) //only do this if not hanging and bomb limit not reached
-    //    {
-    //        if (anim.GetBool("Ready") == false && !kicking)
-    //        { 
-    //            //a bomb drop is instant, but you can't drop a bomb if you're preparing to throw one
-    //            anim.SetBool("Fire", true); //begins the fire animation, which then leads to the FireDone()
-    //            drop = true; //used to tell FireDone() that we're dropping a bomb, not throwing
-    //        }
-    //    }
-    //}
 
     //This event goes off when the fire animation is over. It checks which button was pressed to spawn 
     //the corresponding bomb
@@ -585,29 +355,5 @@ public class PlayerController : MonoBehaviour
             throwed = false;
             StartCoroutine("BrieferPause");
         }
-
-        //if (drop) //do this if you're bomb dropping
-        //{
-        //   //stop the fire animation, then spawn a new bomb drop depending on whether facing right or not
-        //   //Afterwards drop bools are set to false to begin process over again
-        //        anim.SetBool("Fire", false);
-        //        if (facingRight)
-        //        {
-        //            Instantiate(BombDrop, new Vector2(transform.position.x + 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
-        //        }
-        //        if (!facingRight)
-        //        {
-        //            Instantiate(BombDrop, new Vector2(transform.position.x - 7, transform.position.y - 6), Quaternion.Euler(0, 0, 90));
-        //        }
-        //        drop = false;
-        //    //Pause briefly afterwards
-        //    StartCoroutine("BrieferPause");
-
-        //}
-    }
-
-    public void hangFinished() //calls out that player is no longer hanging anymore
-    {
-        hangOver = true;
     }
 }
