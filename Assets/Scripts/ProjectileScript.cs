@@ -23,6 +23,17 @@ public class ProjectileScript : MonoBehaviour {
         timer = 10f;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //If colliding against player, wall, or explosion - destroy self
+        if (collision.gameObject.layer == 9 ||
+            collision.gameObject.layer == 10 ||
+            collision.gameObject.layer == 15)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Public function that sets direction on whether right or left of Robo
     public void SetDirection()
     {

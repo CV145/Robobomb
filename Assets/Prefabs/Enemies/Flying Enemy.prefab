@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4028715397458900}
-  m_Layer: 9
+  m_Layer: 22
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 737772323e1a2e44188801b4615c7a53, type: 3}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4332271074829622}
-  m_Layer: 13
+  m_Layer: 22
   m_Name: CollisionChecker
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}

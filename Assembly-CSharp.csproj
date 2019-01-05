@@ -61,8 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BossExplosionTrigger.cs" />
-    <Compile Include="Assets\EnemyExplosions.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
     <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />
@@ -103,7 +101,6 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
-    <Compile Include="Assets\KingBossScript.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\BeatReactor.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DirectEmotionExample.cs" />
     <Compile Include="Assets\Melodrive\Examples\Scripts\DiscreteEmotionExample.cs" />
@@ -118,19 +115,22 @@
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\SixtyFPS.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\Example\TileSpin.cs" />
     <Compile Include="Assets\Ocias\PixelArtCamera\PixelArtCamera.cs" />
-    <Compile Include="Assets\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Admanager.cs" />
+    <Compile Include="Assets\Scripts\BGSpawner.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\BombDrop.cs" />
     <Compile Include="Assets\Scripts\BombDropExplosion.cs" />
     <Compile Include="Assets\Scripts\BombExplosion.cs" />
     <Compile Include="Assets\Scripts\BombupScript.cs" />
+    <Compile Include="Assets\Scripts\BossExplosionTrigger.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CamShakeSimple.cs" />
     <Compile Include="Assets\Scripts\CellScript.cs" />
+    <Compile Include="Assets\Scripts\CloudMovement.cs" />
     <Compile Include="Assets\Scripts\CrystalGetScript.cs" />
     <Compile Include="Assets\Scripts\DestroySelf.cs" />
+    <Compile Include="Assets\Scripts\EnemyExplosions.cs" />
     <Compile Include="Assets\Scripts\ExplosionFade.cs" />
     <Compile Include="Assets\Scripts\ExplosionTrigger.cs" />
     <Compile Include="Assets\Scripts\FireupScript.cs" />
@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GuardbotScript.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
+    <Compile Include="Assets\Scripts\KingBossScript.cs" />
     <Compile Include="Assets\Scripts\LeftMoveButtonClick.cs" />
     <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\Patrol.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Assets\Scripts\PlanetScript2.cs" />
     <Compile Include="Assets\Scripts\PlanetShop.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
     <Compile Include="Assets\Scripts\ScrollSnapRect\ScrollSnapRect.cs" />
     <Compile Include="Assets\Scripts\showUI.cs" />
@@ -154,7 +156,7 @@
     <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
     <Compile Include="Assets\Scripts\TrampolineScript.cs" />
-    <Compile Include="Assets\UFO.cs" />
+    <Compile Include="Assets\Scripts\UFO.cs" />
     <None Include="Assets\Ocias\PixelArtCamera\PixelArtSpriteDiffuse.shader" />
     <None Include="Assets\Notes\Oct 14 2018.txt" />
     <None Include="Assets\Notes\Death and Respawn.txt" />

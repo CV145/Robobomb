@@ -28,7 +28,7 @@ TagManager:
   - Fireup
   - Explo.Trigger
   - Crystal
-  - 
+  - UFO
   - 
   - 
   - 
@@ -48,11 +48,11 @@ TagManager:
   - name: Tiles and Walls
     uniqueID: 1309394537
     locked: 0
-  - name: Units
-    uniqueID: 4004483509
-    locked: 0
   - name: Items
     uniqueID: 1242355989
+    locked: 0
+  - name: Units
+    uniqueID: 4004483509
     locked: 0
   - name: Objects
     uniqueID: 1508134293
