@@ -64,18 +64,6 @@ public class PlayerController : MonoBehaviour
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
         throwSource.clip = bombThrow;
-
-        
-
-        //if (!arcade)
-        //{
-        //    originalConstraints = RigidbodyConstraints2D.FreezeRotation;
-        //}
-        //else
-        //{
-        //    originalConstraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        //    startPosition = new Vector2(transform.position.x, transform.position.y);
-        //}
     }
 
     //
@@ -109,7 +97,7 @@ public class PlayerController : MonoBehaviour
         if (leftDown)
         {
             move = -1;
-                if (!arcade)
+                if (arcade)
                 {
                     anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
@@ -122,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (rightDown)
         {          
                 move = 1f;
-                if (!arcade)
+                if (arcade)
                 {
                     anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
@@ -136,6 +124,9 @@ public class PlayerController : MonoBehaviour
         else if (move < 0 && facingRight)
         { Flip(); }
         //////////
+        ///
+
+
     }
 
     //One of these pauses occur when Robo throws a bomb
