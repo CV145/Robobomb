@@ -40,8 +40,6 @@ public class PlayerController : MonoBehaviour
     bool rightDown = false;
     bool jumpDown = false;
     public GameObject Bomb;
-    bool bombDown;
-    bool bombNotDown;
     bool throwed = false;
     RigidbodyConstraints2D originalConstraints;
     public bool stopMoving = false;
@@ -86,10 +84,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-    
+
         ///////////////////////
         ///
-
+        
 
         /////HORIZONTAL MOBILE MOVEMENT/////
 
@@ -97,26 +95,16 @@ public class PlayerController : MonoBehaviour
         if (leftDown)
         {
             move = -1;
-                if (arcade)
-                {
-                    anim.SetFloat("Speed", Mathf.Abs(move));
-                    Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-                }
+                    Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);            
         }
 
         ///RIGHT///
         ///
-
         if (rightDown)
         {          
                 move = 1f;
-                if (arcade)
-                {
-                    anim.SetFloat("Speed", Mathf.Abs(move));
                     Rigidbody.velocity = new Vector2(move * maxSpeed, Rigidbody.velocity.y);
-                }
         }
-
 
         ////////// FLIPPING LEFT OR RIGHT /////
         if (move > 0 && !facingRight)
@@ -126,7 +114,8 @@ public class PlayerController : MonoBehaviour
         //////////
         ///
 
-
+        //Constantly check if there's movement to animate
+        anim.SetFloat("Speed", Mathf.Abs(move));
     }
 
     //One of these pauses occur when Robo throws a bomb
