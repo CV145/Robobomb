@@ -181,7 +181,7 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 70f7dc248db3379548a88e8d4fa049f8 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
-9e6d5107aaeb85d80c221aa7284df0d4 Assembly-CSharp.dll:.GameControl
+18ea14fd9eee10513e7d2c35f312bf5c Assembly-CSharp.dll:.GameControl
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:GoogleMobileAds.Common.MobileAdsEventExecutor
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -192,7 +192,7 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.CloudMovement
 aa78e3e4e5798849e06ddb3c045b8546 Assembly-CSharp.dll:.KingBossScript
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-5fb377977ae80b80c95352e2d626b7a4 Assembly-CSharp.dll:.Spawner
+d514bd445fb8e0c0cb4bc1d2917da987 Assembly-CSharp.dll:.Spawner
 1e4a8fcfd60e08a4c686a6069daab2a4 Assembly-CSharp.dll:.CameraControl
 b8dcb271920affb0257904bd64434a73 Assembly-CSharp.dll:.Patrol
 7c4257788e2712bc5f949176d8bd86dd Assembly-CSharp.dll:.FireupScript

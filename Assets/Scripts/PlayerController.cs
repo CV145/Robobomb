@@ -120,15 +120,15 @@ public class PlayerController : MonoBehaviour
     }
 
     //One of these pauses occur when Robo throws a bomb
-    IEnumerator BriefPause()
-    {
-        Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        stopMoving = true;
-        move = 0;
-        yield return new WaitForSeconds(.6f);
-        stopMoving = false;
-        Rigidbody.constraints = originalConstraints; //unfreeze
-    }
+    //IEnumerator BriefPause()
+    //{
+    //    Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    //    stopMoving = true;
+    //    move = 0;
+    //    yield return new WaitForSeconds(.6f);
+    //    stopMoving = false;
+    //    Rigidbody.constraints = originalConstraints; //unfreeze
+    //}
 
     IEnumerator BrieferPause()
     {

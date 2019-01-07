@@ -835,7 +835,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightClick
           m_Mode: 1
           m_Arguments:
@@ -852,7 +852,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightUp
           m_Mode: 1
           m_Arguments:
@@ -4379,7 +4379,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightClick
           m_Mode: 1
           m_Arguments:
@@ -4396,7 +4396,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightUp
           m_Mode: 1
           m_Arguments:
@@ -4620,7 +4620,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightClick
           m_Mode: 1
           m_Arguments:
@@ -4637,7 +4637,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: RightUp
           m_Mode: 1
           m_Arguments:
@@ -6431,7 +6431,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: LeftClick
           m_Mode: 1
           m_Arguments:
@@ -6448,7 +6448,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 986869140}
           m_MethodName: LeftUp
           m_Mode: 1
           m_Arguments:
