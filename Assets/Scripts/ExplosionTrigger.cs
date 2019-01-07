@@ -22,6 +22,8 @@ public class ExplosionTrigger : MonoBehaviour {
     public Patrol patrol;
     bool killed = false;
 
+    public bool thisEnemyPatrols;
+
     // Use this for initialization
     void Start() {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -43,7 +45,10 @@ public class ExplosionTrigger : MonoBehaviour {
                     }
 
                     rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                    patrol.IsAlive = false;
+                    if (thisEnemyPatrols)
+                    {
+                        patrol.IsAlive = false;
+                    }
                     rigidbody.bodyType = RigidbodyType2D.Static;
 
                     foreach (BoxCollider2D c in GetComponents<BoxCollider2D>())
@@ -54,7 +59,10 @@ public class ExplosionTrigger : MonoBehaviour {
                     {
                         Destroy(c);
                     }
-                    Destroy(patrol);
+                    if (thisEnemyPatrols)
+                    {
+                        Destroy(patrol);
+                    }
                     transform.Translate(new Vector3(0, 0, 0));
                     if (isEnemy)
                     {
@@ -64,8 +72,9 @@ public class ExplosionTrigger : MonoBehaviour {
                             killed = true;
                             Debug.Log(killed);
                         }
+                        Object.Destroy(gameObject, destroyTime);
                     }
-                    Object.Destroy(gameObject, destroyTime);
+
                 }
 
                 else
@@ -78,6 +87,7 @@ public class ExplosionTrigger : MonoBehaviour {
             }
         }
 
+     
     }
 
     IEnumerator deathPause()

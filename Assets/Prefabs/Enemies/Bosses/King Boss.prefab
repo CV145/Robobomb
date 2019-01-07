@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 58797434346471092}
   - component: {fileID: 114228901822540530}
   - component: {fileID: 114773898491486346}
+  - component: {fileID: 114464570428235640}
+  - component: {fileID: 95037575520980642}
   m_Layer: 13
   m_Name: King Boss
   m_TagString: Untagged
@@ -211,6 +213,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.618286, y: 21.00447}
   m_EdgeRadius: 0
+--- !u!95 &95037575520980642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973164988048100}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114228901822540530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,6 +245,32 @@ MonoBehaviour:
   facingRight: 0
   intro: 1
   Projectile: {fileID: 1451271444079836, guid: ef3ef56bf2a8479438f2ffe796726671, type: 2}
+--- !u!114 &114464570428235640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973164988048100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470c060900bbe1049b05f7428cf43225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosions:
+    serializedVersion: 2
+    m_Bits: 32768
+  Fireup: {fileID: 0}
+  Bombup: {fileID: 0}
+  isDestructible: 1
+  destroyTime: 0
+  spawnFireup: 0
+  spawnBombup: 0
+  spawnHeart: 0
+  isEnemy: 1
+  hasAnim: 1
+  anim: {fileID: 95037575520980642}
+  patrol: {fileID: 0}
+  thisEnemyPatrols: 0
 --- !u!114 &114773898491486346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1902e09ab95f44fa77f5550d9128a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 1
 --- !u!212 &212688145807497282
 SpriteRenderer:
   m_ObjectHideFlags: 1

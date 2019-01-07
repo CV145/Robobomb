@@ -182,6 +182,7 @@ MonoBehaviour:
   hasAnim: 1
   anim: {fileID: 95527825346194272}
   patrol: {fileID: 114150854906675062}
+  thisEnemyPatrols: 1
 --- !u!114 &114150854906675062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,7 +249,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -290483787
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0b5516e1ce6ee1e428cac2be86521ac5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
