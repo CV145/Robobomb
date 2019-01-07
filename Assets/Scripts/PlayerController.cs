@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         soundSource.clip = jumpLand;
         jumpSource.clip = jump;
         throwSource.clip = bombThrow;
+        originalConstraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     //

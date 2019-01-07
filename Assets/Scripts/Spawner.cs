@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour {
         Minibot,
         Balguard,
         UFO,
-        //Bosses
         KingBoss,
         //Items
         Bombup,
@@ -39,10 +38,6 @@ public class Spawner : MonoBehaviour {
     PickupsAndStats stats;
     GameControl control;
 
-    //Bool that prevents spawning if there's a boss enemy. It is set to false when boss is destroyed
-    public bool Boss = false;
-    //Game object for current boss. When destroyed, set bool boss to false
-    GameObject currentBoss;
 
     int spawnedCount = 0;
     ///
@@ -59,7 +54,7 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (control.GameStart == true && stats.Alive && !Boss) //if game is started, there's no boss, and player is alive, begin spawning
+        if (control.GameStart == true && stats.Alive) //if game is started, and player is alive, begin spawning
         {
             if (stats.Kills >= triggerGoal)
             {
@@ -83,7 +78,6 @@ public class Spawner : MonoBehaviour {
                         ///
                         case ObjectsToSpawn.KingBoss:
                             Instantiate(KingBoss, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 0));
-                            //Boss = true;
                             break;
                         ///
                         case ObjectsToSpawn.Fireup:
@@ -105,23 +99,6 @@ public class Spawner : MonoBehaviour {
                     Destroy(gameObject);
                 }
             }
-        }
-
-        //Every frame check if there's a boss. All spawners should do this and stop spawning when boss is true
-        try
-        {
-            currentBoss = GameObject.Find("King Boss(Clone)");
-            Boss = true;
-        }
-        catch
-        {
-            Boss = false;
-        }
-
-        //If current boss is destroyed, set boss bool to false - should begin spawning enemies again
-        if (currentBoss == null)
-        {
-            Boss = false;
         }
 	}
 }

@@ -47,8 +47,7 @@ public class ProjectileScript : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         //Move the projectile
         transform.position = new Vector2(transform.position.x + speed, transform.position.y);
         //Countdown timer and destroy game object when at 0

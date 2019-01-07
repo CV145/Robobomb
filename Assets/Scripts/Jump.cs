@@ -24,7 +24,7 @@ public class Jump : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y - 4), 0.4f, whatIsGround))
         {

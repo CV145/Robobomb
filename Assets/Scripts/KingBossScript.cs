@@ -23,10 +23,11 @@ public class KingBossScript : MonoBehaviour {
 	void Start () {
         timer = 3;
         Robo = GameObject.Find("RoboPlayer");
+        Flip();
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (Robo.GetComponent<PickupsAndStats>().Alive)
         {
             
@@ -82,7 +83,7 @@ public class KingBossScript : MonoBehaviour {
     {
         if (facingRight)
         {
-            //Jump up and move to X897
+            //Jump up and move to X913
             //Increase x and y continouosly if on ground (-170)
             if (grounded)
             {
@@ -94,26 +95,36 @@ public class KingBossScript : MonoBehaviour {
                 grounded = false;
                 transform.position = new Vector2(transform.position.x + 0.5f, -135);
             }
-            //When passing Robo move down
-            if (transform.position.x >= Robo.transform.position.x + 5)
+            //When passing (some midpoint) move down
+            if (transform.position.x >= 880)
             {
                 transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.35f);
             }
-            //Stop at X897 and reset timer. Also spawn a projectile
-            if (transform.position.x >= 897)
+            //Stop at X913 and reset timer. Also spawn a projectile
+            if (transform.position.x >= 913)
             {
-                transform.position = new Vector2(transform.position.x, transform.position.y);
-                timer = 3;
-                Flip();
-                grounded = true;
-                //Spawn projectile
-                Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                //So stop at X913 and move down until reaching -170Y
+                //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f); //Remove this
+                //timer = 3;
+                
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                //Once y is <= -170, set grounded to true and spawn projectile
+                if (transform.position.y <= -170)
+                {
+                    Flip();
+                    //Freeze position here
+                    transform.position = new Vector2(transform.position.x, transform.position.y);
+                    grounded = true;
+                    //Spawn projectile
+                    Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                    timer = 3;
+                }
             }
         }
 
         else if (!facingRight)
         {
-            //Jump up and move to X785
+            //Jump up and move to X768
             //Do the same as above but in reverse direction
             if (grounded)
             {
@@ -125,20 +136,28 @@ public class KingBossScript : MonoBehaviour {
                 grounded = false;
                 transform.position = new Vector2(transform.position.x - 0.5f, -135);
             }
-            //Move down after passing Robo
-            if (transform.position.x <= Robo.transform.position.x - 5)
+            //Move down after passing (some midpoint)
+            if (transform.position.x <= 800)
             {
                 transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y - 0.35f);
             }
-            //Stop at X785 and reset timer
-            if (transform.position.x <= 785)
+            //Stop at X768 and reset timer
+            if (transform.position.x <= 768)
             {
-                transform.position = new Vector2(transform.position.x, transform.position.y);
-                timer = 3;
-                Flip();
+                //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                //timer = 3;
+                
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                if (transform.position.y <= -170)
+                {
+                    Flip();
+                    transform.position = new Vector2(transform.position.x, transform.position.y);
                 grounded = true;
-                //Spawn projectile
-                Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                    //Spawn projectile
+                    Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                    timer = 3;
+                }
+                
             }
         }
     }
