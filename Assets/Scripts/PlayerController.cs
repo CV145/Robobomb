@@ -133,10 +133,12 @@ public class PlayerController : MonoBehaviour
     IEnumerator BrieferPause()
     {
         Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
-        stopMoving = true;
+        //stopMoving = true;
+        float temp = move;
         move = 0;
         yield return new WaitForSeconds(.15f);
-        stopMoving = false;
+        //stopMoving = false;
+        move = temp;
         Rigidbody.constraints = originalConstraints; //unfreeze
     }
 
