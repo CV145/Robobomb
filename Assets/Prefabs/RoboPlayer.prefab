@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1857591374322194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 840, y: -60.7, z: 0}
+  m_LocalPosition: {x: 840, y: -60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4032269531167226}
@@ -1056,13 +1056,8 @@ MonoBehaviour:
   jumpSource: {fileID: 82503836754538268}
   bombThrow: {fileID: 8300000, guid: 47bfdae7cd1fd764f9e9ab60bbd27968, type: 3}
   throwSource: {fileID: 82700125262590318}
-  grabbables:
-    serializedVersion: 2
-    m_Bits: 2048
-  lowerCheck: {fileID: 4920401810115502}
   Bomb: {fileID: 1371412923011698, guid: 2569c765f041654458b4eec0f710be53, type: 2}
-  BombDrop: {fileID: 1823749725694688, guid: 59b8cda700df70f448a2d28e11d3edcc, type: 2}
-  stopMoving: 1
+  stopMoving: 0
   arcade: 1
   RoboStats: {fileID: 114845553519111708}
 --- !u!114 &114665673813741010
@@ -1079,7 +1074,6 @@ MonoBehaviour:
   MainMenu: {fileID: 0}
   hud: {fileID: 0}
   resultsHUD: {fileID: 0}
-  planetsUI: {fileID: 0}
   ThrowBtn: {fileID: 0}
   JumpBtn: {fileID: 0}
   RightBtn: {fileID: 0}
@@ -1151,7 +1145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -290483787
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 16e58f03a9e13fb479d62523d24ba56d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

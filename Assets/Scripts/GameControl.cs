@@ -13,6 +13,8 @@ public class GameControl : MonoBehaviour {
     public GameObject ThrowBtn, JumpBtn, RightBtn, LeftBtn;
     public PickupsAndStats stats;
     public Admanager instance;
+    public AudioClip BGmusic;
+    public AudioSource BGmusicSource;
 
     public bool GameStart
     {
@@ -36,11 +38,13 @@ public class GameControl : MonoBehaviour {
         JumpBtn.SetActive(true);
         LeftBtn.SetActive(true);
         RightBtn.SetActive(true);
+        BGmusicSource.Play();
         //instance.HideBanner();
     }
 
 	// Use this for initialization
 	void Start () {
+        BGmusicSource.clip = BGmusic; //sets up the music
         hud.SetActive(true);
         ThrowBtn.SetActive(false);
         JumpBtn.SetActive(false);
@@ -49,12 +53,6 @@ public class GameControl : MonoBehaviour {
         resultsHUD.SetActive(false);
         //load the game stats when starting scene over
         LoadGame();
-    }
-
-    //function that sets planet UI called when planet button pressed
-    public void setPlanets()
-    {
-        MainMenu.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -67,7 +65,13 @@ public class GameControl : MonoBehaviour {
             JumpBtn.SetActive(false);
             LeftBtn.SetActive(false);
             RightBtn.SetActive(false);
-           // instance.ShowBanner();
+            // instance.ShowBanner();
+
+            //Fade the music out
+            StartCoroutine(FadeOut(BGmusicSource, 3.5f));
+
+
+
         }
         if (GetComponent<PickupsAndStats>().Alive)
         {
@@ -75,7 +79,23 @@ public class GameControl : MonoBehaviour {
         }
 	}
 
+    //Enum for fading out music
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    {
+        float startVolume = audioSource.volume;
+        float adjustedVolume = startVolume;
 
+        while (audioSource.volume > 0)
+        {
+            adjustedVolume -= startVolume * Time.deltaTime / FadeTime;
+            audioSource.volume = adjustedVolume;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
 
 
     //Saving and loading functions
