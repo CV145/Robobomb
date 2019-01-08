@@ -236,7 +236,7 @@ public class PickupsAndStats : MonoBehaviour {
 
     public void FireLVUp()
     {
-        if (fireLV < 5)
+        if (fireLV < 3)
         {
             fireLV++;
             powerupSource.Play();
@@ -252,7 +252,7 @@ public class PickupsAndStats : MonoBehaviour {
 
     public void BombLVUp()
     {
-        if (bombLV < 5)
+        if (bombLV < 3)
         {
             bombLV++;
             powerupSource.Play();
