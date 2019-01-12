@@ -183,7 +183,7 @@ MonoBehaviour:
   Fireup: {fileID: 0}
   Bombup: {fileID: 0}
   isDestructible: 1
-  destroyTime: 0
+  destroyTime: 0.4
   spawnFireup: 0
   spawnBombup: 0
   spawnHeart: 0

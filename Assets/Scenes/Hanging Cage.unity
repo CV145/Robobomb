@@ -5318,17 +5318,17 @@ Prefab:
     - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
         type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0.34881568
+      value: 0.37791
       objectReference: {fileID: 0}
     - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
         type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0.5803922
+      value: 0.741
       objectReference: {fileID: 0}
     - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
         type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0.5803922
+      value: 0.741
       objectReference: {fileID: 0}
     - target: {fileID: 20066037657438724, guid: 0fbba7abd972b514597ccf142edb4896,
         type: 2}
