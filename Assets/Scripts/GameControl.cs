@@ -14,7 +14,10 @@ public class GameControl : MonoBehaviour {
     public PickupsAndStats stats;
     public Admanager instance;
     public AudioClip BGmusic;
+    public AudioClip BGloop;
+    public AudioSource BGloopsource;
     public AudioSource BGmusicSource;
+    bool secondLoopStarted = false;
 
     public bool GameStart
     {
@@ -45,6 +48,7 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         BGmusicSource.clip = BGmusic; //sets up the music
+        BGloopsource.clip = BGloop; //BGloop is what loops after the intro is done
         hud.SetActive(true);
         ThrowBtn.SetActive(false);
         JumpBtn.SetActive(false);
@@ -57,6 +61,17 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (gameStart && !secondLoopStarted)
+        {
+            //When the game has started, if the intro is done playing loop the seocnd part forever
+            if (!BGmusicSource.isPlaying)
+            {
+                BGloopsource.Play();
+                secondLoopStarted = true;
+            }
+        }
+
 		if (!GetComponent<PickupsAndStats>().Alive) //when Robo dies
         {
             //hud.SetActive(false);
@@ -69,9 +84,7 @@ public class GameControl : MonoBehaviour {
 
             //Fade the music out
             StartCoroutine(FadeOut(BGmusicSource, 3.5f));
-
-
-
+            StartCoroutine(FadeOut(BGloopsource, 3.5f));
         }
         if (GetComponent<PickupsAndStats>().Alive)
         {
