@@ -18,19 +18,25 @@ public class KingBossScript : MonoBehaviour {
     GameObject Robo;
     //Projectile
     public GameObject Projectile;
+    //Get the animator controller
+    Animator animator;
+    //Get BossExplosionTrigger script
+    BossExplosionTrigger otherScript;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         timer = 3;
         Robo = GameObject.Find("RoboPlayer");
+        animator = GetComponent<Animator>();
         Flip();
+        otherScript = GetComponent<BossExplosionTrigger>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         if (Robo.GetComponent<PickupsAndStats>().Alive)
         {
-            
+             
             if (!intro)
             {
                 timer -= Time.deltaTime;
@@ -55,6 +61,7 @@ public class KingBossScript : MonoBehaviour {
         else if (!Robo.GetComponent<PickupsAndStats>().Alive)
         {
             //When Robo is dead, stop in place and laugh at player
+            animator.SetBool("isLaughing", true);
         }
 	}
 
@@ -81,83 +88,88 @@ public class KingBossScript : MonoBehaviour {
     //Function that, depending on where boss is facing, jump and move to opposite direction
     void JumpNShoot()
     {
-        if (facingRight)
+        //Run this code only if not "dead" or playing a death animation
+        if (animator.GetBool("isDead") == false)
         {
-            //Jump up and move to X913
-            //Increase x and y continouosly if on ground (-170)
-            if (grounded)
+            if (facingRight)
             {
-                transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y + 0.7f);
-            }
-            //Cap out y at -135
-            if (transform.position.y >= -135)
-            {
-                grounded = false;
-                transform.position = new Vector2(transform.position.x + 0.5f, -135);
-            }
-            //When passing (some midpoint) move down
-            if (transform.position.x >= 880)
-            {
-                transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.35f);
-            }
-            //Stop at X913 and reset timer. Also spawn a projectile
-            if (transform.position.x >= 913)
-            {
-                //So stop at X913 and move down until reaching -170Y
-                //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f); //Remove this
-                //timer = 3;
-                
-                transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
-                //Once y is <= -170, set grounded to true and spawn projectile
-                if (transform.position.y <= -170)
+                //Jump up and move to X913
+                //Increase x and y continouosly if on ground (-170)
+                if (grounded)
                 {
-                    Flip();
-                    //Freeze position here
-                    transform.position = new Vector2(transform.position.x, transform.position.y);
-                    grounded = true;
-                    //Spawn projectile
-                    Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
-                    timer = 3;
+                    transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y + 0.7f);
                 }
-            }
-        }
+                //Cap out y at -135
+                if (transform.position.y >= -135)
+                {
+                    grounded = false;
+                    transform.position = new Vector2(transform.position.x + 0.5f, -135);
+                }
+                //When passing (some midpoint) move down
+                if (transform.position.x >= 880)
+                {
+                    transform.position = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.35f);
+                }
+                //Stop at X913 and reset timer. Also spawn a projectile
+                if (transform.position.x >= 913)
+                {
+                    //So stop at X913 and move down until reaching -170Y
+                    //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f); //Remove this
+                    //timer = 3;
 
-        else if (!facingRight)
-        {
-            //Jump up and move to X768
-            //Do the same as above but in reverse direction
-            if (grounded)
-            {
-                transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y + 0.7f);
-            }
-            //Cap at Y-135
-            if (transform.position.y >= -135)
-            {
-                grounded = false;
-                transform.position = new Vector2(transform.position.x - 0.5f, -135);
-            }
-            //Move down after passing (some midpoint)
-            if (transform.position.x <= 800)
-            {
-                transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y - 0.35f);
-            }
-            //Stop at X768 and reset timer
-            if (transform.position.x <= 768)
-            {
-                //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
-                //timer = 3;
-                
-                transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
-                if (transform.position.y <= -170)
-                {
-                    Flip();
-                    transform.position = new Vector2(transform.position.x, transform.position.y);
-                grounded = true;
-                    //Spawn projectile
-                    Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
-                    timer = 3;
+                    transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                    //Once y is <= -170, set grounded to true and spawn projectile
+                    if (transform.position.y <= -170)
+                    {
+                        Flip();
+                        //Freeze position here
+                        transform.position = new Vector2(transform.position.x, transform.position.y);
+                        grounded = true;
+                        //Spawn projectile
+                        Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                        timer = 3;
+                    }
                 }
-                
+            }
+
+
+            else if (!facingRight)
+            {
+                //Jump up and move to X768
+                //Do the same as above but in reverse direction
+                if (grounded)
+                {
+                    transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y + 0.7f);
+                }
+                //Cap at Y-135
+                if (transform.position.y >= -135)
+                {
+                    grounded = false;
+                    transform.position = new Vector2(transform.position.x - 0.5f, -135);
+                }
+                //Move down after passing (some midpoint)
+                if (transform.position.x <= 800)
+                {
+                    transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y - 0.35f);
+                }
+                //Stop at X768 and reset timer
+                if (transform.position.x <= 768)
+                {
+                    //transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                    //timer = 3;
+
+                    transform.position = new Vector2(transform.position.x, transform.position.y - 0.35f);
+                    if (transform.position.y <= -170)
+                    {
+                        Flip();
+                        transform.position = new Vector2(transform.position.x, transform.position.y);
+                        grounded = true;
+                        //Spawn projectile
+                        Instantiate(Projectile, new Vector2(transform.position.x, -175), Quaternion.Euler(0, 0, 0));
+                        timer = 3;
+                    }
+
+                }
             }
         }
     }

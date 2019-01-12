@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973164988048100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 897, y: -88.2, z: 0}
+  m_LocalPosition: {x: 907.6796, y: -163.2136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4015548130570448}
@@ -185,9 +185,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.1131377, y: 8.9079485}
+  m_Offset: {x: -2.482788, y: 8.9079485}
   serializedVersion: 2
-  m_Radius: 3.2521148
+  m_Radius: 4.5458374
 --- !u!61 &61737324510292964
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -222,7 +222,7 @@ Animator:
   m_GameObject: {fileID: 1973164988048100}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5fb8b21e105e1945b31b1b87a261d85, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   Fireup: {fileID: 0}
   Bombup: {fileID: 0}
   isDestructible: 1
-  destroyTime: 0
+  destroyTime: 3
   spawnFireup: 0
   spawnBombup: 0
   spawnHeart: 0

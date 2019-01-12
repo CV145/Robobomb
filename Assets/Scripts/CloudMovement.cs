@@ -11,6 +11,6 @@ public class CloudMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector2(transform.position.x + 0.1f, transform.position.y);
+        transform.position = new Vector2(transform.position.x + 0.15f, transform.position.y);
 	}
 }

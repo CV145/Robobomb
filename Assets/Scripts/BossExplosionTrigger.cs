@@ -19,11 +19,22 @@ public class BossExplosionTrigger : MonoBehaviour {
     bool transparent;
     //Get the renderer
     SpriteRenderer renderer;
+    //Get the animator controller
+    Animator animator;
+
+    public bool Hit
+    {
+        get
+        {
+            return isHit;
+        }
+    }
 
     private void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
         transparent = false;
+        animator = GetComponent<Animator>();
     }
 
     //Collision function that takes in explosion hits
@@ -40,63 +51,34 @@ public class BossExplosionTrigger : MonoBehaviour {
                 timer = 3;
             }
         }
+        //If a bomb hits, play the Deflect animation
+        if (collision.gameObject.layer == 17 && !animator.GetBool("isDead") && !animator.GetBool("isLaughing"))
+        {
+            animator.SetBool("Deflect", true);
+        }
     }
 	// Update is called once per frame
 	void Update () {
 
         //Check if dead
         DestroySelf();
-
-	    if (isHit)
-        {
-            //Begin counting down from 3 using timer. During this time make game object blink
-            timer -= Time.deltaTime;
-
-            if (timer <= temp)
-            {
-                //This function should be in charge of blinking
-                TransparentCheck();
-                //Subtract temp to repeat
-                temp -= 0.15f;
-            }
-            //When timer reaches 0 restart and set isHit to false
-            if (timer <= 0)
-            {
-                timer = 3;
-                temp = 3;
-                isHit = false;
-                transparent = false;
-                renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1f);
-            }
-        }
 	}
 
-    //Function that flips between transparent or not
-    void TransparentCheck()
+    public void DeflectFinished()
     {
-        if (!transparent)
-        {
-            //Makes transparent
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0f);
-            transparent = true;
-            return;
-        }
-        if (transparent)
-        {
-            //Brings back sprite
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1f);
-            transparent = false;
-            return;
-        }
+        animator.SetBool("Deflect", false);
     }
-
 
     //Function that destroys seld when health reaches 0
     void DestroySelf()
     {
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetBool("isDead", true);
+            //Change color
+            renderer.color = new Color(0.89f, 0.52f, 0.22f, 1f);
+            transform.position = new Vector2(transform.position.x, transform.position.y + 1f);
+            Destroy(this.gameObject, 2f);
         }
     }
 }

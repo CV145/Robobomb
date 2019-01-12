@@ -53,12 +53,12 @@ public class ExplosionFade : MonoBehaviour {
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 2)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.018f, .018f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.015f, .015f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 3)
         {
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y) +
-            new Vector2(.025f, .025f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
+            new Vector2(.020f, .020f); //.01, .02, .03, .04 <- possible fire level increases? ... death bomb .08f??
         }
         if (Robo.GetComponent<PickupsAndStats>().GetFireLV() == 4)
         {
