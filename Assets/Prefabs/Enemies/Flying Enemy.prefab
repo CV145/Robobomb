@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16822b0d3d3dda94e8391b1232a63616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 29
+  speed: 10
   movingRight: 1
   collisionDetection: {fileID: 4332271074829622}
   walls:
