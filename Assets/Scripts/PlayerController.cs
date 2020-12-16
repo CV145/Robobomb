@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D Rigidbody;
     Animator anim;
     public float jumpForce = 3000f;
-    bool grounded = false;
+    public bool grounded = false;
     public Transform groundCheck;
     float groundRadius = 0.6f;
     public LayerMask whatIsGround;
+    [SerializeField]
     private float jumpTimeCounter;
     public float jumpTime;
+    [SerializeField]
     private bool isJumping;
     //Sounds
     public AudioClip jumpLand;
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     bool leftDown = false;
     bool rightDown = false;
-    bool jumpDown = false;
+    public bool jumpDown = false;
     public GameObject Bomb;
     bool throwed = false;
     RigidbodyConstraints2D originalConstraints;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     Vector3 startPosition;
 
     public PickupsAndStats RoboStats;
+
 
     public bool FacingRightGetter()
     {
@@ -139,6 +142,15 @@ public class PlayerController : MonoBehaviour
         return grounded;
     }
 
+IEnumerator TouchRight()
+    {
+        rightDown = true;
+        yield return new WaitForSeconds(.15f);
+        rightDown = false;
+        movedRight = true;
+    }
+
+bool movedRight = false;
     private void Update()
     {
         /////Constraints when starting game//////
@@ -150,8 +162,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (GetComponent<GameControl>().GameStart == true)
         {
-            //Set constraints to original ones in Start() which supposedly are freezepositionx and rotation
+            //Set constraints to original ones in Start() 
             Rigidbody.constraints = originalConstraints;
+            if (!movedRight)
+            StartCoroutine("TouchRight");
         }
 
         ///CHECK DIRECTION///
@@ -237,7 +251,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 isJumping = false;
-
             }
         }
     }

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿using System.Data.SqlTypes;
+using System.Net.Sockets;
+using System.Data;
+using System.Runtime.InteropServices.ComTypes;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,7 +37,25 @@ public class Patrol : MonoBehaviour
         player = GameObject.Find("RoboPlayer");
         stats = player.GetComponent<PickupsAndStats>();
         speed += 10;
-        speed = speed + (2.5f * stats.GetFireLV()) + (2.5f * stats.GetBombLV());
+        
+
+        if (stats.Kills < 20)
+        {
+            speed += 1.9f * stats.Kills;
+        }
+        else if (stats.Kills >= 20 && stats.Kills < 50)
+        {
+            speed += 1.9f * 20;
+        }
+        else if (stats.Kills >= 50 && stats.Kills < 100)
+        {
+            speed += 1.9f * 25;
+        }
+        else
+        {
+            speed += 1.9f * 30;
+        }
+        
     }
 
 
@@ -53,7 +75,7 @@ public class Patrol : MonoBehaviour
         }
 
 
-        if (isAlive)
+        if (isAlive && player.GetComponent<GameControl>().GameStart)
         {
                 if (!isItem)
                 {

@@ -10,7 +10,7 @@ public class PickupsAndStats : MonoBehaviour {
     public LayerMask Fireups;
 
     public int fireLV = 1;
-    public int bombLV = 1;
+    public int bombLV = 2;
     public int Crystals = 0;
     public int killCount;
     private int highScore = 0;
@@ -214,7 +214,7 @@ public class PickupsAndStats : MonoBehaviour {
 
     IEnumerator LoadYourAsyncScene()
     {
-        yield return new WaitForSeconds(0.5f); //WaitForSeconds seems to be a class type
+        yield return new WaitForSeconds(0.5f); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -241,13 +241,17 @@ public class PickupsAndStats : MonoBehaviour {
             fireLV++;
             powerupSource.Play();
         }
+        else
+        {
+            //increase score here
+            Kills++;
+        }
     }
 
     public void CrystalIncrease()
     {
         Crystals++;
         crystalSource.Play();
-
     }
 
     public void BombLVUp()
@@ -256,6 +260,11 @@ public class PickupsAndStats : MonoBehaviour {
         {
             bombLV++;
             powerupSource.Play();
+        }
+        else
+        {
+            //increase score here
+            Kills++;
         }
     }
 

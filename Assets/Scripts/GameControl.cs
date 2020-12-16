@@ -41,7 +41,7 @@ public class GameControl : MonoBehaviour {
         JumpBtn.SetActive(true);
         LeftBtn.SetActive(true);
         RightBtn.SetActive(true);
-        BGmusicSource.Play();
+        //BGmusicSource.Play();
         //instance.HideBanner();
     }
 

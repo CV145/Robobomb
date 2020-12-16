@@ -1,0 +1,335 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+MERGED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:3:1-65:12
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:2:1-37:12
+MERGED from [:UnityAdsAndroidPlugin:] /home/carlos/.gradle/caches/transforms-2/files-2.1/b54424cf68032aa22fc18c1c4469dfcc/AndroidManifest.xml:2:1-11:12
+MERGED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:17:1-30:12
+MERGED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:17:1-28:12
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:17:1-31:12
+MERGED from [:com.google.android.gms.play-services-ads-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de1ab77dac5db1873649268eaed0d22d/AndroidManifest.xml:17:1-25:12
+MERGED from [:com.google.android.gms.play-services-ads-base-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/854a6b8b07ac7e941449283c56dc2e90/AndroidManifest.xml:17:1-24:12
+MERGED from [:com.google.android.gms.play-services-ads-identifier-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1e537a7147fceb0960072e9f03bae7a2/AndroidManifest.xml:17:1-24:12
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:17:1-36:12
+MERGED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:17:1-28:12
+MERGED from [:com.google.android.gms.play-services-gass-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/4cad9322375ed6e662d27d974f3bf304/AndroidManifest.xml:2:1-9:12
+MERGED from [:unityLibrary:GoogleMobileAdsPlugin] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/GoogleMobileAdsPlugin/build/intermediates/library_manifest/release/AndroidManifest.xml:7:1-19:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+	package
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:70-100
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:101-147
+	android:versionCode
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:1-6:12
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:11-69
+	android:installLocation
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:3:148-188
+supports-screens
+ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:3-163
+	android:largeScreens
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:78-105
+	android:smallScreens
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:21-48
+	android:normalScreens
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:49-77
+	android:xlargeScreens
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:106-134
+	android:anyDensity
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:4:135-160
+application
+ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:5:3-121
+MERGED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:28:5-63:19
+MERGED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:28:5-63:19
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:14:5-35:19
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:14:5-35:19
+MERGED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:24:5-28:19
+MERGED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:24:5-28:19
+MERGED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:22:5-26:19
+MERGED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:22:5-26:19
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:25:5-29:19
+MERGED from [:com.google.android.gms.play-services-ads-base-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/854a6b8b07ac7e941449283c56dc2e90/AndroidManifest.xml:22:5-20
+MERGED from [:com.google.android.gms.play-services-ads-base-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/854a6b8b07ac7e941449283c56dc2e90/AndroidManifest.xml:22:5-20
+MERGED from [:com.google.android.gms.play-services-ads-identifier-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1e537a7147fceb0960072e9f03bae7a2/AndroidManifest.xml:22:5-20
+MERGED from [:com.google.android.gms.play-services-ads-identifier-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1e537a7147fceb0960072e9f03bae7a2/AndroidManifest.xml:22:5-20
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:26:5-34:19
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:26:5-34:19
+MERGED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:22:5-26:19
+MERGED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:22:5-26:19
+MERGED from [:com.google.android.gms.play-services-gass-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/4cad9322375ed6e662d27d974f3bf304/AndroidManifest.xml:7:5-20
+MERGED from [:com.google.android.gms.play-services-gass-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/4cad9322375ed6e662d27d974f3bf304/AndroidManifest.xml:7:5-20
+MERGED from [:unityLibrary:GoogleMobileAdsPlugin] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/GoogleMobileAdsPlugin/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-17:19
+MERGED from [:unityLibrary:GoogleMobileAdsPlugin] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/GoogleMobileAdsPlugin/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-17:19
+	android:label
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:5:16-48
+	android:icon
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:5:49-80
+	android:banner
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml:5:81-118
+	android:isGame
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:28:18-39
+uses-sdk
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+MERGED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-11:41
+MERGED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-11:41
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:7:5-9:41
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:7:5-9:41
+MERGED from [:UnityAdsAndroidPlugin:] /home/carlos/.gradle/caches/transforms-2/files-2.1/b54424cf68032aa22fc18c1c4469dfcc/AndroidManifest.xml:7:5-9:41
+MERGED from [:UnityAdsAndroidPlugin:] /home/carlos/.gradle/caches/transforms-2/files-2.1/b54424cf68032aa22fc18c1c4469dfcc/AndroidManifest.xml:7:5-9:41
+MERGED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:20:5-22:41
+MERGED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:20:5-22:41
+MERGED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:20:5-44
+MERGED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:20:5-44
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:21:5-23:58
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:21:5-23:61
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:21:5-23:61
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:21:5-23:60
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:21:5-23:60
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:21:5-23:63
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:21:5-23:63
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:21:5-23:54
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:21:5-23:54
+MERGED from [:com.google.android.gms.play-services-ads-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de1ab77dac5db1873649268eaed0d22d/AndroidManifest.xml:21:5-23:62
+MERGED from [:com.google.android.gms.play-services-ads-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de1ab77dac5db1873649268eaed0d22d/AndroidManifest.xml:21:5-23:62
+MERGED from [:com.google.android.gms.play-services-ads-base-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/854a6b8b07ac7e941449283c56dc2e90/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-ads-base-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/854a6b8b07ac7e941449283c56dc2e90/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-ads-identifier-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1e537a7147fceb0960072e9f03bae7a2/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-ads-identifier-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1e537a7147fceb0960072e9f03bae7a2/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:20:5-44
+MERGED from [:com.google.android.gms.play-services-gass-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/4cad9322375ed6e662d27d974f3bf304/AndroidManifest.xml:5:5-44
+MERGED from [:com.google.android.gms.play-services-gass-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/4cad9322375ed6e662d27d974f3bf304/AndroidManifest.xml:5:5-44
+MERGED from [:unityLibrary:GoogleMobileAdsPlugin] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/GoogleMobileAdsPlugin/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-14:41
+MERGED from [:unityLibrary:GoogleMobileAdsPlugin] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/GoogleMobileAdsPlugin/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-14:41
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:23:9-55
+	android:targetSdkVersion
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		ADDED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+		INJECTED from /home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/src/main/AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-54
+	android:glEsVersion
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:13:19-51
+uses-permission#android.permission.INTERNET
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-67
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:12:5-67
+MERGED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:12:5-67
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:23:5-67
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:15:22-64
+uses-permission#android.permission.CHANGE_WIFI_MULTICAST_STATE
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-86
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:16:22-83
+uses-feature#android.hardware.touchscreen
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:19:9-52
+uses-feature#android.hardware.touchscreen.multitouch
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:22:9-63
+uses-feature#android.hardware.touchscreen.multitouch.distinct
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:24:5-26:36
+	android:required
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:26:9-33
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:25:9-72
+activity#com.unity3d.player.UnityPlayerActivity
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:29:9-49:20
+	android:screenOrientation
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:34:13-56
+	android:launchMode
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:33:13-44
+	android:hardwareAccelerated
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:32:13-48
+	android:configChanges
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:31:13-194
+	android:theme
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:35:13-54
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:30:13-66
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:android.intent.category.LEANBACK_LAUNCHER
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:36:13-41:29
+action#android.intent.action.MAIN
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:39:27-74
+category#android.intent.category.LEANBACK_LAUNCHER
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:40:17-86
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:40:27-83
+meta-data#unityplayer.UnityActivity
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:43:13-45:40
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:45:17-37
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:44:17-57
+meta-data#android.notch_support
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:46:13-48:40
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:48:17-37
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:47:17-53
+meta-data#unity.splash-mode
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:51:9-53:33
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:53:13-30
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:52:13-45
+meta-data#unity.splash-enable
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:54:9-56:36
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:56:13-33
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:55:13-47
+meta-data#notch.config
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:57:9-59:50
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:59:13-47
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:58:13-40
+meta-data#unity.build-id
+ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:60:9-62:68
+	android:value
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:62:13-65
+	android:name
+		ADDED from [:unityLibrary] /home/carlos/Unity/Robobomb/Temp/gradleOut/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:61:13-42
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:11:5-79
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:24:5-79
+MERGED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:11:22-76
+activity#com.unity3d.services.ads.adunit.AdUnitActivity
+ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:15:9-19:74
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:18:13-47
+	android:configChanges
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:17:13-170
+	android:theme
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:19:13-71
+	android:name
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:16:13-74
+activity#com.unity3d.services.ads.adunit.AdUnitTransparentActivity
+ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:20:9-24:86
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:23:13-47
+	android:configChanges
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:22:13-170
+	android:theme
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:24:13-83
+	android:name
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:21:13-85
+activity#com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity
+ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:25:9-29:86
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:28:13-48
+	android:configChanges
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:27:13-170
+	android:theme
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:29:13-83
+	android:name
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:26:13-93
+activity#com.unity3d.services.ads.adunit.AdUnitSoftwareActivity
+ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:30:9-34:74
+	android:hardwareAccelerated
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:33:13-48
+	android:configChanges
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:32:13-170
+	android:theme
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:34:13-71
+	android:name
+		ADDED from [:UnityAds:] /home/carlos/.gradle/caches/transforms-2/files-2.1/de06fe8cd6bbc8f382a1803535ad19ec/AndroidManifest.xml:31:13-82
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [:android.arch.lifecycle.runtime-1.0.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/086d81283d1d9fa01cdd6dc563346003/AndroidManifest.xml:26:13-58
+meta-data#android.support.VERSION
+ADDED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:23:9-25:38
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-core-ui-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/398b447031b9781110df73582876dbd0/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-core-utils-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/39aaff21bc34daf8714bb5711dc2b273/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-fragment-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/07a3b57f70746b33940e923c82455ae4/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-media-compat-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/ede70377d0509fae849b5eb84ed0567a/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:26:9-28:38
+MERGED from [:com.android.support.support-v4-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/348dba03551b17994af1d8d5356ae80d/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from [:com.android.support.customtabs-26.1.0:] /home/carlos/.gradle/caches/transforms-2/files-2.1/1f58e30258b1b91ae522a6af873b35c4/AndroidManifest.xml:24:13-51
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:29:9-33:64
+	android:exported
+		ADDED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:32:13-37
+	android:configChanges
+		ADDED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:31:13-122
+	android:theme
+		ADDED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:33:13-61
+	android:name
+		ADDED from [:com.google.android.gms.play-services-ads-lite-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/8c23b67bbcab1cf994ba80bc895ea962/AndroidManifest.xml:30:13-65
+meta-data#com.google.android.gms.version
+ADDED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [:com.google.android.gms.play-services-basement-15.0.1:] /home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/AndroidManifest.xml:24:13-58

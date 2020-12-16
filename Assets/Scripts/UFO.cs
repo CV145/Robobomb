@@ -10,6 +10,12 @@ public class UFO : MonoBehaviour {
     public Patrol patrol;
     //Explosion game object
     public GameObject explosion;
+    PickupsAndStats stats;
+    bool killed;
+
+    private void Start() {
+        stats = GameObject.Find("RoboPlayer").GetComponent<PickupsAndStats>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -18,6 +24,13 @@ public class UFO : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().gravityScale = 30;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+
+            if (!killed)
+            {
+                stats.Kills++;
+                killed = true;
+            }
+   
             Destroy(GetComponent<Patrol>());
         }
 	}
@@ -29,12 +42,22 @@ public class UFO : MonoBehaviour {
         if (collision.gameObject.layer == 10)
         {
             Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+            if (!killed)
+            {
+                stats.Kills++;
+                killed = true;
+            }
             Destroy(this.gameObject);
         }
         //Against an enemy
         if (collision.gameObject.layer == 13)
         {
             Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+            if (!killed)
+            {
+                stats.Kills++;
+                killed = true;
+            }
             Destroy(this.gameObject);
         }
     }

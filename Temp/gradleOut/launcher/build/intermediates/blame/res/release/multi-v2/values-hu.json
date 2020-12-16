@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hu/values-hu.xml",
+            "map": [
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/de1ab77dac5db1873649268eaed0d22d/res/values-hu/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,265,386,453,521,604,720",
+                        "endColumns": "67,120,66,67,82,115,70",
+                        "endOffsets": "264,385,452,520,603,719,790"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "341,413,538,609,681,768,888",
+                        "endColumns": "71,124,70,71,86,119,74",
+                        "endOffsets": "408,533,604,676,763,883,958"
+                    }
+                },
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/res/values-hu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "235",
+                        "endOffsets": "482"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "235",
+                        "endOffsets": "336"
+                    }
+                },
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "963",
+                        "endColumns": "100",
+                        "endOffsets": "1059"
+                    }
+                }
+            ]
+        }
+    ]
+}

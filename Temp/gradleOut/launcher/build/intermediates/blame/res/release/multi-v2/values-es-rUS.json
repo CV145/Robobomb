@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-es-rUS/values-es-rUS.xml",
+            "map": [
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/de1ab77dac5db1873649268eaed0d22d/res/values-es-rUS/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "201,272,406,471,537,624,744",
+                        "endColumns": "70,133,64,65,86,119,74",
+                        "endOffsets": "271,405,470,536,623,743,818"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "310,385,523,592,662,753,877",
+                        "endColumns": "74,137,68,69,90,123,78",
+                        "endOffsets": "380,518,587,657,748,872,951"
+                    }
+                },
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/1316da4f5de19c949bf3d5d8d2852e3c/res/values-es-rUS/values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "956",
+                        "endColumns": "100",
+                        "endOffsets": "1052"
+                    }
+                },
+                {
+                    "source": "/home/carlos/.gradle/caches/transforms-2/files-2.1/c1e72568a61f8b0d2717da35bd35439d/res/values-es-rUS/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "204",
+                        "endOffsets": "455"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "204",
+                        "endOffsets": "305"
+                    }
+                }
+            ]
+        }
+    ]
+}

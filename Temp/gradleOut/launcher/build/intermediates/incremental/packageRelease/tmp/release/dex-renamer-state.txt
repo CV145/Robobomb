@@ -1,0 +1,4 @@
+#Tue Dec 15 15:46:39 CST 2020
+base.0=/home/carlos/Unity/Robobomb/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex
